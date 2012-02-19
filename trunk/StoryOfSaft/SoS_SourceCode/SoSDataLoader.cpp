@@ -203,15 +203,49 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 		screenID.str(L"");
 		screenID << i;
 
-		int numImages = (*properties)[screenID.str().append(SoS_SCREEN_NUM_IMAGES)];
+		int numImages;
+		wstring numImagesProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_IMAGES)];
+		wstringstream(numImagesProp) >> numImages;
+
 		for(int z = 0; z < numImages; z++)
 		{
 			wstringstream overlayID;
 			overlayID.str(L"");
 			overlayID << z;
+
+			wstring temp;
+			int t;
+
+			unsigned int imageID = guiTextureManager->loadTexture(
+							(*properties)[screenID.str().append(SoS_SCREEN_IMAGE_PATH).append(overlayID.str())]);
+
+			OverlayImage *imageToAdd = new OverlayImage();
+
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->x = t;
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Y).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->y = t;
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Z).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->z = t;
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_ALPHA).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->alpha = t;
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->width = t;
+			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
+			wstringstream(temp) >> t;
+			imageToAdd->height = t;
+			imageToAdd->imageID = imageID;
+			screenToAdd->addOverlayImage(imageToAdd);
 		}
 
-		int numButtons = (*properties)[screenID.str().append(SoS_SCREEN_NUM_BUTTONS)];
+		int numButtons;
+		wstring numButtonsProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_BUTTONS)];
+		wstringstream(numButtonsProp) >> numButtons;
 		for(int z = 0; z < numButtons; z++)
 		{
 			wstringstream buttonID;
@@ -219,14 +253,18 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			buttonID << z;
 		}
 
-		int numStates = (*properties)[screenID.str().append(SoS_SCREEN_NUM_STATES)];
+		int numStates;
+		wstring numStatesProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_STATES)];
+		wstringstream(numStatesProp) >> numStates;
 		for(int z = 0; z < numStates; z++)
 		{
 			wstringstream stateID;
 			stateID.str(L"");
 			stateID << z;
 
-			
+			GameState gs = gsLookup(screenID.str().append(SoS_SCREEN_STATE).append(stateID.str()));
+
+			gui->addScreenGUI(gs,screenToAdd);
 		}
 	}
 
@@ -625,4 +663,5 @@ GameState gsLookup(wstring g)
 		return GS_UNLOADING_GAME;
 	}
 
+	return GS_EXIT_GAME;
 }
