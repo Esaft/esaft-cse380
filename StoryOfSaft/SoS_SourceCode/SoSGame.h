@@ -29,12 +29,38 @@ static const wstring	SoS_COLOR_KEY_RED		= L"COLOR_KEY_RED";
 static const wstring	SoS_COLOR_KEY_GREEN		= L"COLOR_KEY_GREEN";
 static const wstring	SoS_COLOR_KEY_BLUE		= L"COLOR_KEY_BLUE";
 
+
 static const wstring	SoS_NUM_CURSORS			= L"NUM_CURSORS";
 static const wstring	SoS_CURSOR_PATH			= L"CURSOR_PATH_";
+
+//SCREEN PROPERTIES
 static const wstring	SoS_NUM_SCREENS			= L"NUM_SCREENS";
 static const wstring	SoS_SCREEN_NUM_IMAGES	= L"_SCREEN_NUM_IMAGES";
 static const wstring	SoS_SCREEN_NUM_BUTTONS	= L"_SCREEN_NUM_BUTTONS";
 static const wstring	SoS_SCREEN_NUM_STATES	= L"_SCREEN_NUM_STATES";
+static const wstring	SoS_SCREEN_STATE		= L"_SCREEN_STATE_";
+
+//IMAGE PROPERTIES
+static const wstring	SoS_SCREEN_IMAGE_PATH	= L"_SCREEN_IMAGE_PATH_";
+static const wstring	SoS_SCREEN_IMAGE_X		= L"_SCREEN_IMAGE_X_";
+static const wstring	SoS_SCREEN_IMAGE_Y		= L"_SCREEN_IMAGE_Y_";
+static const wstring	SoS_SCREEN_IMAGE_Z		= L"_SCREEN_IMAGE_Z_";
+static const wstring	SoS_SCREEN_IMAGE_ALPHA	= L"_SCREEN_IMAGE_ALPHA_";
+static const wstring	SoS_SCREEN_IMAGE_WIDTH	= L"_SCREEN_IMAGE_WIDTH_";
+static const wstring	SoS_SCREEN_IMAGE_HEIGHT	= L"_SCREEN_IMAGE_HEIGHT_";
+
+//BUTTON PROPERTIES
+static const wstring	SoS_SCREEN_BUTTON_PATH	= L"_SCREEN_BUTTON_PATH_";
+static const wstring	SoS_SCREEN_BUTTON_MO_PATH	= L"_SCREEN_BUTTON_MO_PATH_";
+static const wstring	SoS_SCREEN_BUTTON_X		= L"_SCREEN_BUTTON_X_";
+static const wstring	SoS_SCREEN_BUTTON_Y		= L"_SCREEN_BUTTON_Y_";
+static const wstring	SoS_SCREEN_BUTTON_Z		= L"_SCREEN_BUTTON_Z_";
+static const wstring	SoS_SCREEN_BUTTON_ALPHA	= L"_SCREEN_BUTTON_ALPHA_";
+static const wstring	SoS_SCREEN_BUTTON_WIDTH	= L"_SCREEN_BUTTON_WIDTH_";
+static const wstring	SoS_SCREEN_BUTTON_HEIGHT= L"_SCREEN_BUTTON_HEIGHT_";
+static const wstring	SoS_SCREEN_BUTTON_MO	= L"_SCREEN_BUTTON_MO_";
+static const wstring	SoS_SCREEN_BUTTON_COM	= L"_SCREEN_BUTTON_COM_";
+
 
 // CONSTANTS FOR ARTWORK - NOTE, THIS SHOULD REALLY BE LOADED FROM A FILE
 static const wstring SoS_GO_TO_MM_COMMAND	= L"Go To Main Menu";
