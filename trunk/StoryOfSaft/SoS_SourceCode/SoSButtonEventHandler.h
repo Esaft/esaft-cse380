@@ -25,7 +25,7 @@ public:
 	SoSButtonEventHandler()	{}
 	~SoSButtonEventHandler()	{}
 
-	// DEFINED INSIDE DummyButtonEventHandler.cpp
+	// DEFINED INSIDE SoSButtonEventHandler.cpp
 	void handleButtonEvents(Game *game, 
 							wstring command);
 };

@@ -146,6 +146,12 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 	// WE'RE JUST GOING TO IGNORE THE GUI FILE FOR NOW.
 	// FOR THE MOMENT WE ARE CALLING THIS HARD-CODED GUI LOADER
 	hardCodedLoadGUIExample(game);
+
+	// READ IN THE GUI SETUP INFO
+	// FIRST LOAD ALL THE PROPERTIES
+	/*
+	map<wstring,wstring> *guiproperties = new map<wstring,wstring>();
+	loadGameProperties(game, guiproperties, guiInitFile);*/
 }
 
 /*

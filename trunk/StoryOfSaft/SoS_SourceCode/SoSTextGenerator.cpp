@@ -46,7 +46,7 @@ void SoSTextGenerator::appendTargetFPS(Game *game)
 void SoSTextGenerator::initText(Game *game)
 {
 	// FIRST UPDATE THE TEXT THIS GENERATOR IS USING
-	appendTargetFPS(game);
+	//appendTargetFPS(game);
 
 	// AND THEN HAND IT TO THE TEXT MANAGER, SPECIFYING WHERE IT SHOULD BE RENDERED
 	GameText *text = game->getText();
@@ -64,5 +64,5 @@ void SoSTextGenerator::updateText(Game *game)
 	// SIMPLY CLEAR IT OUT OF OLD CHARACTER DATA AND FILL IT IN WITH
 	// WHAT WE WANT.
 	textToGenerate.clear();
-	appendTargetFPS(game);
+	//appendTargetFPS(game);
 }
