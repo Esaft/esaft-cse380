@@ -16,11 +16,11 @@
 #include "stdafx.h"
 
 // DUMMY GAME INCLUDES
-#include "DG_SourceCode\SoSButtonEventHandler.h"
-#include "DG_SourceCode\SoSDataLoader.h"
-#include "DG_SourceCode\SoSGame.h"
-#include "DG_SourceCode\SoSKeyEventHandler.h"
-#include "DG_SourceCode\SoSTextGenerator.h"
+#include "SoS_SourceCode\SoSButtonEventHandler.h"
+#include "SoS_SourceCode\SoSDataLoader.h"
+#include "SoS_SourceCode\SoSGame.h"
+#include "SoS_SourceCode\SoSKeyEventHandler.h"
+#include "SoS_SourceCode\SoSTextGenerator.h"
 
 // GAME OBJECT INCLUDES
 #include "SSSF_SourceCode\game\Game.h"
@@ -60,7 +60,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	SoSDataLoader *sosDataLoader = new SoSDataLoader();
 	sosDataLoader->initWinHandle(hInstance, nCmdShow);
 	sosGame->setDataLoader(sosDataLoader);
-	sosDataLoader->loadGame(sosGame, DG_INIT_FILE);
+	sosDataLoader->loadGame(sosGame, SoS_INIT_FILE);
 	
 	// WHAT WE SHOULD BE DOING HERE IS LOADING THE GAME DATA FROM FILES. THIS
 	// MEANS THE GUIS THEMSELVES AS WELL AS THE LEVELS. THAT WILL BE LEFT
@@ -68,7 +68,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// LOAD THE GUI STUFF, AGAIN, NOTE THAT THIS SHOULD REALLY
 	// BE DONE FROM A FILE, NOT HARD CODED
-	sosDataLoader->loadGUI(sosGame, DG_GUI_INIT_FILE);
+	sosDataLoader->loadGUI(sosGame, SoS_GUI_INIT_FILE);
 
 	// SPECIFY WHO WILL HANDLE BUTTON EVENTS
 	SoSButtonEventHandler *sosButtonHandler = new SoSButtonEventHandler();

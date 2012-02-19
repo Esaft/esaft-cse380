@@ -3,9 +3,9 @@
 			Stony Brook University
 			Computer Science Department
 
-	DummyDataLoader.h
+	SoSDataLoader.h
 
-	This class provides a custom importer for the DummyGame to import
+	This class provides a custom importer for the SoSGame to import
 	game data, gui data, and world (i.e. level) data.
 */
 #pragma once
@@ -14,7 +14,7 @@
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXTextureManager.h"
 
-class DummyDataLoader : public GameDataLoader
+class SoSDataLoader : public GameDataLoader
 {
 private:
 	// WE NEED THESE GUYS TO INIT OUR WINDOWS WINDOW
@@ -22,8 +22,8 @@ private:
 	int nCmdShow;
 
 public:
-	DummyDataLoader()	{}
-	~DummyDataLoader()	{}
+	SoSDataLoader()	{}
+	~SoSDataLoader()	{}
 
 	// INLINED MUTATOR METHOD
 	void initWinHandle(HINSTANCE initHInstance, int initNCmdShow)
@@ -34,7 +34,7 @@ public:
 
 
 	// THESE SHOULD BE LOADING DATA FROM FILES. THEY
-	// ARE ALL DEFINED IN DummyDataLoader.cpp
+	// ARE ALL DEFINED IN SoSDataLoader.cpp
 	void loadGame(Game *game, wstring gameInitFile);
 	void loadGUI(Game *game, wstring guiInitFile);
 	void loadWorld(Game *game, wstring levelInitFile);

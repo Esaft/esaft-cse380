@@ -1,5 +1,22 @@
-﻿Build started 2/18/2012 5:46:44 PM.
+﻿Build started 2/19/2012 11:24:38 AM.
+     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DG_SourceCode\DummyButtonEventHandler.cpp DG_SourceCode\DummyDataLoader.cpp DG_SourceCode\DummyGame.cpp DG_SourceCode\DummyKeyEventHandler.cpp DG_SourceCode\DummyTextGenerator.cpp
+         DummyTextGenerator.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         DummyKeyEventHandler.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         DummyGame.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         DummyDataLoader.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         DummyButtonEventHandler.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.01
+Time Elapsed 00:00:09.21

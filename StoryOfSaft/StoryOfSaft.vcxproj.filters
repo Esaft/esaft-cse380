@@ -10,35 +10,37 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="SoS_SourceCode">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <UniqueIdentifier>{da3a417f-3bb0-4f0d-80da-320d30fca471}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SoS_SourceCode\SoSButtonEventHandler.h">
+    <ClInclude Include="SoS_SourceCode\SoSDataLoader.h">
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
-    <ClInclude Include="SoSGame.h">
+    <ClInclude Include="SoS_SourceCode\SoSGame.h">
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
-    <ClInclude Include="SoSDataLoader.h">
+    <ClInclude Include="SoS_SourceCode\SoSKeyEventHandler.h">
+      <Filter>SoS_SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SoS_SourceCode\SoSTextGenerator.h">
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SoS_SourceCode\SoSButtonEventHandler.cpp">
+    <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
-    <ClCompile Include="SoSGame.cpp">
+    <ClCompile Include="SoS_SourceCode\SoSGame.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
-    <ClCompile Include="SoSDataLoader.cpp">
+    <ClCompile Include="SoS_SourceCode\SoSKeyEventHandler.cpp">
+      <Filter>SoS_SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SoS_SourceCode\SoSTextGenerator.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
   </ItemGroup>
