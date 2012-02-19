@@ -20,6 +20,10 @@ private:
 	// WE NEED THESE GUYS TO INIT OUR WINDOWS WINDOW
 	HINSTANCE hInstance;
 	int nCmdShow;
+	
+	//helper method for loading screens from file
+	//(no good way to convert wstring to enum)
+	GameState gsLookup(wstring g);
 
 public:
 	SoSDataLoader()	{}

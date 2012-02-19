@@ -190,6 +190,46 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 		gui->setCursor(cursor);
 	}
 
+
+	//Set up screens
+	int numScreens;
+	wstring numScreensProp = (*properties)[SoS_NUM_SCREENS];
+	wstringstream(numScreensProp) >> numScreens;
+
+	for(int i = 0; i < numScreens; i++)
+	{
+		ScreenGUI *screenToAdd = new ScreenGUI();
+		wstringstream screenID;
+		screenID.str(L"");
+		screenID << i;
+
+		int numImages = (*properties)[screenID.str().append(SoS_SCREEN_NUM_IMAGES)];
+		for(int z = 0; z < numImages; z++)
+		{
+			wstringstream overlayID;
+			overlayID.str(L"");
+			overlayID << z;
+		}
+
+		int numButtons = (*properties)[screenID.str().append(SoS_SCREEN_NUM_BUTTONS)];
+		for(int z = 0; z < numButtons; z++)
+		{
+			wstringstream buttonID;
+			buttonID.str(L"");
+			buttonID << z;
+		}
+
+		int numStates = (*properties)[screenID.str().append(SoS_SCREEN_NUM_STATES)];
+		for(int z = 0; z < numStates; z++)
+		{
+			wstringstream stateID;
+			stateID.str(L"");
+			stateID << z;
+
+			
+		}
+	}
+
 	delete properties;
 
 
@@ -522,3 +562,67 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	player->setCurrentState(IDLE_STATE);
 }
 
+GameState gsLookup(wstring g)
+{
+	if(g.compare(L"GS_SPLASH_SCREEN") == 0)
+	{
+		return GS_SPLASH_SCREEN;
+	}
+	if(g.compare(L"GS_MAIN_MENU")== 0)
+	{
+		return GS_MAIN_MENU;
+	}
+	if(g.compare(L"GS_STARTING_LEVEL")== 0)
+	{
+		return GS_STARTING_LEVEL;
+	}
+	if(g.compare(L"GS_GAME_IN_PROGRESS")== 0)
+	{
+		return GS_GAME_IN_PROGRESS;
+	}
+	if(g.compare(L"GS_EXIT_GAME")== 0)
+	{
+		return GS_EXIT_GAME;
+	}
+	if(g.compare(L"GS_MENU_HELP_MENU")== 0)
+	{
+		return GS_MENU_HELP_MENU;
+	}
+	if(g.compare(L"GS_MENU_ABOUT_MENU")== 0)
+	{
+		return GS_MENU_ABOUT_MENU;
+	}
+	if(g.compare(L"GS_MENU_CONTROLS_MENU")== 0)
+	{
+		return GS_MENU_CONTROLS_MENU;
+	}
+	if(g.compare(L"GS_PAUSED")== 0)
+	{
+		return GS_PAUSED;
+	}
+	if(g.compare(L"GS_GAME_OVER")== 0)
+	{
+		return GS_GAME_OVER;
+	}
+	if(g.compare(L"GS_IN_GAME_HELP")== 0)
+	{
+		return GS_IN_GAME_HELP;
+	}
+	if(g.compare(L"GS_IN_GAME_ABOUT")== 0)
+	{
+		return GS_IN_GAME_ABOUT;
+	}
+	if(g.compare(L"GS_IN_GAME_CONTROLS")== 0)
+	{
+		return GS_IN_GAME_CONTROLS;
+	}
+	if(g.compare(L"GS_UNLOADING_LEVEL")== 0)
+	{
+		return GS_UNLOADING_LEVEL;
+	}
+	if(g.compare(L"GS_UNLOADING_GAME")== 0)
+	{
+		return GS_UNLOADING_GAME;
+	}
+
+}

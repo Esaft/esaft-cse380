@@ -31,6 +31,10 @@ static const wstring	SoS_COLOR_KEY_BLUE		= L"COLOR_KEY_BLUE";
 
 static const wstring	SoS_NUM_CURSORS			= L"NUM_CURSORS";
 static const wstring	SoS_CURSOR_PATH			= L"CURSOR_PATH_";
+static const wstring	SoS_NUM_SCREENS			= L"NUM_SCREENS";
+static const wstring	SoS_SCREEN_NUM_IMAGES	= L"_SCREEN_NUM_IMAGES";
+static const wstring	SoS_SCREEN_NUM_BUTTONS	= L"_SCREEN_NUM_BUTTONS";
+static const wstring	SoS_SCREEN_NUM_STATES	= L"_SCREEN_NUM_STATES";
 
 // CONSTANTS FOR ARTWORK - NOTE, THIS SHOULD REALLY BE LOADED FROM A FILE
 static const wstring SoS_GO_TO_MM_COMMAND	= L"Go To Main Menu";
