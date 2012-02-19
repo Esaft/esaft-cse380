@@ -9,8 +9,8 @@
 */
 
 // HERE IS THE DUMMY GAME SETUP/INIT FILE. EVERYTHING WOULD START FROM HERE
-static const wstring	SoS_INIT_FILE			= L"data/DummyGameInit.txt";
-static const wstring	SoS_GUI_INIT_FILE		= L"data/DummyGameGUIInit.txt";
+static const wstring	SoS_INIT_FILE			= L"data/SoSGameInit.txt";
+static const wstring	SoS_GUI_INIT_FILE		= L"data/SoSGameGUIInit.txt";
 static const string		SoS_DEBUG_FILE			= "DebugOutput.txt";
 
 

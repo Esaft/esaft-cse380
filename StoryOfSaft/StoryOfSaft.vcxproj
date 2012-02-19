@@ -39,24 +39,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Apps\$(ProjectName\</OutDir>
+    <OutDir>$(SolutionDir)Apps\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)SimpleSideScrollerFramework\;$(ProjectDir);$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Common\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)SimpleSideScrollerFramework\;$(ProjectDir);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Common\;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SimpleSideScrollerFramework.lib;winmm.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,12 +80,14 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SoS_SourceCode\SoSButtonEventHandler.h" />
     <ClInclude Include="SoS_SourceCode\SoSDataLoader.h" />
     <ClInclude Include="SoS_SourceCode\SoSGame.h" />
     <ClInclude Include="SoS_SourceCode\SoSKeyEventHandler.h" />
     <ClInclude Include="SoS_SourceCode\SoSTextGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SoS_SourceCode\SoSButtonEventHandler.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSGame.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSKeyEventHandler.cpp" />
