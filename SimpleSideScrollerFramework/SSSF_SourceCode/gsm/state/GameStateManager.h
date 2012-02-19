@@ -79,10 +79,17 @@ public:
 	bool			isGameLevelLoading();
 	bool			isWorldRenderable();
 
+	bool			isGamePaused();
+
+
 	// METHODS FOR TRANSITIONING TO OTHER GAME STATES
 	void			goToGame();
 	void			goToLoadLevel();
 	void			goToMainMenu();
+
+	void			goToPaused();
+	void			goToAboutMenu();
+	void			goToControlsMenu();
 
 	// METHODS DEFINED in GameStateManager.cpp
 	GameStateManager();
