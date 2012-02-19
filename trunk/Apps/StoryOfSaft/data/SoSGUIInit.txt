@@ -1,0 +1,3 @@
+NUM_CURSORS:2
+CURSOR_PATH_0:textures/gui/cursor/green_cursor.png
+CURSOR_PATH_1:textures/gui/cursor/red_cursor.png

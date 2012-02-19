@@ -144,18 +144,67 @@ void SoSDataLoader::initColors(	GameGraphics *graphics,
 */
 void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 {
+	
+
+	
+	///ACTUALLY LOADING FROM FILE
+	GameGUI *gui = game->getGUI();
+	GameGraphics *graphics = game->getGraphics();
+	DirectXTextureManager *guiTextureManager = (DirectXTextureManager*)graphics->getGUITextureManager();
+
+	map<wstring,wstring> *properties = new map<wstring,wstring>();
+	loadGameProperties(game, properties, guiInitFile);
+	
+	//Set up cursor
+	int numCursor;
+	wstring numCursorProp = (*properties)[SoS_NUM_CURSORS];
+	wstringstream(numCursorProp) >> numCursor;
+
+	//if there are custom cursors
+	if(numCursor > 0)
+	{
+		vector<unsigned int> *imageIDs = new vector<unsigned int>();
+		int imageID;
+
+		for(int i = 0; i < numCursor; i++)
+		{
+			wstring label = SoS_CURSOR_PATH;
+			wstringstream wss;
+			wss.str(L"");
+			wss << i;
+			label.append(wss.str());
+
+			imageID = guiTextureManager->loadTexture(((*properties)[label]));
+			imageIDs->push_back(imageID);
+		}
+
+		Cursor *cursor = new Cursor();
+		cursor->initCursor(	imageIDs,
+							*(imageIDs->begin()),
+							0,
+							0,
+							0,
+							255,
+							32,
+							32);
+		gui->setCursor(cursor);
+	}
+
+	delete properties;
+
+
+	initSplashScreen(game, gui, guiTextureManager);
+	initMainMenu(gui, guiTextureManager);
+	initInGameGUI(gui, guiTextureManager);
+
 	// WE'RE JUST GOING TO IGNORE THE GUI FILE FOR NOW.
 	// FOR THE MOMENT WE ARE CALLING THIS HARD-CODED GUI LOADER
-	hardCodedLoadGUIExample(game);
-
-	
-	BufferedTextFileReader reader;
-	reader.initFile(guiInitFile);
-	
-	wstring line;
-
-
+	//hardCodedLoadGUIExample(game);
 }
+
+
+
+
 
 /*
 	loadLevel - This method should load the data the level described by the
@@ -341,6 +390,7 @@ void SoSDataLoader::initInGameGUI(GameGUI *gui, DirectXTextureManager *guiTextur
 
 	// AND LET'S ADD OUR SCREENS
 	gui->addScreenGUI(GS_GAME_IN_PROGRESS,	inGameGUI);
+	gui->addScreenGUI(GS_PAUSED, inGameGUI);
 }
 
 /*
@@ -436,6 +486,7 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	int spriteImageID0 = worldTextureManager->loadTexture(PLAYER_IDLE0_PATH);
 	int spriteImageID1 = worldTextureManager->loadTexture(PLAYER_IDLE1_PATH);
 	int spriteImageID2 = worldTextureManager->loadTexture(PLAYER_IDLE2_PATH);
+	int spriteImageID3 = worldTextureManager->loadTexture(PLAYER_IDLE3_PATH);
 
 	// SIZE OF SPRITE IMAGES
 	ast->setTextureSize(PLAYER_WIDTH, PLAYER_HEIGHT);
@@ -444,10 +495,12 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	// FIRST THE NAME
 	ast->addAnimationSequence(IDLE_STATE);
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 50);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 20);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 40);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 100);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 20);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 10);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 10);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID3, 100);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 10);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 10);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 20);
 
 	SpriteManager *spriteManager = gsm->getSpriteManager();
 	unsigned int spriteTypeID = spriteManager->addSpriteType(ast);

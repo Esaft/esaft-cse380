@@ -29,6 +29,9 @@ static const wstring	SoS_COLOR_KEY_RED		= L"COLOR_KEY_RED";
 static const wstring	SoS_COLOR_KEY_GREEN		= L"COLOR_KEY_GREEN";
 static const wstring	SoS_COLOR_KEY_BLUE		= L"COLOR_KEY_BLUE";
 
+static const wstring	SoS_NUM_CURSORS			= L"NUM_CURSORS";
+static const wstring	SoS_CURSOR_PATH			= L"CURSOR_PATH_";
+
 // CONSTANTS FOR ARTWORK - NOTE, THIS SHOULD REALLY BE LOADED FROM A FILE
 static const wstring SoS_GO_TO_MM_COMMAND	= L"Go To Main Menu";
 static const wstring SoS_START_COMMAND		= L"Start";
@@ -54,12 +57,15 @@ static const wstring	WALL_IMAGE_PATH = L"textures/world/tiles/wall.png";
 
 // FOR OUR SPRITE
 static const wstring	IDLE_STATE = L"IDLE_STATE";
-static const wstring	PLAYER_IDLE0_PATH = L"textures/world/sprites/tros/tros_3_0.png";
-static const wstring	PLAYER_IDLE1_PATH = L"textures/world/sprites/tros/tros_3_1.png";
-static const wstring	PLAYER_IDLE2_PATH = L"textures/world/sprites/tros/tros_3_2.png";
+static const wstring	PLAYER_IDLE0_PATH = L"textures/world/sprites/evan/evan_3_0.png";
+static const wstring	PLAYER_IDLE1_PATH = L"textures/world/sprites/evan/evan_3_1.png";
+static const wstring	PLAYER_IDLE2_PATH = L"textures/world/sprites/evan/evan_3_2.png";
+static const wstring	PLAYER_IDLE3_PATH = L"textures/world/sprites/evan/evan_3_3.png";
+
+
 static const int		ANIM_SPEED = 6;
 static const int		PLAYER_WIDTH = 64;
-static const int		PLAYER_HEIGHT = 92;
+static const int		PLAYER_HEIGHT = 128;
 
 // FOR OUR WORLD
 static const int		NUM_COLUMNS = 60;
