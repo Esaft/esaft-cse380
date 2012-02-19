@@ -18,6 +18,7 @@
 #include "SSSF_SourceCode\input\GameInput.h"
 #include "SSSF_SourceCode\os\GameOS.h"
 #include "SSSF_SourceCode\text\GameText.h"
+#include "SSSF_SourceCode\text\BufferedTextFileReader.h"
 
 // WINDOWS PLATFORM INCLUDES
 #include "SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.h"
@@ -147,11 +148,13 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 	// FOR THE MOMENT WE ARE CALLING THIS HARD-CODED GUI LOADER
 	hardCodedLoadGUIExample(game);
 
-	// READ IN THE GUI SETUP INFO
-	// FIRST LOAD ALL THE PROPERTIES
-	/*
-	map<wstring,wstring> *guiproperties = new map<wstring,wstring>();
-	loadGameProperties(game, guiproperties, guiInitFile);*/
+	
+	BufferedTextFileReader reader;
+	reader.initFile(guiInitFile);
+	
+	wstring line;
+
+
 }
 
 /*
@@ -308,7 +311,7 @@ void SoSDataLoader::initMainMenu(GameGUI *gui,	DirectXTextureManager *guiTexture
 	mainMenuGUI->addButton(buttonToAdd);
 
 	// AND LET'S ADD OUR SCREENS
-	gui->addScreenGUI(GS_MAIN_MENU,		mainMenuGUI);
+	gui->addScreenGUI(GS_MAIN_MENU,mainMenuGUI);
 }
 
 /*

@@ -79,6 +79,50 @@ void GameStateManager::goToMainMenu()
 	currentGameState = GS_MAIN_MENU;
 }
 
+
+//////////////////BEGIN ADDED METHODS
+
+/*
+	goToPaused - This method transitions the game application from actual game to paused state
+*/
+void GameStateManager::goToPaused()
+{
+	currentGameState = GS_PAUSED;
+}
+
+/*
+	goToAboutMenu - This method transitions the game application from main menu to about screen
+*/
+void GameStateManager::goToAboutMenu()
+{
+	currentGameState = GS_MENU_ABOUT_MENU;
+}
+
+/*
+	goToControlsMenu - This method transitions the game application from main menu to controls screen
+*/
+void GameStateManager::goToControlsMenu()
+{
+	currentGameState = GS_MENU_CONTROLS_MENU;
+}
+
+
+/*
+	isGamePaused - Used to test if this application is currently
+	paused. This will dictate what to render, but also
+	how to respond to user input.
+*/
+bool GameStateManager::isGamePaused()
+{
+	return currentGameState == GS_PAUSED;
+}
+
+
+
+
+
+////////////////////END ADDED METHODS
+
 /*
 	isAtSplashScreen - Used to test if this application is currently
 	at the splash screen. This will dictate what to render, but also

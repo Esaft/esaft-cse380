@@ -35,6 +35,7 @@ const unsigned int LEFT_KEY = VK_LEFT;
 const unsigned int RIGHT_KEY = VK_RIGHT;
 
 const unsigned int ENTER_KEY = VK_RETURN;
+const unsigned int TAB_KEY = VK_TAB;
 
 // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED
 const unsigned int C_KEY = (unsigned int)'C';
@@ -67,6 +68,8 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 			gsm->goToMainMenu();
 		}
 	}
+
+	
 
 	// IF THE GAME IS IN PROGRESS
 	if (gsm->isGameInProgress())
@@ -106,6 +109,19 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		// NOTE THAT THE VIEWPORT SHOULD FOLLOW THE PLAYER, AND SO SHOULD BE CORRECTED AFTER PHYSICS
 		// ARE APPLIED. I HAVE PROVIDED A SIMPLE WAY OF DOING SO, WHICH SHOULD BE IMPROVED, DEPENDING
 		// ON THE GAME'S NEED
+
+
+
+		if(input->isKeyDownForFirstTime(TAB_KEY))
+		{
+
+		}
+
+	}
+
+	else if(gsm->isGamePaused() && input->isKeyDownForFirstTime(TAB_KEY))
+	{
+		gsm->goToGame();
 	}
 
 	// 0X43 is HEX FOR THE 'C' VIRTUAL KEY
