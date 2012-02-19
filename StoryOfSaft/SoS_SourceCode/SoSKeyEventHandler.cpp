@@ -34,6 +34,8 @@ const unsigned int DOWN_KEY = VK_DOWN;
 const unsigned int LEFT_KEY = VK_LEFT;
 const unsigned int RIGHT_KEY = VK_RIGHT;
 
+const unsigned int ENTER_KEY = VK_RETURN;
+
 // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED
 const unsigned int C_KEY = (unsigned int)'C';
 
@@ -58,6 +60,14 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 	AnimatedSprite *player = gsm->getSpriteManager()->getPlayer();
 	PhysicalProperties *pp = player->getPhysicalProperties();
 	
+	if(gsm->isAtSplashScreen())
+	{
+		if(input->isKeyDown(ENTER_KEY))
+		{
+			gsm->goToMainMenu();
+		}
+	}
+
 	// IF THE GAME IS IN PROGRESS
 	if (gsm->isGameInProgress())
 	{
