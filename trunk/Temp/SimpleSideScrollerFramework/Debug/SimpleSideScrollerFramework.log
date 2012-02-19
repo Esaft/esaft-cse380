@@ -1,13 +1,86 @@
-﻿Build started 2/19/2012 11:24:54 AM.
-     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild".
+﻿Build started 2/19/2012 12:52:14 PM.
+     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\stdafx.h(43): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
-     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" (build target(s)) -- FAILED.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\dataLoader\GameDataLoader.cpp SSSF_SourceCode\game\Game.cpp SSSF_SourceCode\game\WStringTable.cpp SSSF_SourceCode\graphics\GameGraphics.cpp SSSF_SourceCode\graphics\RenderList.cpp SSSF_SourceCode\graphics\TextureManager.cpp SSSF_SourceCode\gsm\ai\BotRecycler.cpp SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp SSSF_SourceCode\gsm\physics\Physics.cpp SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.cpp SSSF_SourceCode\gsm\sprite\SpriteManager.cpp SSSF_SourceCode\gsm\state\GameStateManager.cpp SSSF_SourceCode\gsm\world\SparseLayer.cpp SSSF_SourceCode\gsm\world\TiledLayer.cpp SSSF_SourceCode\gsm\world\World.cpp SSSF_SourceCode\gui\Button.cpp SSSF_SourceCode\gui\Cursor.cpp SSSF_SourceCode\gui\GameGUI.cpp SSSF_SourceCode\gui\ScreenGUI.cpp SSSF_SourceCode\gui\Viewport.cpp SSSF_SourceCode\input\GameInput.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXGraphics.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXTextureManager.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsInput.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsTimer.cpp SSSF_SourceCode\text\BufferedTextFileReader.cpp SSSF_SourceCode\text\GameText.cpp SSSF_SourceCode\text\TextFileWriter.cpp
+         TextFileWriter.cpp
+         GameText.cpp
+         BufferedTextFileReader.cpp
+         WindowsTimer.cpp
+         WindowsOS.cpp
+         WindowsInput.cpp
+         DirectXTextureManager.cpp
+         DirectXGraphics.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\platformplugins\directxplugin\directxgraphics.cpp(454): warning C4390: ';' : empty controlled statement found; is this the intent?
+         GameInput.cpp
+         Viewport.cpp
+         ScreenGUI.cpp
+         GameGUI.cpp
+         Cursor.cpp
+         Button.cpp
+         World.cpp
+         TiledLayer.cpp
+         SparseLayer.cpp
+         GameStateManager.cpp
+         SpriteManager.cpp
+         AnimatedSpriteType.cpp
+         Generating Code...
+         Compiling...
+         AnimatedSprite.cpp
+         Physics.cpp
+         RandomFloatingBot.cpp
+         BotRecycler.cpp
+         TextureManager.cpp
+         RenderList.cpp
+         GameGraphics.cpp
+         WStringTable.cpp
+         Game.cpp
+         GameDataLoader.cpp
+         Generating Code...
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\graphics\renderlist.cpp(102): warning C4715: 'RenderList::next' : not all control paths return a value
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Common\SimpleSideScrollerFramework.lib" /NOLOGO "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameDataLoader.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Game.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\WStringTable.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameGraphics.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\RenderList.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\TextureManager.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\BotRecycler.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\RandomFloatingBot.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Physics.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\AnimatedSprite.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\AnimatedSpriteType.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SpriteManager.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameStateManager.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SparseLayer.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\TiledLayer.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\World.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Button.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Cursor.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameGUI.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\ScreenGUI.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Viewport.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameInput.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\DirectXGraphics.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\DirectXTextureManager.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\WindowsInput.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\WindowsOS.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\WindowsTimer.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\BufferedTextFileReader.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameText.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\TextFileWriter.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\stdafx.obj"
+         SimpleSideScrollerFramework.vcxproj -> C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Common\SimpleSideScrollerFramework.lib
+       FinalizeBuildStatus:
+         Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild".
+         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
+     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" (rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:02.99
+Time Elapsed 00:00:12.00
