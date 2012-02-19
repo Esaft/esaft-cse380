@@ -77,9 +77,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="icon1.ico" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SoS_SourceCode\SoSButtonEventHandler.h" />
     <ClInclude Include="SoS_SourceCode\SoSDataLoader.h" />
     <ClInclude Include="SoS_SourceCode\SoSGame.h" />
@@ -92,6 +94,9 @@
     <ClCompile Include="SoS_SourceCode\SoSGame.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSKeyEventHandler.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSTextGenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="StoryOfSaft.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -114,7 +114,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 
 		if(input->isKeyDownForFirstTime(TAB_KEY))
 		{
-
+			gsm->goToPaused();
 		}
 
 	}

@@ -1,4 +1,4 @@
-﻿Build started 2/19/2012 12:52:14 PM.
+﻿Build started 2/19/2012 3:30:07 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
@@ -83,4 +83,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.00
+Time Elapsed 00:00:12.91

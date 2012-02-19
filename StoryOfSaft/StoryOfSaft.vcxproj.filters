@@ -11,6 +11,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SoS_SourceCode\SoSDataLoader.h">
@@ -28,6 +31,7 @@
     <ClInclude Include="SoS_SourceCode\SoSButtonEventHandler.h">
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp">
@@ -45,5 +49,10 @@
     <ClCompile Include="SoS_SourceCode\SoSButtonEventHandler.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="StoryOfSaft.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
