@@ -213,10 +213,9 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			overlayID.str(L"");
 			overlayID << j;
 
-			
+			wstring path = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_PATH).append(overlayID.str())];
 
-			unsigned int imageID = guiTextureManager->loadTexture(
-							(*properties)[screenID.str().append(SoS_SCREEN_IMAGE_PATH).append(overlayID.str())]);
+			unsigned int imageID = guiTextureManager->loadTexture(path);
 
 			OverlayImage *imageToAdd = new OverlayImage();
 
@@ -227,8 +226,8 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			wstring yProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Y).append(overlayID.str())];
 			wstring zProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Z).append(overlayID.str())];
 			wstring alphaProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_ALPHA).append(overlayID.str())];
-			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_HEIGHT).append(overlayID.str())];
-			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_WIDTH).append(overlayID.str())];
+			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_WIDTH).append(overlayID.str())];
+			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_HEIGHT).append(overlayID.str())];
 			wstringstream(xProp) >> x;
 			wstringstream(yProp) >> y;
 			wstringstream(zProp) >> z;
@@ -268,8 +267,8 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			wstring yProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_Y).append(buttonID.str())];
 			wstring zProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_Z).append(buttonID.str())];
 			wstring alphaProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_ALPHA).append(buttonID.str())];
-			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_HEIGHT).append(buttonID.str())];
-			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_WIDTH).append(buttonID.str())];
+			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_WIDTH).append(buttonID.str())];
+			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_HEIGHT).append(buttonID.str())];
 			wstringstream(xProp) >> x;
 			wstringstream(yProp) >> y;
 			wstringstream(zProp) >> z;
@@ -277,9 +276,10 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			wstringstream(widthProp) >> width;
 			wstringstream(heightProp) >> height;
 
-			bool mo;
+			bool mo = false;
 			wstring moProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_MO).append(buttonID.str())];
-			mo = (moProp.compare(L"true") == 0);
+			if(moProp.compare(L"true") == 0)
+				mo = true;
 			wstring com = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_COM).append(buttonID.str())];
 
 			Button *buttonToAdd = new Button();
@@ -305,7 +305,7 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			stateID.str(L"");
 			stateID << j;
 
-			GameState gs = gsLookup(screenID.str().append(SoS_SCREEN_STATE).append(stateID.str()));
+			GameState gs = gsLookup((*properties)[screenID.str().append(SoS_SCREEN_STATE).append(stateID.str())]);
 
 			gui->addScreenGUI(gs,screenToAdd);
 		}
