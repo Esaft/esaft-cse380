@@ -207,38 +207,41 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 		wstring numImagesProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_IMAGES)];
 		wstringstream(numImagesProp) >> numImages;
 
-		for(int z = 0; z < numImages; z++)
+		for(int j = 0; j < numImages; j++)
 		{
 			wstringstream overlayID;
 			overlayID.str(L"");
-			overlayID << z;
+			overlayID << j;
 
-			wstring temp;
-			int t;
+			
 
 			unsigned int imageID = guiTextureManager->loadTexture(
 							(*properties)[screenID.str().append(SoS_SCREEN_IMAGE_PATH).append(overlayID.str())]);
 
 			OverlayImage *imageToAdd = new OverlayImage();
 
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->x = t;
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Y).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->y = t;
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Z).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->z = t;
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_ALPHA).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->alpha = t;
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->width = t;
-			temp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
-			wstringstream(temp) >> t;
-			imageToAdd->height = t;
+			
+			int x,y,z,alpha,width,height;
+
+			wstring xProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_X).append(overlayID.str())];
+			wstring yProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Y).append(overlayID.str())];
+			wstring zProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_Z).append(overlayID.str())];
+			wstring alphaProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_ALPHA).append(overlayID.str())];
+			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_HEIGHT).append(overlayID.str())];
+			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_IMAGE_WIDTH).append(overlayID.str())];
+			wstringstream(xProp) >> x;
+			wstringstream(yProp) >> y;
+			wstringstream(zProp) >> z;
+			wstringstream(alphaProp) >> alpha;
+			wstringstream(widthProp) >> width;
+			wstringstream(heightProp) >> height;
+			
+			imageToAdd->x = x;
+			imageToAdd->y = y;
+			imageToAdd->z = z;
+			imageToAdd->alpha = alpha;
+			imageToAdd->width = width;
+			imageToAdd->height = height;
 			imageToAdd->imageID = imageID;
 			screenToAdd->addOverlayImage(imageToAdd);
 		}
@@ -246,21 +249,61 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 		int numButtons;
 		wstring numButtonsProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_BUTTONS)];
 		wstringstream(numButtonsProp) >> numButtons;
-		for(int z = 0; z < numButtons; z++)
+		for(int j = 0; j < numButtons; j++)
 		{
 			wstringstream buttonID;
 			buttonID.str(L"");
-			buttonID << z;
+			buttonID << j;
+
+			
+
+			unsigned int normalTextureID = guiTextureManager->loadTexture(
+				(*properties)[screenID.str().append(SoS_SCREEN_BUTTON_PATH).append(buttonID.str())]);
+			unsigned int mouseOverTextureID = guiTextureManager->loadTexture(
+				(*properties)[screenID.str().append(SoS_SCREEN_BUTTON_MO_PATH).append(buttonID.str())]);
+
+			int x,y,z,alpha,width,height;
+
+			wstring xProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_X).append(buttonID.str())];
+			wstring yProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_Y).append(buttonID.str())];
+			wstring zProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_Z).append(buttonID.str())];
+			wstring alphaProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_ALPHA).append(buttonID.str())];
+			wstring widthProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_HEIGHT).append(buttonID.str())];
+			wstring heightProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_WIDTH).append(buttonID.str())];
+			wstringstream(xProp) >> x;
+			wstringstream(yProp) >> y;
+			wstringstream(zProp) >> z;
+			wstringstream(alphaProp) >> alpha;
+			wstringstream(widthProp) >> width;
+			wstringstream(heightProp) >> height;
+
+			bool mo;
+			wstring moProp = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_MO).append(buttonID.str())];
+			mo = (moProp.compare(L"true") == 0);
+			wstring com = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_COM).append(buttonID.str())];
+
+			Button *buttonToAdd = new Button();
+			buttonToAdd->initButton(normalTextureID, 
+							mouseOverTextureID,
+							x,
+							y,
+							z,
+							alpha,
+							width,
+							height,
+							mo,
+							com);
+			screenToAdd->addButton(buttonToAdd);
 		}
 
 		int numStates;
 		wstring numStatesProp = (*properties)[screenID.str().append(SoS_SCREEN_NUM_STATES)];
 		wstringstream(numStatesProp) >> numStates;
-		for(int z = 0; z < numStates; z++)
+		for(int j = 0; j < numStates; j++)
 		{
 			wstringstream stateID;
 			stateID.str(L"");
-			stateID << z;
+			stateID << j;
 
 			GameState gs = gsLookup(screenID.str().append(SoS_SCREEN_STATE).append(stateID.str()));
 
@@ -271,9 +314,9 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 	delete properties;
 
 
-	initSplashScreen(game, gui, guiTextureManager);
-	initMainMenu(gui, guiTextureManager);
-	initInGameGUI(gui, guiTextureManager);
+	//initSplashScreen(game, gui, guiTextureManager);
+	//initMainMenu(gui, guiTextureManager);
+	//initInGameGUI(gui, guiTextureManager);
 
 	// WE'RE JUST GOING TO IGNORE THE GUI FILE FOR NOW.
 	// FOR THE MOMENT WE ARE CALLING THIS HARD-CODED GUI LOADER
@@ -600,7 +643,7 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	player->setCurrentState(IDLE_STATE);
 }
 
-GameState gsLookup(wstring g)
+GameState SoSDataLoader::gsLookup(wstring g)
 {
 	if(g.compare(L"GS_SPLASH_SCREEN") == 0)
 	{
