@@ -254,12 +254,15 @@ void SoSDataLoader::loadGUI(Game *game, wstring guiInitFile)
 			buttonID.str(L"");
 			buttonID << j;
 
-			
+			wstring path = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_PATH).append(buttonID.str())];
+			wstring pathMO = (*properties)[screenID.str().append(SoS_SCREEN_BUTTON_MO_PATH).append(buttonID.str())];
 
-			unsigned int normalTextureID = guiTextureManager->loadTexture(
-				(*properties)[screenID.str().append(SoS_SCREEN_BUTTON_PATH).append(buttonID.str())]);
-			unsigned int mouseOverTextureID = guiTextureManager->loadTexture(
-				(*properties)[screenID.str().append(SoS_SCREEN_BUTTON_MO_PATH).append(buttonID.str())]);
+			unsigned int normalTextureID = guiTextureManager->loadTexture(path);
+			unsigned int mouseOverTextureID;
+			if(path.compare(pathMO) == 0)
+				mouseOverTextureID = normalTextureID;
+			else
+				mouseOverTextureID = guiTextureManager->loadTexture(pathMO);
 
 			int x,y,z,alpha,width,height;
 
@@ -616,11 +619,11 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	// FIRST THE NAME
 	ast->addAnimationSequence(IDLE_STATE);
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 50);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 10);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 10);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID3, 100);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 10);
-	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 10);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 5);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 5);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID3, 50);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 5);
+	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 5);
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 20);
 
 	SpriteManager *spriteManager = gsm->getSpriteManager();
