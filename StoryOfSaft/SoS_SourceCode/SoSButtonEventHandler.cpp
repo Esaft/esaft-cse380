@@ -42,4 +42,18 @@ void SoSButtonEventHandler::handleButtonEvents(	Game *game,
 	{
 		game->quitGame();
 	}
+	// THE USER PRESSED THE Quit BUTTON ON THE IN-GAME MENU,
+	// SO LET'S UNLOAD THE LEVEL AND RETURN TO THE MAIN MENU
+	else if (command.compare(SoS_ABOUT_COMMAND) == 0)
+	{
+		GameStateManager *gsm = game->getGSM();
+		gsm->goToAboutMenu();
+	}
+	// THE USER PRESSED THE Quit BUTTON ON THE IN-GAME MENU,
+	// SO LET'S UNLOAD THE LEVEL AND RETURN TO THE MAIN MENU
+	else if (command.compare(SoS_CONTROLS_COMMAND) == 0)
+	{
+		GameStateManager *gsm = game->getGSM();
+		gsm->goToControlsMenu();
+	}
 }

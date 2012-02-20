@@ -106,7 +106,6 @@ void GameStateManager::goToControlsMenu()
 	currentGameState = GS_MENU_CONTROLS_MENU;
 }
 
-
 /*
 	isGamePaused - Used to test if this application is currently
 	paused. This will dictate what to render, but also
