@@ -16,6 +16,7 @@
 #include "SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.h"
 #include "SSSF_SourceCode\timer\GameTimer.h"
 
+
 // WE WILL USE blankWindowsCursor TO HIDE THE WINDOWS
 // CURSOR. WE ARE DOING THIS BECAUSE WE DON'T LIKE THE
 // WAY IT BEHAVES SOMETIMES AND WE WANT OUR OWN EG
@@ -88,7 +89,7 @@ WindowsOS::WindowsOS(	HINSTANCE hInstance,
 	// WE'LL DEAL WITH THE CURSOR ELSEWHERE
 	wc.hCursor = NULL;
 
-//	wc.hIcon = ??
+	//wc.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
 //	wc.hIconSm = ??
 
 	// NAME DOESN'T MATTER AS LONG AS WE USE THE SAME
