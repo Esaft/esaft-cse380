@@ -206,6 +206,9 @@
     <ClInclude Include="SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsTimer.h">
       <Filter>SSSF_SourceCode\PlatformPlugins\WindowsPlugin</Filter>
     </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -300,6 +303,9 @@
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsTimer.cpp">
       <Filter>SSSF_SourceCode\PlatformPlugins\WindowsPlugin</Filter>
+    </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,27 +1,9 @@
-﻿Build started 2/19/2012 12:51:49 PM.
-     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DG_SourceCode\DummyButtonEventHandler.cpp DG_SourceCode\DummyDataLoader.cpp DG_SourceCode\DummyGame.cpp DG_SourceCode\DummyKeyEventHandler.cpp DG_SourceCode\DummyTextGenerator.cpp
-         DummyTextGenerator.cpp
-         DummyKeyEventHandler.cpp
-         DummyGame.cpp
-         DummyDataLoader.cpp
-         DummyButtonEventHandler.cpp
-         Generating Code...
-       ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.exe.embed.manifest.res" "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame_manifest.rc" 
-       Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Apps\DummyGame\DummyGame.exe" /INCREMENTAL /NOLOGO SimpleSideScrollerFramework.lib winmm.lib d3d9.lib d3dx9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Apps\DummyGame\DummyGame.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Apps\DummyGame\DummyGame.lib" /MACHINE:X86 "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.exe.embed.manifest.res"
-         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyButtonEventHandler.obj"
-         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyDataLoader.obj"
-         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.obj"
-         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyKeyEventHandler.obj"
-         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyTextGenerator.obj"
-     1>LINK : fatal error LNK1104: cannot open file 'SimpleSideScrollerFramework.lib'
-     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" (build target(s)) -- FAILED.
+﻿Build started 2/20/2012 11:01:30 AM.
+     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" on node 3 (clean target(s)).
+     1>_PrepareForClean:
+         Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\DummyGame\Debug\DummyGame.lastbuildstate".
+     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\DummyGame\DummyGame.vcxproj" (clean target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:12.28
+Time Elapsed 00:00:00.23

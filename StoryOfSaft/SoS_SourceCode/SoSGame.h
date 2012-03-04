@@ -89,14 +89,29 @@ static const wstring	WALL_IMAGE_PATH = L"textures/world/tiles/wall.png";
 
 // FOR OUR SPRITE
 static const wstring	IDLE_STATE = L"IDLE_STATE";
-static const wstring	PLAYER_IDLE0_PATH = L"textures/world/sprites/evan/evan_3_0.png";
-static const wstring	PLAYER_IDLE1_PATH = L"textures/world/sprites/evan/evan_3_1.png";
-static const wstring	PLAYER_IDLE2_PATH = L"textures/world/sprites/evan/evan_3_2.png";
-static const wstring	PLAYER_IDLE3_PATH = L"textures/world/sprites/evan/evan_3_3.png";
-
+static const wstring	PLAYER_IDLE0_PATH = L"textures/world/sprites/evan/evan_IDLE_0.png";
+static const wstring	PLAYER_IDLE1_PATH = L"textures/world/sprites/evan/evan_IDLE_1.png";
+static const wstring	PLAYER_IDLE2_PATH = L"textures/world/sprites/evan/evan_IDLE_2.png";
+static const wstring	PLAYER_IDLE3_PATH = L"textures/world/sprites/evan/evan_IDLE_3.png";
+static const wstring	PLAYER_RIGHT0_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_0.png";
+static const wstring	PLAYER_RIGHT1_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_1.png";
+static const wstring	PLAYER_RIGHT2_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_2.png";
+static const wstring	PLAYER_RIGHT3_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_3.png";
+static const wstring	PLAYER_RIGHT4_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_4.png";
+static const wstring	PLAYER_RIGHT5_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_5.png";
+static const wstring	PLAYER_RIGHT6_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_6.png";
+static const wstring	PLAYER_RIGHT7_PATH = L"textures/world/sprites/evan/evan_RIGHT_STATE_7.png";
+static const wstring	PLAYER_LEFT0_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_0.png";
+static const wstring	PLAYER_LEFT1_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_1.png";
+static const wstring	PLAYER_LEFT2_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_2.png";
+static const wstring	PLAYER_LEFT3_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_3.png";
+static const wstring	PLAYER_LEFT4_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_4.png";
+static const wstring	PLAYER_LEFT5_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_5.png";
+static const wstring	PLAYER_LEFT6_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_6.png";
+static const wstring	PLAYER_LEFT7_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_7.png";
 
 static const int		ANIM_SPEED = 6;
-static const int		PLAYER_WIDTH = 64;
+static const int		PLAYER_WIDTH = 128;
 static const int		PLAYER_HEIGHT = 128;
 
 // FOR OUR WORLD

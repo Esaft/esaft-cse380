@@ -85,21 +85,31 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		float vX = pp->getVelocityX();
 		float vY = pp->getVelocityY();
 
-		if (input->isKeyDown(W_KEY))
+		if (input->isKeyDown(W_KEY) || input->isKeyDown(UP_KEY))
 		{
 			vY = -PLAYER_SPEED;
+			
 		}
-		if (input->isKeyDown(A_KEY))
+		if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
 		{
 			vX = -PLAYER_SPEED;
+			if (input->isKeyDownForFirstTime(A_KEY) || input->isKeyDownForFirstTime(LEFT_KEY))
+				player->setCurrentState(L"LEFT_STATE");
 		}
-		if (input->isKeyDown(S_KEY))
+		if (input->isKeyDown(S_KEY) || input->isKeyDown(DOWN_KEY))
 		{
 			vY = PLAYER_SPEED;
 		}
-		if (input->isKeyDown(D_KEY))
+		if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
 		{
 			vX = PLAYER_SPEED;
+			if (input->isKeyDownForFirstTime(D_KEY) || input->isKeyDownForFirstTime(RIGHT_KEY))
+				player->setCurrentState(L"RIGHT_STATE");
+		}
+
+		if(vY == 0 && vX == 0 && player->getCurrentState().compare(L"IDLE_STATE") != 0)
+		{
+			player->setCurrentState(L"IDLE_STATE");
 		}
 		
 		// NOW SET THE ACTUAL VELOCITY

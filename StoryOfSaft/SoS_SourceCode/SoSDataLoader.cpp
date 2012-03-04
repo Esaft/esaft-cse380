@@ -611,6 +611,22 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	int spriteImageID1 = worldTextureManager->loadTexture(PLAYER_IDLE1_PATH);
 	int spriteImageID2 = worldTextureManager->loadTexture(PLAYER_IDLE2_PATH);
 	int spriteImageID3 = worldTextureManager->loadTexture(PLAYER_IDLE3_PATH);
+	int spriteImageIDR0 = worldTextureManager->loadTexture(PLAYER_RIGHT0_PATH);
+	int spriteImageIDR1 = worldTextureManager->loadTexture(PLAYER_RIGHT1_PATH);
+	int spriteImageIDR2 = worldTextureManager->loadTexture(PLAYER_RIGHT2_PATH);
+	int spriteImageIDR3 = worldTextureManager->loadTexture(PLAYER_RIGHT3_PATH);
+	int spriteImageIDR4 = worldTextureManager->loadTexture(PLAYER_RIGHT4_PATH);
+	int spriteImageIDR5 = worldTextureManager->loadTexture(PLAYER_RIGHT5_PATH);
+	int spriteImageIDR6 = worldTextureManager->loadTexture(PLAYER_RIGHT6_PATH);
+	int spriteImageIDR7 = worldTextureManager->loadTexture(PLAYER_RIGHT7_PATH);
+	int spriteImageIDL0 = worldTextureManager->loadTexture(PLAYER_LEFT0_PATH);
+	int spriteImageIDL1 = worldTextureManager->loadTexture(PLAYER_LEFT1_PATH);
+	int spriteImageIDL2 = worldTextureManager->loadTexture(PLAYER_LEFT2_PATH);
+	int spriteImageIDL3 = worldTextureManager->loadTexture(PLAYER_LEFT3_PATH);
+	int spriteImageIDL4 = worldTextureManager->loadTexture(PLAYER_LEFT4_PATH);
+	int spriteImageIDL5 = worldTextureManager->loadTexture(PLAYER_LEFT5_PATH);
+	int spriteImageIDL6 = worldTextureManager->loadTexture(PLAYER_LEFT6_PATH);
+	int spriteImageIDL7 = worldTextureManager->loadTexture(PLAYER_LEFT7_PATH);
 
 	// SIZE OF SPRITE IMAGES
 	ast->setTextureSize(PLAYER_WIDTH, PLAYER_HEIGHT);
@@ -625,6 +641,26 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID2, 5);
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID1, 5);
 	ast->addAnimationFrame(IDLE_STATE, spriteImageID0, 20);
+
+	ast->addAnimationSequence(L"RIGHT_STATE");
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR0, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR1, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR2, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR3, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR4, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR5, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR6, 5);
+	ast->addAnimationFrame(L"RIGHT_STATE", spriteImageIDR7, 5);
+
+	ast->addAnimationSequence(L"LEFT_STATE");
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL0, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL1, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL2, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL3, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL4, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL5, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL6, 5);
+	ast->addAnimationFrame(L"LEFT_STATE", spriteImageIDL7, 5);
 
 	SpriteManager *spriteManager = gsm->getSpriteManager();
 	unsigned int spriteTypeID = spriteManager->addSpriteType(ast);

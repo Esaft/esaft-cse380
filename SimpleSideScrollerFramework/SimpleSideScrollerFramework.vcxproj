@@ -89,6 +89,7 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\Bot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BotRecycler.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.h" />
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\BoundingVolume.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\CollidableObject.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\PhysicalProperties.h" />
@@ -134,6 +135,7 @@
     <ClCompile Include="SSSF_SourceCode\graphics\TextureManager.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BotRecycler.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp" />
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\physics\Physics.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.cpp" />
