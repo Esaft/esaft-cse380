@@ -111,8 +111,8 @@ static const wstring	PLAYER_LEFT6_PATH = L"textures/world/sprites/evan/evan_LEFT
 static const wstring	PLAYER_LEFT7_PATH = L"textures/world/sprites/evan/evan_LEFT_STATE_7.png";
 
 static const int		ANIM_SPEED = 6;
-static const int		PLAYER_WIDTH = 128;
-static const int		PLAYER_HEIGHT = 128;
+static const int		PLAYER_WIDTH = 64;
+static const int		PLAYER_HEIGHT = 64;
 
 // FOR OUR WORLD
 static const int		NUM_COLUMNS = 60;
