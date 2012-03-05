@@ -40,6 +40,7 @@ RandomFloatingBot::RandomFloatingBot(	Physics *physics,
 	not completely initialize it with similar data to this. Most of the 
 	object, like velocity and position, are left uninitialized.
 */
+
 Bot* RandomFloatingBot::clone()
 {
 	RandomFloatingBot *botClone = new RandomFloatingBot(	minCyclesBeforeThinking, 

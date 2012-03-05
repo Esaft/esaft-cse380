@@ -159,6 +159,7 @@ void SpriteManager::update(Game *game)
 	{
 		Bot *bot = (*botIterator);
 		bot->updateSprite();
+		bot->think(game);
 		botIterator++;
 	}
 }

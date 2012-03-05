@@ -43,6 +43,7 @@ public:
 	void loadGUI(Game *game, wstring guiInitFile);
 	void loadWorld(Game *game, wstring levelInitFile);
 
+
 	// THESE ARE HARD-CODED EXAMPLES OF GAME DATA LOADING
 	void hardCodedLoadGUIExample(Game *game);
 	void hardCodedLoadLevelExample(Game *game);

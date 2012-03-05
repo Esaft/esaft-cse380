@@ -281,14 +281,14 @@ void GameStateManager::update(Game *game)
 	if(pVelX < 0 
 		&& (pp->round(pp->getX() - vp->getViewportX())) < vp->getViewportWidth()/3)
 	{
-		vp->setScrollSpeedX(-5.0f);
+		vp->setScrollSpeedX(pVelX);
 		if(vp->getViewportX() == 0)
 			vp->setScrollSpeedX(0);
 	}
 	else if(pVelX > 0 
 		&& (pp->round(pp->getX() - vp->getViewportX())) > (vp->getViewportWidth()/3*2))
 	{
-		vp->setScrollSpeedX(5.0f);
+		vp->setScrollSpeedX(pVelX);
 		if(vp->getViewportX()+vp->getViewportWidth() == world.getWorldWidth())
 			vp->setScrollSpeedX(0);
 		
@@ -301,14 +301,14 @@ void GameStateManager::update(Game *game)
 	if(pVelY < 0 
 		&& (pp->round(pp->getY() - vp->getViewportY())) < vp->getViewportHeight()/3)
 	{
-		vp->setScrollSpeedY(-5.0f);
+		vp->setScrollSpeedY(pVelY);
 		if(vp->getViewportY() == 0)
 			vp->setScrollSpeedY(0);
 	}
 	else if(pVelY > 0 
 		&& (pp->round(pp->getY() - vp->getViewportY())) > (vp->getViewportHeight()/3*2))
 	{
-		vp->setScrollSpeedY(5.0f);
+		vp->setScrollSpeedY(pVelY);
 		if(vp->getViewportY()+vp->getViewportHeight() == world.getWorldHeight())
 			vp->setScrollSpeedY(0);
 	}
