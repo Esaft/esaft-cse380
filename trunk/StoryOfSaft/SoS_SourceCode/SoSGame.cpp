@@ -79,6 +79,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	SoSKeyEventHandler *sosKeyHandler = new SoSKeyEventHandler();
 	sosGame->getInput()->registerKeyHandler((KeyEventHandler*)sosKeyHandler);
 
+
+	sosGame->setInitLevelFile(SoS_WORLD_INIT_FILE);
 	// START THE GAME LOOP
 	sosGame->runGameLoop();
 

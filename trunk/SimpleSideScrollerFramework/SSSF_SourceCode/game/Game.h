@@ -71,6 +71,7 @@ private:
 	GameInput			*input;
 	GameOS				*os;
 	GameTimer			*timer;
+	wstring	initLevelFile;
 
 public:
 	// INLINED ACCESSOR METHODS - THE REAL THINGS
@@ -95,6 +96,7 @@ public:
 									GameInput *initInput, 
 									GameOS *initOS,
 									GameTimer *initTimer);
+	void	setInitLevelFile(wstring lF);
 	void	processGameData();
 	void	quitApp();
 	void	quitGame();
