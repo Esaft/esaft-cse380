@@ -19,6 +19,8 @@
 #include "SSSF_SourceCode\os\GameOS.h"
 #include "SSSF_SourceCode\text\GameText.h"
 #include "SSSF_SourceCode\text\BufferedTextFileReader.h"
+#include "SSSF_SourceCode\gsm\ai\SimplePatternBot.h"
+#include "SSSF_SourceCode\gsm\ai\Bot.h"
 
 // WINDOWS PLATFORM INCLUDES
 #include "SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.h"
@@ -340,6 +342,14 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	//			PROGRAMICALLY. YOU SHOULD DO THIS
 	//			USING CSV FILES.
 	hardCodedLoadLevelExample(game);
+
+	// FIRST SETUP THE GAME WORLD DIMENSIONS
+	/*
+	GameStateManager *gsm = game->getGSM();
+	GameGraphics *graphics = game->getGraphics();
+	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
+
+	World *world = gsm->getWorld();*/
 }
 
 /*
@@ -680,6 +690,42 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 
 	player->setAlpha(255);
 	player->setCurrentState(IDLE_STATE);
+
+
+	wstring BOT_FLOATING0_IMG = L"./textures/world/sprites/hex/Hex0.png";
+	wstring BOT_FLOATING1_IMG = L"./textures/world/sprites/hex/Hex1.png";
+	wstring BOT_FLOATING2_IMG = L"./textures/world/sprites/hex/Hex2.png";
+	wstring BOT_FLOATING3_IMG = L"./textures/world/sprites/hex/Hex3.png";
+	int BOT_WIDTH = 64;
+	int BOT_HEIGHT = 64;
+	wstring FLOATING_STATE = L"FLOATING_STATE";
+
+	ast = new AnimatedSpriteType();
+	vector<unsigned int> botImageIDs;
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING0_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING1_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING2_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING3_IMG));
+	ast->setTextureSize(BOT_WIDTH, BOT_HEIGHT);
+	ast->addAnimationSequence(FLOATING_STATE);
+	for (int i = 0; i < 4; i++)
+		ast->addAnimationFrame(FLOATING_STATE, botImageIDs.at(i), 10);
+	spriteTypeID = spriteManager->addSpriteType(ast);
+	ast->setSpriteTypeID(spriteTypeID);
+
+	SimplePatternBot *bot = new SimplePatternBot(gsm->getPhysics());
+		bot->setSpriteType(ast);
+		bot->setCurrentState(FLOATING_STATE);
+		bot->setAlpha(255);
+		PhysicalProperties *pp = bot->getPhysicalProperties();
+		pp->setCollidable(false);
+		int x = 400;
+		int y = 400;
+		pp->setX(x);
+		pp->setY(y);
+		pp->setAccelerationX(0.0f);
+		pp->setAccelerationY(0.0f);
+		spriteManager->addBot(bot);
 }
 
 GameState SoSDataLoader::gsLookup(wstring g)

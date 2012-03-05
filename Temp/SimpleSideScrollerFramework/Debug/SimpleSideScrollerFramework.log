@@ -1,4 +1,4 @@
-﻿Build started 3/4/2012 5:08:29 PM.
+﻿Build started 3/4/2012 7:59:02 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
@@ -29,10 +29,6 @@
          GameStateManager.cpp
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(271): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(272): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(284): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(291): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(304): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(311): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
          SpriteManager.cpp
          AnimatedSpriteType.cpp
          Generating Code...
@@ -40,6 +36,8 @@
          AnimatedSprite.cpp
          Physics.cpp
          SimplePatternBot.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(29): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(70): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
          RandomFloatingBot.cpp
          BotRecycler.cpp
          TextureManager.cpp
@@ -91,4 +89,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:15.65
+Time Elapsed 00:00:15.90
