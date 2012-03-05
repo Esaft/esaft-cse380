@@ -349,7 +349,104 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	GameGraphics *graphics = game->getGraphics();
 	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
 
-	World *world = gsm->getWorld();*/
+	World *world = gsm->getWorld();
+	
+	map<wstring, int> *tileMap = new map<wstring, int>();//Tile identifier, tileImageID
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	delete tileMap;
+	*/
+}
+
+
+void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
+{
+	GameStateManager *gsm = game->getGSM();
+	GameGraphics *graphics = game->getGraphics();
+	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
+
+	map<wstring, int> *playerMap = new map<wstring, int>();//Sprite identifier, spriteImageID
+	AnimatedSpriteType *ast = new AnimatedSpriteType();
+
+
+	BufferedTextFileReader reader;
+	reader.initFile(playerInitFile);
+	wstring line;
+	unsigned int delimiterIndex;
+
+	int numSprites = _wtoi(reader.getNextLine().c_str());
+	wchar_t delim = ',';
+	
+	for(int i = 0; i < numSprites; i++)
+	{
+		line = reader.getNextLine();
+		delimiterIndex = line.find(delim);
+		wstring name = line.substr(0, delimiterIndex);
+		wstring path = line.substr(delimiterIndex+1);
+		(*playerMap)[name] = worldTextureManager->loadTexture(path);
+	}
+
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int width = _wtoi(line.substr(0, delimiterIndex).c_str());
+	int height = _wtoi(line.substr(delimiterIndex+1).c_str());
+
+	ast->setTextureSize(height, width);
+
+	int numStates = _wtoi(reader.getNextLine().c_str());
+	
+	//loads each state
+	for(int i = 0; i < numStates; i++)
+	{
+		line = reader.getNextLine();
+		delimiterIndex = line.find(delim);
+		wstring stateName = line.substr(0, delimiterIndex);
+		int numFrames = _wtoi(line.substr(delimiterIndex+1).c_str());
+		ast->addAnimationSequence(stateName);
+
+		//loads each frame in state
+		for(int j = 0; j < numFrames; j++)
+		{
+			line = reader.getNextLine();
+			delimiterIndex = line.find(delim);
+			wstring sprite = line.substr(0, delimiterIndex);
+			int duration = _wtoi(line.substr(delimiterIndex+1).c_str());
+			ast->addAnimationFrame(stateName, (*playerMap)[sprite], duration);
+		}
+	}
+
+	SpriteManager *spriteManager = gsm->getSpriteManager();
+	unsigned int spriteTypeID = spriteManager->addSpriteType(ast);
+	ast->setSpriteTypeID(spriteTypeID);
+
+	AnimatedSprite *player = spriteManager->getPlayer();
+	player->setSpriteType(ast);
+	PhysicalProperties *playerProps = player->getPhysicalProperties();
+
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int x = _wtoi(line.substr(0, delimiterIndex).c_str());
+	int y = _wtoi(line.substr(delimiterIndex+1).c_str());
+	playerProps->setX(x);
+	playerProps->setY(y);
+
+
+	playerProps->setVelocity(0.0f, 0.0f);
+	playerProps->setAccelerationX(0);
+	playerProps->setAccelerationY(0);
+	
+	player->setAlpha(_wtoi(reader.getNextLine().c_str()));
+	player->setCurrentState(reader.getNextLine());
+
+	delete playerMap;
 }
 
 /*
@@ -615,8 +712,10 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 
 	world->addLayer(tiledLayer);
 
+	loadPlayer(game, L"data/PlayerInfo.csv");
+
 	// AND NOW LET'S MAKE A MAIN CHARACTER SPRITE
-	AnimatedSpriteType *ast = new AnimatedSpriteType();
+	/*AnimatedSpriteType *ast = new AnimatedSpriteType();
 	int spriteImageID0 = worldTextureManager->loadTexture(PLAYER_IDLE0_PATH);
 	int spriteImageID1 = worldTextureManager->loadTexture(PLAYER_IDLE1_PATH);
 	int spriteImageID2 = worldTextureManager->loadTexture(PLAYER_IDLE2_PATH);
@@ -689,7 +788,8 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	// WE START DOING COLLISIONS AND PHYSICS
 
 	player->setAlpha(255);
-	player->setCurrentState(IDLE_STATE);
+	player->setCurrentState(IDLE_STATE);*/
+	SpriteManager *spriteManager = gsm->getSpriteManager();
 
 
 	wstring BOT_FLOATING0_IMG = L"./textures/world/sprites/hex/Hex0.png";
@@ -700,7 +800,7 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	int BOT_HEIGHT = 64;
 	wstring FLOATING_STATE = L"FLOATING_STATE";
 
-	ast = new AnimatedSpriteType();
+	AnimatedSpriteType *ast = new AnimatedSpriteType();
 	vector<unsigned int> botImageIDs;
 	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING0_IMG));
 	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING1_IMG));
@@ -710,7 +810,7 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	ast->addAnimationSequence(FLOATING_STATE);
 	for (int i = 0; i < 4; i++)
 		ast->addAnimationFrame(FLOATING_STATE, botImageIDs.at(i), 10);
-	spriteTypeID = spriteManager->addSpriteType(ast);
+	unsigned int spriteTypeID = spriteManager->addSpriteType(ast);
 	ast->setSpriteTypeID(spriteTypeID);
 
 	SimplePatternBot *bot = new SimplePatternBot(gsm->getPhysics());

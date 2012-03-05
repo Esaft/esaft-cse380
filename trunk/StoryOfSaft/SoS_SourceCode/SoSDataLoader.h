@@ -25,6 +25,9 @@ private:
 	//(no good way to convert wstring to enum)
 	GameState gsLookup(wstring g);
 
+	//helper method for loading world
+	void loadPlayer(Game *game, wstring playerInitFile);
+
 public:
 	SoSDataLoader()	{}
 	~SoSDataLoader()	{}
