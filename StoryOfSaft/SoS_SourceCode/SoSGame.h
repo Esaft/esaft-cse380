@@ -11,6 +11,7 @@
 // HERE IS THE DUMMY GAME SETUP/INIT FILE. EVERYTHING WOULD START FROM HERE
 static const wstring	SoS_INIT_FILE			= L"data/SoSGameInit.txt";
 static const wstring	SoS_GUI_INIT_FILE		= L"data/SoSGUIInit.txt";
+static const wstring	SoS_WORLD_INIT_FILE		= L"data/SoSWorldInit.csv";
 static const string		SoS_DEBUG_FILE			= "DebugOutput.txt";
 
 

@@ -341,29 +341,134 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	// NOTE:	I AM DEMONSTRATING HOW TO LOAD A LEVEL
 	//			PROGRAMICALLY. YOU SHOULD DO THIS
 	//			USING CSV FILES.
-	hardCodedLoadLevelExample(game);
+	//hardCodedLoadLevelExample(game);
 
 	// FIRST SETUP THE GAME WORLD DIMENSIONS
-	/*
+	
 	GameStateManager *gsm = game->getGSM();
 	GameGraphics *graphics = game->getGraphics();
 	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
 
+	BufferedTextFileReader reader;
+	reader.initFile(levelInitFile);
+	wstring line;
+	unsigned int delimiterIndex;
+	wchar_t delim = ',';
+
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int tWidth = _wtoi(line.substr(0, delimiterIndex).c_str());//tile width
+	int tHeight = _wtoi(line.substr(delimiterIndex+1).c_str());//tile height
+
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int numColumns = _wtoi(line.substr(0, delimiterIndex).c_str());
+	int numRows = _wtoi(line.substr(delimiterIndex+1).c_str());
+
 	World *world = gsm->getWorld();
+	world->setWorldWidth(numColumns * tWidth);
+	world->setWorldHeight(numRows * tHeight);
+
+	TiledLayer *tiledLayer = new TiledLayer(	numColumns,	numRows, 
+												tWidth,		tHeight, 
+												0, true, 
+												numColumns * tWidth,
+												numRows * tHeight);
+
+
+	wstring tileInfoFile = reader.getNextLine();
+	wstring playerInfoFile = reader.getNextLine();
+	wstring tiledLayerFile = reader.getNextLine();
+	reader.closeReader();
+	BufferedTextFileReader tileInfoReader;
+	tileInfoReader.initFile(tileInfoFile);
 	
-	map<wstring, int> *tileMap = new map<wstring, int>();//Tile identifier, tileImageID
+	map<wstring, int> *tileIDMap = new map<wstring, int>();//Tile identifier, tileImageID
+	
+	int numTiles = _wtoi(tileInfoReader.getNextLine().c_str());
+	
+	for(int i = 0; i < numTiles; i++)
+	{
+		line = tileInfoReader.getNextLine();
+		delimiterIndex = line.find(delim);
+		wstring name = line.substr(0, delimiterIndex);
+		wstring path = line.substr(delimiterIndex+1);
+		(*tileIDMap)[name] = worldTextureManager->loadTexture(path);
+	}
+
+	tileInfoReader.closeReader();
+	BufferedTextFileReader tiledLayerReader;
+	tiledLayerReader.initFile(tiledLayerFile);
+	
+	// LET'S GENERATE A RANDOM BACKGROUND USING OUR TWO TILES
+	for (int i = 0; i < numRows; i++)
+	{
+		line = tiledLayerReader.getNextLine();
+
+		for (int j = 0; j < numColumns; j++)
+		{
+			delimiterIndex = line.find(delim);
+			
+			bool isCollidable = false;
+			wstring tileName = line.substr(0,delimiterIndex);
+			line = line.substr(delimiterIndex+1);
+			int tileIDToUse = (*tileIDMap)[tileName];
+
+			Tile *tileToAdd = new Tile();
+			tileToAdd->collidable = isCollidable;
+			tileToAdd->textureID = tileIDToUse;
+			tiledLayer->addTile(tileToAdd);
+		}//end for
+	}//end for
+	tiledLayerReader.closeReader();
+	
+	world->addLayer(tiledLayer);
+	
+	delete tileIDMap;
+
+	loadPlayer(game, playerInfoFile);
 	
 	
+
+
+	///////////////////////////////////////ADDING THE PATTERN BOT
+
+	SpriteManager *spriteManager = gsm->getSpriteManager();
+	wstring BOT_FLOATING0_IMG = L"./textures/world/sprites/hex/Hex0.png";
+	wstring BOT_FLOATING1_IMG = L"./textures/world/sprites/hex/Hex1.png";
+	wstring BOT_FLOATING2_IMG = L"./textures/world/sprites/hex/Hex2.png";
+	wstring BOT_FLOATING3_IMG = L"./textures/world/sprites/hex/Hex3.png";
+	int BOT_WIDTH = 64;
+	int BOT_HEIGHT = 64;
+	wstring FLOATING_STATE = L"FLOATING_STATE";
+
+	AnimatedSpriteType *ast = new AnimatedSpriteType();
+	vector<unsigned int> botImageIDs;
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING0_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING1_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING2_IMG));
+	botImageIDs.push_back(worldTextureManager->loadTexture(BOT_FLOATING3_IMG));
+	ast->setTextureSize(BOT_WIDTH, BOT_HEIGHT);
+	ast->addAnimationSequence(FLOATING_STATE);
+	for (int i = 0; i < 4; i++)
+		ast->addAnimationFrame(FLOATING_STATE, botImageIDs.at(i), 10);
+	unsigned int spriteTypeID = spriteManager->addSpriteType(ast);
+	ast->setSpriteTypeID(spriteTypeID);
+
+	SimplePatternBot *bot = new SimplePatternBot(gsm->getPhysics());
+		bot->setSpriteType(ast);
+		bot->setCurrentState(FLOATING_STATE);
+		bot->setAlpha(255);
+		PhysicalProperties *pp = bot->getPhysicalProperties();
+		pp->setCollidable(false);
+		int x = 400;
+		int y = 400;
+		pp->setX(x);
+		pp->setY(y);
+		pp->setAccelerationX(0.0f);
+		pp->setAccelerationY(0.0f);
+		spriteManager->addBot(bot);
 	
-	
-	
-	
-	
-	
-	
-	
-	delete tileMap;
-	*/
 }
 
 

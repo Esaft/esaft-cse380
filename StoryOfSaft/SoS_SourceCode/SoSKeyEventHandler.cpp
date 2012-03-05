@@ -33,6 +33,7 @@ const unsigned int UP_KEY = VK_UP;
 const unsigned int DOWN_KEY = VK_DOWN;
 const unsigned int LEFT_KEY = VK_LEFT;
 const unsigned int RIGHT_KEY = VK_RIGHT;
+const unsigned int SPACE_KEY = VK_SPACE;
 
 const unsigned int ENTER_KEY = VK_RETURN;
 const unsigned int TAB_KEY = VK_TAB;
@@ -78,6 +79,15 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		int incX = 0;
 		int incY = 0;
 		bool moveViewport = false;
+		bool attacking = false;
+
+		if(input->isKeyDown(SPACE_KEY))
+		{
+			attacking = true;
+			if(input->isKeyDownForFirstTime(SPACE_KEY))
+				player->setCurrentState(L"ATTACK_STATE");
+			
+		}
 
 		// WASD AND DIRECTION KEY PRESSES WILL CONTROL THE PLAYER,
 		// SO WE'LL UPDATE THE PLAYER VELOCITY WHEN THESE KEYS ARE
@@ -107,7 +117,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 				player->setCurrentState(L"RIGHT_STATE");
 		}
 
-		if(vY == 0 && vX == 0 && player->getCurrentState().compare(L"IDLE_STATE") != 0)
+		if(vY == 0 && vX == 0 && !attacking && player->getCurrentState().compare(L"IDLE_STATE") != 0)
 		{
 			player->setCurrentState(L"IDLE_STATE");
 		}

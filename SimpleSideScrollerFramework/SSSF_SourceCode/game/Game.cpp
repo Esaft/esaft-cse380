@@ -44,6 +44,7 @@ Game::Game()
 	gsm = new GameStateManager();
 	gui = new GameGUI();
 	text = new GameText();
+	initLevelFile = L"There is no file";
 }
 
 /*
@@ -78,6 +79,11 @@ void Game::initPlatformPlugins(		GameGraphics *initGraphics,
 	input = initInput;
 	os = initOS;
 	timer = initTimer;
+}
+
+void Game::setInitLevelFile(wstring lF)
+{
+	initLevelFile = lF;
 }
 
 /*
@@ -217,5 +223,5 @@ void Game::startGame()
 	gsm->goToLoadLevel();	// NOTE THAT CURRENTLY HTERE IS NO LEVEL FILE,
 	
 	// THAT'S ONE THING YOU'LL BE DOING
-	dataLoader->loadWorld(this, L"THERE IS NO FILE");
+	dataLoader->loadWorld(this, initLevelFile);
 }
