@@ -369,6 +369,15 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	world->setWorldWidth(numColumns * tWidth);
 	world->setWorldHeight(numRows * tHeight);
 
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int vpX = _wtoi(line.substr(0, delimiterIndex).c_str());
+	int vpY = _wtoi(line.substr(delimiterIndex+1).c_str());
+	Viewport *viewport = game->getGUI()->getViewport();
+	viewport->setViewportX(vpX);
+	viewport->setViewportY(vpY);
+
+
 	TiledLayer *tiledLayer = new TiledLayer(	numColumns,	numRows, 
 												tWidth,		tHeight, 
 												0, true, 
@@ -462,7 +471,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 		PhysicalProperties *pp = bot->getPhysicalProperties();
 		pp->setCollidable(false);
 		int x = 400;
-		int y = 400;
+		int y = 1600;
 		pp->setX(x);
 		pp->setY(y);
 		pp->setAccelerationX(0.0f);
