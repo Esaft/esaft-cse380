@@ -1,3 +1,9 @@
-2,
+8
 GR,textures/world/tiles/grass.png
 WA,textures/world/tiles/wall.png
+GG,textures/world/tiles/grassground.png
+BG,textures/world/tiles/brickground.png
+BR,textures/world/tiles/brick.png
+CD,textures/world/tiles/closedoor.png
+OD,textures/world/tiles/opendoor.png
+SK,textures/world/tiles/sky.png
