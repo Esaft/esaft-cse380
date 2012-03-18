@@ -45,14 +45,17 @@ void Physics::update(Game *game)
 	// DETECTION OR RESPONSE
 	GameStateManager *gsm = game->getGSM();
 	SpriteManager *sm = gsm->getSpriteManager();
+	World *w = gsm->getWorld();
+	vector<WorldLayer*> *layers = w->getLayers();
 	AnimatedSprite *player;
 	PhysicalProperties *pp;
 
 	// FIRST WE'LL MOVE THE PLAYER
 	player = sm->getPlayer();
 	pp = player->getPhysicalProperties();
-	/*pp->incVelocity(this,pp->getAccelerationX(), pp->getAccelerationY() + gravity); 
+	pp->incVelocity(this,pp->getAccelerationX(), pp->getAccelerationY() + gravity); 
 
+	/*
 	list<Bot*>::iterator botIterator = sm->getBotsIterator();
 	while (botIterator != sm->getEndOfBotsIterator())
 	{			

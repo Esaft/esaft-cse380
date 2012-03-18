@@ -415,7 +415,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	BufferedTextFileReader tiledLayerReader;
 	tiledLayerReader.initFile(tiledLayerFile);
 	
-	// LET'S GENERATE A RANDOM BACKGROUND USING OUR TWO TILES
+	// LET'S GENERATE A BACKGROUND 
 	for (int i = 0; i < numRows; i++)
 	{
 		line = tiledLayerReader.getNextLine();
@@ -523,6 +523,7 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	int height = _wtoi(line.substr(delimiterIndex+1).c_str());
 
 	ast->setTextureSize(height, width);
+	
 
 	int numStates = _wtoi(reader.getNextLine().c_str());
 	
@@ -552,16 +553,24 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 
 	AnimatedSprite *player = spriteManager->getPlayer();
 	player->setSpriteType(ast);
-	PhysicalProperties *playerProps = player->getPhysicalProperties();
 
+	BoundingVolume *bv = player->getBoundingVolume();
+	bv->setWidth(width/2);
+	bv->setHeight(height/2);
+	bv->setX(width/2);
+	bv->setY(height/2);
+	bv->setType(1);
+
+	PhysicalProperties *playerProps = player->getPhysicalProperties();
 	line = reader.getNextLine();
 	delimiterIndex = line.find(delim);
 	int x = _wtoi(line.substr(0, delimiterIndex).c_str());
 	int y = _wtoi(line.substr(delimiterIndex+1).c_str());
-	playerProps->setX(x);
+	playerProps->setX(x+bv->ge);
 	playerProps->setY(y);
+	
 	playerProps->setCollidable(true);
-	playerProps->setMass(0.1f);
+	playerProps->setMass(1);
 
 	playerProps->setVelocity(0.0f, 0.0f);
 	playerProps->setAccelerationX(0);
