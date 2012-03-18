@@ -1,4 +1,4 @@
-﻿Build started 3/4/2012 11:55:25 PM.
+﻿Build started 3/18/2012 4:12:57 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
@@ -27,8 +27,10 @@
          TiledLayer.cpp
          SparseLayer.cpp
          GameStateManager.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(271): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(272): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(274): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(275): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(329): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(330): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
          SpriteManager.cpp
          AnimatedSpriteType.cpp
          Generating Code...
@@ -89,4 +91,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.81
+Time Elapsed 00:00:12.20

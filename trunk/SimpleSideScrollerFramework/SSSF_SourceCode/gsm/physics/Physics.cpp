@@ -51,12 +51,24 @@ void Physics::update(Game *game)
 	// FIRST WE'LL MOVE THE PLAYER
 	player = sm->getPlayer();
 	pp = player->getPhysicalProperties();
+	/*pp->incVelocity(this,pp->getAccelerationX(), pp->getAccelerationY() + gravity); 
+
+	list<Bot*>::iterator botIterator = sm->getBotsIterator();
+	while (botIterator != sm->getEndOfBotsIterator())
+	{			
+		Bot *bot = (*botIterator);
+		pp = bot->getPhysicalProperties();
+		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY() + gravity);
+		botIterator++;
+	}*/
+
+
 	pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
 	// FOR NOW THE PLAYER IS DIRECTLY CONTROLLED BY THE KEYBOARD,
 	// SO WE'LL NEED TO TURN OFF ANY VELOCITY APPLIED BY INPUT
 	// SO THE NEXT FRAME IT DOESN'T GET ADDED
-	pp->setVelocity(0.0f, 0.0f);
+	pp->setVelocity(0.0f, pp->getVelocityY());
 
 	// AND NOW MOVE ALL THE BOTS
 	list<Bot*>::iterator botIterator = sm->getBotsIterator();

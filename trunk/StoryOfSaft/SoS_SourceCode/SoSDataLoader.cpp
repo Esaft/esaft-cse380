@@ -353,6 +353,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	reader.initFile(levelInitFile);
 	wstring line;
 	unsigned int delimiterIndex;
+	unsigned int delimiterIndex2;
 	wchar_t delim = ',';
 
 	line = reader.getNextLine();
@@ -393,6 +394,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	tileInfoReader.initFile(tileInfoFile);
 	
 	map<wstring, int> *tileIDMap = new map<wstring, int>();//Tile identifier, tileImageID
+	map<wstring, int> *tileCollisionMap = new map<wstring, int>();//Tile identifier, tileImageID
 	
 	int numTiles = _wtoi(tileInfoReader.getNextLine().c_str());
 	
@@ -402,7 +404,11 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 		delimiterIndex = line.find(delim);
 		wstring name = line.substr(0, delimiterIndex);
 		wstring path = line.substr(delimiterIndex+1);
+		delimiterIndex = path.find(delim);
+		int isCollidable =  _wtoi(path.substr(delimiterIndex+1).c_str());
+		path = path.substr(0,delimiterIndex);
 		(*tileIDMap)[name] = worldTextureManager->loadTexture(path);
+		(*tileCollisionMap)[name] = isCollidable;
 	}
 
 	tileInfoReader.closeReader();
@@ -422,6 +428,8 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 			wstring tileName = line.substr(0,delimiterIndex);
 			line = line.substr(delimiterIndex+1);
 			int tileIDToUse = (*tileIDMap)[tileName];
+			if((*tileCollisionMap)[tileName] == 1)
+				isCollidable = true;
 
 			Tile *tileToAdd = new Tile();
 			tileToAdd->collidable = isCollidable;
@@ -434,6 +442,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	world->addLayer(tiledLayer);
 	
 	delete tileIDMap;
+	delete tileCollisionMap;
 
 	loadPlayer(game, playerInfoFile);
 	
@@ -551,7 +560,8 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	int y = _wtoi(line.substr(delimiterIndex+1).c_str());
 	playerProps->setX(x);
 	playerProps->setY(y);
-
+	playerProps->setCollidable(true);
+	playerProps->setMass(0.1f);
 
 	playerProps->setVelocity(0.0f, 0.0f);
 	playerProps->setAccelerationX(0);

@@ -265,17 +265,71 @@ void GameStateManager::unloadCurrentLevel()
 */
 void GameStateManager::update(Game *game)
 {
-	//For viewport scoping(because after physics updates, player velocities are set to 0)
+	spriteManager->update(game);
+	world.update(game);
+	physics.update(game);
+
 	AnimatedSprite *p = spriteManager->getPlayer();
 	PhysicalProperties *pp = p->getPhysicalProperties();
 	int pVelX = pp->getVelocityX();
 	int pVelY = pp->getVelocityY();
 
-	spriteManager->update(game);
-	world.update(game);
-	physics.update(game);
+	//VIEWPORT SCOPING
+	Viewport *vp = game->getGUI()->getViewport();
+	
+	if(pVelX < 0 
+		&& (pp->round(pp->getX() - vp->getViewportX())) < vp->getViewportWidth()/3)
+	{
+		vp->setScrollSpeedX(pVelX);
+		if(vp->getViewportX() == 0)
+			vp->setScrollSpeedX(0);
+	}
+	else if(pVelX > 0 
+		&& (pp->round(pp->getX() - vp->getViewportX())) > (vp->getViewportWidth()/3*2))
+	{
+		vp->setScrollSpeedX(pVelX);
+		if(vp->getViewportX()+vp->getViewportWidth() == world.getWorldWidth())
+			vp->setScrollSpeedX(0);
+		
+	}
+	else
+	{
+		vp->setScrollSpeedX(0);
+	}
 
-		//VIEWPORT SCOPING
+	if(pVelY < 0 
+		&& (pp->round(pp->getY() - vp->getViewportY())) < vp->getViewportHeight()/3)
+	{
+		vp->setScrollSpeedY(pVelY);
+		if(vp->getViewportY() == 0)
+			vp->setScrollSpeedY(0);
+	}
+	else if(pVelY > 0 
+		&& (pp->round(pp->getY() - vp->getViewportY())) > (vp->getViewportHeight()/3*2))
+	{
+		vp->setScrollSpeedY(pVelY);
+		if(vp->getViewportY()+vp->getViewportHeight() == world.getWorldHeight())
+			vp->setScrollSpeedY(0);
+	}
+	else
+	{
+		vp->setScrollSpeedY(0);
+	}
+
+	vp->moveViewport(	vp->getScrollSpeedX(),
+						vp->getScrollSpeedY(),
+						world.getWorldWidth(),
+						world.getWorldHeight());
+}
+
+void GameStateManager::updateViewport(Game *game)
+{
+	AnimatedSprite *p = spriteManager->getPlayer();
+	PhysicalProperties *pp = p->getPhysicalProperties();
+	int pVelX = pp->getVelocityX();
+	int pVelY = pp->getVelocityY();
+
+	//VIEWPORT SCOPING
 	Viewport *vp = game->getGUI()->getViewport();
 	
 	if(pVelX < 0 

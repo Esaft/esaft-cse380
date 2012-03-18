@@ -102,4 +102,5 @@ public:
 	void			loadLevel(Game *game, wstring levelName);
 	void			unloadCurrentLevel();
 	void			update(Game *game);
+	void			updateViewport(Game *game);
 };

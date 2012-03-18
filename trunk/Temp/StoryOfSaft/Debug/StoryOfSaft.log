@@ -1,4 +1,4 @@
-﻿Build started 3/5/2012 1:17:28 AM.
+﻿Build started 3/18/2012 4:30:57 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.lastbuildstate".
@@ -10,12 +10,13 @@
          SoSKeyEventHandler.cpp
          SoSGame.cpp
          SoSDataLoader.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(475): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(476): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(552): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(553): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(938): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(939): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(484): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(485): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(356): warning C4101: 'delimiterIndex2' : unreferenced local variable
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(561): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(948): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(949): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
          SoSButtonEventHandler.cpp
          Generating Code...
        ResourceCompile:
@@ -50,4 +51,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:20.53
+Time Elapsed 00:00:13.03
