@@ -16,7 +16,7 @@
 #include "SSSF_SourceCode\game\Game.h"
 
 const float DEFAULT_MAX_VELOCITY = 100.0f;
-const float DEFAULT_GRAVITY = 1.0f;
+const float DEFAULT_GRAVITY = 0.1f;
 
 class Physics
 {

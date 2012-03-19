@@ -13,4 +13,6 @@ class Collision
 		float startTimeOfYCollision;
 		float endTimeOfXCollision;
 		float endTimeOfYCollision;
+
+
 };

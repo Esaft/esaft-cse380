@@ -1,22 +1,28 @@
-﻿Build started 3/18/2012 4:30:57 PM.
+﻿Build started 3/18/2012 8:06:16 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.lastbuildstate".
        InitializeBuildStatus:
          Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSButtonEventHandler.cpp SoS_SourceCode\SoSDataLoader.cpp SoS_SourceCode\SoSGame.cpp SoS_SourceCode\SoSKeyEventHandler.cpp SoS_SourceCode\SoSTextGenerator.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSButtonEventHandler.cpp SoS_SourceCode\SoSDataLoader.cpp SoS_SourceCode\SoSGame.cpp SoS_SourceCode\SoSKeyEventHandler.cpp SoS_SourceCode\SoSPhysics.cpp SoS_SourceCode\SoSTextGenerator.cpp
          SoSTextGenerator.cpp
+         SoSPhysics.cpp
          SoSKeyEventHandler.cpp
          SoSGame.cpp
          SoSDataLoader.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(484): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(485): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(356): warning C4101: 'delimiterIndex2' : unreferenced local variable
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(561): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(948): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(949): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(361): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(489): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(490): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(357): warning C4101: 'delimiterIndex2' : unreferenced local variable
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(563): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(564): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(565): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(566): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(574): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(575): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(962): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(963): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
          SoSButtonEventHandler.cpp
          Generating Code...
        ResourceCompile:
@@ -30,6 +36,7 @@
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSGame.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSKeyEventHandler.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSPhysics.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSTextGenerator.obj"
        Manifest:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.exe.embed.manifest".
@@ -42,6 +49,7 @@
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSGame.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSKeyEventHandler.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSPhysics.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSTextGenerator.obj"
          StoryOfSaft.vcxproj -> C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Apps\StoryOfSaft\StoryOfSaft.exe
        FinalizeBuildStatus:
@@ -51,4 +59,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.03
+Time Elapsed 00:00:17.00

@@ -91,6 +91,7 @@
     <ClInclude Include="SoS_SourceCode\SoSDataLoader.h" />
     <ClInclude Include="SoS_SourceCode\SoSGame.h" />
     <ClInclude Include="SoS_SourceCode\SoSKeyEventHandler.h" />
+    <ClInclude Include="SoS_SourceCode\SoSPhysics.h" />
     <ClInclude Include="SoS_SourceCode\SoSTextGenerator.h" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +99,7 @@
     <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSGame.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSKeyEventHandler.cpp" />
+    <ClCompile Include="SoS_SourceCode\SoSPhysics.cpp" />
     <ClCompile Include="SoS_SourceCode\SoSTextGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -3,16 +3,11 @@
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\sprite\SpriteManager.h"
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
-
-SoSPhysics::SoSPhysics() : Physics()
-{
-
-}
-
+/*
 void SoSPhysics::update(Game *game)
 {
 	// REMEMBER, AT THIS POINT, ALL PLAYER INPUT AND AI
-	// HAVE ALREADY BEEN PROCESSED AND BOT AND PLAYER
+	// HAVE AREADY BEEN PROCESSED AND BOT AND PLAYER
 	// STATES, VELOCITIES, AND ACCELERATIONS HAVE ALREADY
 	// BEEN UPDATED. NOW WE HAVE TO PROCESS THE PHYSICS
 	// OF ALL THESE OBJECTS INTERACTING WITH EACH OTHER
@@ -52,7 +47,7 @@ void SoSPhysics::update(Game *game)
 		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY() + gravity);
 		botIterator++;
 	}*/
-
+/*
 
 	pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
@@ -71,3 +66,4 @@ void SoSPhysics::update(Game *game)
 		botIterator++;
 	}
 }
+*/

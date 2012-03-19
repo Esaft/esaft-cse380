@@ -209,6 +209,9 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\gsm\physics\Collision.h">
+      <Filter>SSSF_SourceCode\gsm\physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

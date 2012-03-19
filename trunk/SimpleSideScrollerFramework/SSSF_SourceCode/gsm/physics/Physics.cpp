@@ -3,6 +3,7 @@
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\sprite\SpriteManager.h"
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
+#include "SSSF_SourceCode\gsm\world\TiledLayer.h"
 
 /*
 	Default constructor, it initializes all data using default values.
@@ -49,6 +50,33 @@ void Physics::update(Game *game)
 	vector<WorldLayer*> *layers = w->getLayers();
 	AnimatedSprite *player;
 	PhysicalProperties *pp;
+
+	/*
+	for(int i = 0; i < layers->size(); i++)
+	{
+		WorldLayer *currentLayer = (*layers)[i];
+		if(currentLayer->hasCollidableTiles() == true)
+		{
+			TiledLayer *tL = dynamic_cast<TiledLayer*>(currentLayer);
+			if(tL != 0)
+			{
+				
+				
+				for(int j = 0; j < tL->getRows(); j++)
+				{
+					for(int z = 0; z < tL->getColumns(); z++)
+					{
+						Tile *t = tL->getTile(j,z);
+						if(t->collidable == true)
+						{
+
+						}
+					}//end for
+
+				}//end for
+			}//end if
+		}//end if
+	}*/
 
 	// FIRST WE'LL MOVE THE PLAYER
 	player = sm->getPlayer();
