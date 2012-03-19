@@ -191,6 +191,8 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Coll
 					currentCollision->setCO1(c);
 					currentCollision->setCO2(tileCO);
 					currentCollision->calculateTimes();
+
+					collisions->push_back(currentCollision);
 				}
 			}
 		}
