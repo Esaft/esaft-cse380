@@ -560,8 +560,8 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	player->setSpriteType(ast);
 
 	BoundingVolume *bv = player->getBoundingVolume();
-	bv->setWidth(width/2);
-	bv->setHeight(height/2);
+	bv->setWidth(width);
+	bv->setHeight(height);
 	bv->setX(width/2);
 	bv->setY(height/2);
 	bv->setType(1);
