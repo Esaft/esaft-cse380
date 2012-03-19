@@ -70,7 +70,7 @@ void Physics::update(Game *game)
 	AnimatedSprite *player;
 	PhysicalProperties *pp;
 	TiledLayer *tL;
-	vector<Collision*> collisions;
+	list<Collision*> collisions;
 	
 	//finding TileLayer
 	for(int i = 0; i < layers->size(); i++)
@@ -90,8 +90,9 @@ void Physics::update(Game *game)
 	player = sm->getPlayer();
 	pp = player->getPhysicalProperties();
 
-	//UPDATING ALL VELOCITIES
+	//UPDATING ALL VELOCITIES AND DOING TILE COLLISION
 	pp->incVelocity(this,pp->getAccelerationX(), pp->getAccelerationY() + gravity); 
+	collideTestWithTiles(player, tL, &collisions);
 
 	list<Bot*>::iterator botIterator = sm->getBotsIterator();
 	while (botIterator != sm->getEndOfBotsIterator())
@@ -99,10 +100,16 @@ void Physics::update(Game *game)
 		Bot *bot = (*botIterator);
 		pp = bot->getPhysicalProperties();
 		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY() + gravity);
+		collideTestWithTiles(bot, tL, &collisions);
 		botIterator++;
 	}
 
+	//HERE, COLLIDE SPRITES WITH OTHER SPRITES
 
+
+	//SORT COLLISIONS
+	collisions.sort(compare_collisionTime);
+	
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
 	// FOR NOW THE PLAYER IS DIRECTLY CONTROLLED BY THE KEYBOARD,
@@ -123,7 +130,7 @@ void Physics::update(Game *game)
 	
 }
 
-void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> *collisions)
+void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collision*> *collisions)
 {
 	
 	
@@ -198,4 +205,12 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Coll
 		}
 	}
 	
+}
+
+bool compare_collisionTime(Collision first, Collision second)
+{
+	if(first.timeOfCollision < second.timeOfCollision)
+		return true;
+	else
+		return false;
 }
