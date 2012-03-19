@@ -348,6 +348,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	GameStateManager *gsm = game->getGSM();
 	GameGraphics *graphics = game->getGraphics();
 	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
+	Physics *physics = gsm->getPhysics();
 
 	BufferedTextFileReader reader;
 	reader.initFile(levelInitFile);
@@ -355,6 +356,10 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	unsigned int delimiterIndex;
 	unsigned int delimiterIndex2;
 	wchar_t delim = ',';
+
+	line = reader.getNextLine();
+	physics->setGravity(_wtof(line.c_str()));
+
 
 	line = reader.getNextLine();
 	delimiterIndex = line.find(delim);
@@ -566,7 +571,7 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	delimiterIndex = line.find(delim);
 	int x = _wtoi(line.substr(0, delimiterIndex).c_str());
 	int y = _wtoi(line.substr(delimiterIndex+1).c_str());
-	playerProps->setX(x+bv->ge);
+	playerProps->setX(x);
 	playerProps->setY(y);
 	
 	playerProps->setCollidable(true);

@@ -92,6 +92,7 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\BoundingVolume.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\CollidableObject.h" />
+    <ClInclude Include="SSSF_SourceCode\gsm\physics\Collision.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\PhysicalProperties.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\Physics.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\sprite\AnimatedSprite.h" />

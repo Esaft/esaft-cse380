@@ -114,10 +114,11 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		}
 		if (input->isKeyDown(W_KEY) || input->isKeyDown(UP_KEY))
 		{
-			vY = -PLAYER_SPEED;
+			
 
 			if (input->isKeyDownForFirstTime(W_KEY) || input->isKeyDownForFirstTime(UP_KEY))
 			{
+				vY = -PLAYER_SPEED;
 				player->setCurrentState(L"JUMP_STATE");
 				if(vX < 0)
 					player->setCurrentState(L"JUMPL_STATE");

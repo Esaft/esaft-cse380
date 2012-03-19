@@ -32,6 +32,9 @@
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SoS_SourceCode\SoSPhysics.h">
+      <Filter>SoS_SourceCode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp">
@@ -47,6 +50,9 @@
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
     <ClCompile Include="SoS_SourceCode\SoSButtonEventHandler.cpp">
+      <Filter>SoS_SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SoS_SourceCode\SoSPhysics.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
   </ItemGroup>
