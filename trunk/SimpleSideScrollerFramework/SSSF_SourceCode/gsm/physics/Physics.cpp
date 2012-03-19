@@ -5,6 +5,9 @@
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
 #include "SSSF_SourceCode\gsm\physics\Collision.h"
+#include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
+#include "SSSF_SourceCode\gsm\physics\BoundingVolume.h"
+#include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
 
 /*
 	Default constructor, it initializes all data using default values.
@@ -14,11 +17,19 @@ Physics::Physics()
 	maxVelocity = DEFAULT_MAX_VELOCITY;
 	gravity = DEFAULT_GRAVITY;
 
-	for(int i = 0; i < 1000; i++)
+	/*for(int i = 0; i < 1000; i++)
 	{
 		Collision *c = new Collision();
 		collisionStack.push(c);
+	}//end for*/
+
+	for(int i = 0; i < 1000; i++)
+	{
+		Collision *c = new Collision();
+		collisionStack[i];
 	}//end for
+	
+	collisionStackCounter = 999;
 }
 
 /*
@@ -160,8 +171,26 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Coll
 				if((i*tH > maxY || (i+1)*tH < minY)
 					&& (j*tW > maxX && (j+1)*tW < minX))
 				{
+					CollidableObject* tileCO = new CollidableObject();
+					BoundingVolume *bv = tileCO->getBoundingVolume();
+					bv->setWidth(tW);
+					bv->setHeight(tH);
+					bv->setX(tW/2);
+					bv->setY(tW/2);
+					pp = tileCO->getPhysicalProperties();
+					pp->setPosition(j*tW,i*tH);
+					pp->setVelocity(0,0);
+
+					/*
 					Collision* currentCollision = collisionStack.top();
-					collisionStack
+					collisionStack.pop();*/
+					Collision* currentCollision = collisionStack[collisionStackCounter];
+					collisionStackCounter --;
+
+
+					currentCollision->setCO1(c);
+					currentCollision->setCO2(tileCO);
+					currentCollision->calculateTimes();
 				}
 			}
 		}

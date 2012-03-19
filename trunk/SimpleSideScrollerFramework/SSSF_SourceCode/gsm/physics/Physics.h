@@ -16,6 +16,7 @@
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\physics\Collision.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
+#include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
 
 const float DEFAULT_MAX_VELOCITY = 100.0f;
 const float DEFAULT_GRAVITY = 0.1f;
@@ -29,9 +30,11 @@ private:
 	// THINK OF THIS AS THE WORLD'S TERMINAL VELOCITY
 	float maxVelocity;
 
-	stack<Collision*> collisionStack;
+	//stack<Collision*> collisionStack;
+	Collision* collisionStack[1000];
+	int collisionStackCounter;
 	
-	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> collisions);
+	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> *collisions);
 
 public:
 	// INLINED METHODS
