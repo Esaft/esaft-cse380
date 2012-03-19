@@ -55,42 +55,33 @@ void Physics::update(Game *game)
 	SpriteManager *sm = gsm->getSpriteManager();
 	World *w = gsm->getWorld();
 	vector<WorldLayer*> *layers = w->getLayers();
+
 	AnimatedSprite *player;
 	PhysicalProperties *pp;
-
-	/*
+	TiledLayer *tL;
+	vector<Collision*> collisions;
+	
+	//finding TileLayer
 	for(int i = 0; i < layers->size(); i++)
 	{
 		WorldLayer *currentLayer = (*layers)[i];
 		if(currentLayer->hasCollidableTiles() == true)
 		{
-			TiledLayer *tL = dynamic_cast<TiledLayer*>(currentLayer);
+			tL = dynamic_cast<TiledLayer*>(currentLayer);
 			if(tL != 0)
 			{
-				
-				
-				for(int j = 0; j < tL->getRows(); j++)
-				{
-					for(int z = 0; z < tL->getColumns(); z++)
-					{
-						Tile *t = tL->getTile(j,z);
-						if(t->collidable == true)
-						{
-
-						}
-					}//end for
-
-				}//end for
+				i = layers->size();
 			}//end if
 		}//end if
-	}*/
+	}
 
-	// FIRST WE'LL MOVE THE PLAYER
+
 	player = sm->getPlayer();
 	pp = player->getPhysicalProperties();
+
+	//UPDATING ALL VELOCITIES
 	pp->incVelocity(this,pp->getAccelerationX(), pp->getAccelerationY() + gravity); 
 
-	/*
 	list<Bot*>::iterator botIterator = sm->getBotsIterator();
 	while (botIterator != sm->getEndOfBotsIterator())
 	{			
@@ -98,10 +89,10 @@ void Physics::update(Game *game)
 		pp = bot->getPhysicalProperties();
 		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY() + gravity);
 		botIterator++;
-	}*/
+	}
 
 
-	pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
+	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
 	// FOR NOW THE PLAYER IS DIRECTLY CONTROLLED BY THE KEYBOARD,
 	// SO WE'LL NEED TO TURN OFF ANY VELOCITY APPLIED BY INPUT
@@ -116,5 +107,64 @@ void Physics::update(Game *game)
 		pp = bot->getPhysicalProperties();
 		pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 		botIterator++;
+	}*/
+
+	
+}
+
+void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> *collisions)
+{
+	
+	
+
+	BoundingVolume *bv = c->getBoundingVolume();
+	float toLeft	= bv->getX() - bv->getWidth()/2;
+	float toRight	= bv->getX() + bv->getWidth()/2;
+	float toTop	 = bv->getY() - bv->getHeight()/2;
+	float toBottom = bv->getY() + bv->getHeight()/2;
+
+	PhysicalProperties *pp = c->getPhysicalProperties();
+	float x = pp->getX();
+	float y = pp->getY();
+	float xVel = pp->getVelocityX();
+	float yVel = pp->getVelocityY();
+	float minX = x + toLeft;
+	float maxX = x + toRight;
+	float minY = y + toTop;
+	float maxY = y + toBottom;
+
+	if(xVel > 0)
+		maxX += xVel;
+	else
+		minX += xVel;
+	if(yVel > 0)
+		maxY += yVel;
+	else
+		minY += yVel;
+
+	unsigned int tW = tL->getTileWidth();
+	unsigned int tH = tL->getTileHeight();
+
+	int firstCol = minX/tW;
+	int lastCol = maxX/tW;
+	int firstRow = minY/tH;
+	int lastRow = maxY/tH;
+
+	for(int i = firstRow; i <= lastRow; i++)
+	{
+		for(int j = firstCol; j <= lastCol; j++)
+		{
+			Tile* current = tL->getTile(i,j);
+			if(current->collidable == true)
+			{
+				if((i*tH > maxY || (i+1)*tH < minY)
+					&& (j*tW > maxX && (j+1)*tW < minX))
+				{
+					Collision* currentCollision = collisionStack.top();
+					collisionStack
+				}
+			}
+		}
 	}
+	
 }

@@ -15,6 +15,7 @@
 #include "stdafx.h"
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\physics\Collision.h"
+#include "SSSF_SourceCode\gsm\world\TiledLayer.h"
 
 const float DEFAULT_MAX_VELOCITY = 100.0f;
 const float DEFAULT_GRAVITY = 0.1f;
@@ -29,6 +30,8 @@ private:
 	float maxVelocity;
 
 	stack<Collision*> collisionStack;
+	
+	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> collisions);
 
 public:
 	// INLINED METHODS
