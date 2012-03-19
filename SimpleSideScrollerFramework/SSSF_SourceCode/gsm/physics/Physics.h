@@ -34,7 +34,7 @@ private:
 	Collision* collisionStack[1000];
 	int collisionStackCounter;
 	
-	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, vector<Collision*> *collisions);
+	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collision*> *collisions);
 
 public:
 	// INLINED METHODS
