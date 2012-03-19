@@ -207,9 +207,9 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collis
 	
 }
 
-bool compare_collisionTime(Collision first, Collision second)
+bool compare_collisionTime(Collision *first, Collision *second)
 {
-	if(first.timeOfCollision < second.timeOfCollision)
+	if(first->timeOfCollision < second->timeOfCollision)
 		return true;
 	else
 		return false;
