@@ -4,6 +4,7 @@
 #include "SSSF_SourceCode\gsm\sprite\SpriteManager.h"
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
+#include "SSSF_SourceCode\gsm\physics\Collision.h"
 
 /*
 	Default constructor, it initializes all data using default values.
@@ -12,6 +13,12 @@ Physics::Physics()
 {
 	maxVelocity = DEFAULT_MAX_VELOCITY;
 	gravity = DEFAULT_GRAVITY;
+
+	for(int i = 0; i < 1000; i++)
+	{
+		Collision *c = new Collision();
+		collisionStack.push(c);
+	}//end for
 }
 
 /*

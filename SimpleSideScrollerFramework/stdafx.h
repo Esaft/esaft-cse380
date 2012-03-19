@@ -26,6 +26,7 @@
 #include <algorithm>
 #include <vector>
 #include <list>
+#include <stack>
 #include <map>
 #include <stdio.h>
 #include <iostream>
