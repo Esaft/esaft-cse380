@@ -8,6 +8,7 @@ protected:
 	float buoyancy;
 	float mass;
 	bool  collidable;
+	bool  gravAffected;
 	float coefficientOfRestitution;
 	float x;
 	float y;
@@ -26,6 +27,7 @@ public:
 	float getMass()							{ return mass;					}
 	float getCoefficientOfRestitution()		{ return coefficientOfRestitution;	}
 	bool isCollidable()						{ return collidable;			}
+	bool isGravAffected()					{ return gravAffected;			}
 	float getX()							{ return x;						}
 	float getY()							{ return y;						}
 	float getZ()							{ return z;						}
@@ -37,6 +39,7 @@ public:
 	void setMass(float initMass)			{ mass = initMass;				}
 	void setCofficientOfRestitution(float cR) { coefficientOfRestitution = cR; }
 	void setCollidable(bool initCollidable)	{ collidable = initCollidable;	}
+	void setGravAffected(bool initGA)		{ gravAffected = initGA;		}
 	void setX(float initX)					{ x = initX;					}
 	void incX(float xToInc)					{ x += xToInc;					}
 	void setY(float initY)					{ y = initY;					}
