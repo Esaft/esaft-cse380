@@ -1,9 +1,452 @@
-﻿Build started 3/20/2012 1:52:12 PM.
-     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (clean target(s)).
+﻿Build started 3/20/2012 3:37:06 PM.
+     1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.lastbuildstate".
-     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" (clean target(s)).
+       InitializeBuildStatus:
+         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\dataLoader\GameDataLoader.cpp SSSF_SourceCode\game\Game.cpp SSSF_SourceCode\game\WStringTable.cpp SSSF_SourceCode\graphics\GameGraphics.cpp SSSF_SourceCode\graphics\RenderList.cpp SSSF_SourceCode\graphics\TextureManager.cpp SSSF_SourceCode\gsm\ai\BotRecycler.cpp SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp SSSF_SourceCode\gsm\physics\Physics.cpp SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.cpp SSSF_SourceCode\gsm\sprite\SpriteManager.cpp SSSF_SourceCode\gsm\state\GameStateManager.cpp SSSF_SourceCode\gsm\world\SparseLayer.cpp SSSF_SourceCode\gsm\world\TiledLayer.cpp SSSF_SourceCode\gsm\world\World.cpp SSSF_SourceCode\gui\Button.cpp SSSF_SourceCode\gui\Cursor.cpp SSSF_SourceCode\gui\GameGUI.cpp SSSF_SourceCode\gui\ScreenGUI.cpp SSSF_SourceCode\gui\Viewport.cpp SSSF_SourceCode\input\GameInput.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXGraphics.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXTextureManager.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsInput.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsTimer.cpp SSSF_SourceCode\text\BufferedTextFileReader.cpp SSSF_SourceCode\text\GameText.cpp SSSF_SourceCode\text\TextFileWriter.cpp
+         TextFileWriter.cpp
+         GameText.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         BufferedTextFileReader.cpp
+         WindowsTimer.cpp
+         WindowsOS.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         WindowsInput.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         DirectXTextureManager.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         DirectXGraphics.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         GameInput.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         Viewport.cpp
+         ScreenGUI.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         GameGUI.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         Cursor.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         Button.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         World.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         TiledLayer.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         SparseLayer.cpp
+         GameStateManager.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(274): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(275): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(329): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\state\gamestatemanager.cpp(330): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+         SpriteManager.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): warning C4183: 'getCO1': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): warning C4183: 'getCO2': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(36): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'PhysicalProperties' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(43): error C2061: syntax error : identifier 'CollidableObject'
+         AnimatedSpriteType.cpp
+         Generating Code...
+         Compiling...
+         AnimatedSprite.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(12): error C2146: syntax error : missing ';' before identifier 'pp'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(22): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(22): warning C4183: 'getPhysicalProperties': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collidableobject.h(22): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'PhysicalProperties' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(24): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(24): error C2228: left of '.setVelocity' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(25): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(25): error C2228: left of '.setAccelerationX' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(26): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(26): error C2228: left of '.setAccelerationY' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(27): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\sprite\animatedsprite.cpp(27): error C2228: left of '.setPosition' must have class/struct/union
+                 type is ''unknown-type''
+         Physics.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(126): error C2065: 'compare_collisionTime' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(141): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(141): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(143): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(143): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(188): error C2065: 'compare_collisionTime' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(258): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(259): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(260): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(261): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(276): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(277): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(278): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(279): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(281): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(281): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         SimplePatternBot.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): warning C4183: 'getCO1': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): warning C4183: 'getCO2': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(36): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'PhysicalProperties' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(43): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(29): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(70): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
+         RandomFloatingBot.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): warning C4183: 'getCO1': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): warning C4183: 'getCO2': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(36): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'PhysicalProperties' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(43): error C2061: syntax error : identifier 'CollidableObject'
+         BotRecycler.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): warning C4183: 'getCO1': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): warning C4183: 'getCO2': missing return type; assumed to be a member function returning 'int'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(36): error C2061: syntax error : identifier 'CollidableObject'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(23): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(24): error C2065: 'co' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(31): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(32): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(38): error C2065: 'c' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'PhysicalProperties' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(45): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(48): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2065: 'co1' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(49): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(50): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(51): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(54): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(55): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(57): error C2227: left of '->getPhysicalProperties' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2065: 'co2' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(58): error C2227: left of '->getBoundingVolume' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(59): error C2227: left of '->getX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(60): error C2227: left of '->getY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(63): error C2227: left of '->getVelocityX' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2065: 'pp' : undeclared identifier
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\collision.h(64): error C2227: left of '->getVelocityY' must point to class/struct/union/generic type
+                 type is ''unknown-type''
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.h(43): error C2061: syntax error : identifier 'CollidableObject'
+         TextureManager.cpp
+         RenderList.cpp
+         GameGraphics.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         WStringTable.cpp
+         Game.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2027: use of undefined type 'Physics'
+                 c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\game\game.h(43) : see declaration of 'Physics'
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physicalproperties.h(50): error C2227: left of '->getMaxVelocity' must point to class/struct/union/generic type
+         GameDataLoader.cpp
+         Generating Code...
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\graphics\renderlist.cpp(102): warning C4715: 'RenderList::next' : not all control paths return a value
+     1>Done Building Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" (rebuild target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:10.69

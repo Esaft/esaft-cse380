@@ -34,8 +34,8 @@ private:
 
 	//stack<Collision*> collisionStack;
 
-	int coStackCounter;
-	int collisionStackCounter;
+	unsigned int coStackCounter;
+	unsigned int collisionStackCounter;
 	Collision* collisionStack[1000];
 	CollidableObject* coStack[500];
 	

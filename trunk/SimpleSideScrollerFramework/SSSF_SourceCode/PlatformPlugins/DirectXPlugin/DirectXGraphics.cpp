@@ -450,7 +450,7 @@ void DirectXGraphics::renderWorldRenderList()
 	// GO THROUGH EACH ITEM IN THE LIST
 	while (worldRenderList->hasNext())
 	{
-		if (counter != 204);
+		if (counter != 204)
 			counter++;
 		if (rect != NULL)
 			delete rect;

@@ -8,8 +8,8 @@
 class Collision
 {
 	private:
-		CollidableObject *co1;
-		CollidableObject *co2;
+		CollidableObject* co1;
+		CollidableObject* co2;
 		float timeOfCollision;
 		float startTimeOfXCollision;
 		float startTimeOfYCollision;
@@ -17,19 +17,21 @@ class Collision
 		float endTimeOfYCollision;
 
 	public:
-		
+		Collision()	{}
+		~Collision() {}
 
-		CollidableObject* getCO1()	{return co1;}
-		CollidableObject* getCO2()	{return co2;}
+		void setCO1(CollidableObject* co) {co1 = co;}
+		void setCO2(CollidableObject* co) {co1 = co;}
+	
 		float getTOC()				{return timeOfCollision;}
 		float getSXC()				{return startTimeOfXCollision;}
 		float getEXC()				{return	endTimeOfXCollision;}
 		float getSYC()				{return startTimeOfXCollision;}
 		float getEYC()				{return endTimeOfXCollision;}
-	
+		CollidableObject* getCO1()	{return co1;}
+		CollidableObject* getCO2()	{return co2;}
 
-		void setCO1(CollidableObject* co) {co1 = co;}
-		void setCO2(CollidableObject* co) {co1 = co;}
+		
 		
 		bool contains(CollidableObject* c)
 		{
