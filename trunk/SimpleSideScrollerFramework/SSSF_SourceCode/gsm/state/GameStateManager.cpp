@@ -271,8 +271,8 @@ void GameStateManager::update(Game *game)
 
 	AnimatedSprite *p = spriteManager->getPlayer();
 	PhysicalProperties *pp = p->getPhysicalProperties();
-	int pVelX = pp->getVelocityX();
-	int pVelY = pp->getVelocityY();
+	float pVelX = pp->getVelocityX();
+	float pVelY = pp->getVelocityY();
 
 	//VIEWPORT SCOPING
 	Viewport *vp = game->getGUI()->getViewport();
@@ -326,8 +326,8 @@ void GameStateManager::updateViewport(Game *game)
 {
 	AnimatedSprite *p = spriteManager->getPlayer();
 	PhysicalProperties *pp = p->getPhysicalProperties();
-	int pVelX = pp->getVelocityX();
-	int pVelY = pp->getVelocityY();
+	float pVelX = pp->getVelocityX();
+	float pVelY = pp->getVelocityY();
 
 	//VIEWPORT SCOPING
 	Viewport *vp = game->getGUI()->getViewport();

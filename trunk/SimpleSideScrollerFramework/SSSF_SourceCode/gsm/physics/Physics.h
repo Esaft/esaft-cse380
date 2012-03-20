@@ -17,7 +17,6 @@
 #include "SSSF_SourceCode\gsm\physics\Collision.h"
 #include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
-#include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
 
 const float DEFAULT_MAX_VELOCITY = 100.0f;
 const float DEFAULT_GRAVITY = 0.1f;

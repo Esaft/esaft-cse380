@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Physics.h"
+#include "SSSF_SourceCode\gsm\physics\Physics.h"
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\sprite\SpriteManager.h"
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
@@ -8,6 +8,14 @@
 #include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
 #include "SSSF_SourceCode\gsm\physics\BoundingVolume.h"
 #include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
+
+bool compare_collisionTime(Collision *first, Collision *second)
+{
+	if(first->getTOC() < second->getTOC())
+		return true;
+	else
+		return false;
+}
 
 /*
 	Default constructor, it initializes all data using default values.
@@ -138,9 +146,9 @@ void Physics::update(Game *game)
 		{
 			
 			pp = co1->getPhysicalProperties();
-			pp->setVelocity(pp->getVelocityX()*0.01,pp->getVelocityY()*0.01);
+			//pp->setVelocity(pp->getVelocityX(),pp->getVelocityY());
 			pp = co2->getPhysicalProperties();
-			pp->setVelocity(pp->getVelocityX()*0.01,pp->getVelocityY()*0.01);
+			//pp->setVelocity(pp->getVelocityX(),pp->getVelocityY());
 
 			pp = player->getPhysicalProperties();
 			pp->setPosition(pp->getX() + (pp->getVelocityX()*(colTime-timer)),pp->getY() + (pp->getVelocityY()*(colTime-timer)));
@@ -202,6 +210,22 @@ void Physics::update(Game *game)
 	
 	}
 	
+	if(timer < 1)
+	{
+		pp = player->getPhysicalProperties();
+		pp->setPosition(pp->getX() + (pp->getVelocityX()*(1-timer)),pp->getY() + (pp->getVelocityY()*(1-timer)));
+		pp->setVelocity(0.0f, pp->getVelocityY());
+		botIterator = sm->getBotsIterator();
+		while (botIterator != sm->getEndOfBotsIterator())
+		{			
+			Bot *bot = (*botIterator);
+			pp = bot->getPhysicalProperties();
+			pp->setPosition(pp->getX() + (pp->getVelocityX()*(1-timer)), pp->getY() + (pp->getVelocityY()*(1-timer)));
+			botIterator++;
+		}
+	}
+	
+	pp->setVelocity(0.0f, pp->getVelocityY());
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
 	// FOR NOW THE PLAYER IS DIRECTLY CONTROLLED BY THE KEYBOARD,
@@ -252,8 +276,8 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 	else
 		minY += yVel;
 
-	unsigned int tW = tL->getTileWidth();
-	unsigned int tH = tL->getTileHeight();
+	 int tW = tL->getTileWidth();
+	 int tH = tL->getTileHeight();
 
 	int firstCol = minX/tW;
 	int lastCol = maxX/tW;
@@ -267,8 +291,7 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 			Tile* current = tL->getTile(i,j);
 			if(current->collidable == true)
 			{
-				if((i*tH > maxY || (i+1)*tH < minY)
-					&& (j*tW > maxX && (j+1)*tW < minX))
+				if( !( (i+1)*tH < minY || i*tH > maxY || (j+1)*tW < minX || j*tW > maxX)  )
 				{
 					CollidableObject* tileCO = coStack[coStackCounter];
 					coStackCounter --;
@@ -310,19 +333,25 @@ void Physics::resolveCollision(Collision* currentCollision)
 	{
 		pp = co1->getPhysicalProperties();
 		
-		if(currentCollision->getSXC() < currentCollision->getSYC())
+		
+		if(currentCollision->getSXC() <= currentCollision->getSYC())
+		{
+			if(pp->getVelocityY() < 0)
+				pp->setY(pp->getY() + 0.1);
+			else
+				pp->setX(pp->getY() - 0.1);
 			pp->setVelocity(pp->getVelocityX(), 0);
+		}
 		else if(currentCollision->getSXC() > currentCollision->getSYC())
+		{
+			if(pp->getVelocityX() < 0)
+				pp->setX(pp->getX() + 0.1);
+			else
+				pp->setX(pp->getX() - 0.1);
 			pp->setVelocity(0, pp->getVelocityY());
+		}
 	}
 }
 
 
 
-bool compare_collisionTime(Collision *first, Collision *second)
-{
-	if(first->getTOC() < second->getTOC())
-		return true;
-	else
-		return false;
-}
