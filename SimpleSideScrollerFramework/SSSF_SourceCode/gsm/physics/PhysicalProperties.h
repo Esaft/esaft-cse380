@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
-#include "SSSF_SourceCode\gsm\physics\Physics.h"
-
+//#include "SSSF_SourceCode\gsm\physics\Physics.h"
+class Physics;
 class PhysicalProperties
 {
 protected:
@@ -45,7 +45,7 @@ public:
 	void setY(float initY)					{ y = initY;					}
 	void incY(float yToInc)					{ y += yToInc;					}
 	void setZ(float initZ)					{ z = initZ;					}
-	void capVelocity(Physics *physics)
+	/*void capVelocity(Physics *physics){}
 	{
 		float maxVelocity = physics->getMaxVelocity();
 		if (calcTotalVelocity() > maxVelocity)
@@ -64,7 +64,7 @@ public:
 			x *= xRatio;
 			y *= yRatio;
 		}
-	}
+	}*/
 
 	int round(float realNum)
 	{

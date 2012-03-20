@@ -310,5 +310,8 @@
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\physics\Collision.cpp">
+      <Filter>SSSF_SourceCode\gsm\physics</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

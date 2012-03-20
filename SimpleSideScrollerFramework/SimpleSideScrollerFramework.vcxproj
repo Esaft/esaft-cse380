@@ -137,6 +137,7 @@
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BotRecycler.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp" />
+    <ClCompile Include="SSSF_SourceCode\gsm\physics\Collision.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\physics\Physics.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.cpp" />
