@@ -49,8 +49,6 @@ Physics::Physics()
 */
 Physics::~Physics()
 {
-	delete collisionStack;
-	delete coStack;
 }
 
 void Physics::update(Game *game)
@@ -88,7 +86,7 @@ void Physics::update(Game *game)
 	list<Collision*> collisions;
 	
 	//finding TileLayer
-	for(int i = 0; i < layers->size(); i++)
+	for(unsigned int i = 0; i < layers->size(); i++)
 	{
 		WorldLayer *currentLayer = (*layers)[i];
 		if(currentLayer->hasCollidableTiles() == true)
@@ -136,7 +134,7 @@ void Physics::update(Game *game)
 		CollidableObject* co1 = currentCollision->getCO1();
 		CollidableObject* co2 = currentCollision->getCO2();
 
-		if(colTime >= 0 && colTime <= 1);
+		if(colTime >= 0 && colTime <= 1)
 		{
 			
 			pp = co1->getPhysicalProperties();
@@ -172,7 +170,7 @@ void Physics::update(Game *game)
 
 				cIterator++;
 
-				if(deleteLast == true)
+				if(deleteLast)
 				{
 					collisions.erase(lastIterator);
 				}
