@@ -558,6 +558,8 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 
 	AnimatedSprite *player = spriteManager->getPlayer();
 	player->setSpriteType(ast);
+	player->setIsStatic(false);
+	player->setCurrentlyCollidable(true);
 
 	BoundingVolume *bv = player->getBoundingVolume();
 	bv->setWidth(width);
@@ -575,6 +577,7 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	playerProps->setY(y);
 	
 	playerProps->setCollidable(true);
+	playerProps->setGravAffected(true);
 	playerProps->setMass(1);
 
 	playerProps->setVelocity(0.0f, 0.0f);

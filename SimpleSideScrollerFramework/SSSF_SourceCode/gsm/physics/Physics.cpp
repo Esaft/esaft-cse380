@@ -26,10 +26,22 @@ Physics::Physics()
 	for(int i = 0; i < 1000; i++)
 	{
 		Collision *c = new Collision();
-		collisionStack[i];
+		collisionStack[i] = c;
+
+		if(i < 500)
+		{
+			CollidableObject* co = new CollidableObject();
+			co->setCurrentlyCollidable(true);
+			co->setIsStatic(true);
+			PhysicalProperties* pp = co->getPhysicalProperties();
+			pp->setVelocity(0,0);
+
+			coStack[i] = co;
+		}
 	}//end for
 	
 	collisionStackCounter = 999;
+	coStackCounter = 499;
 }
 
 /*
@@ -37,7 +49,8 @@ Physics::Physics()
 */
 Physics::~Physics()
 {
-
+	delete collisionStack;
+	delete coStack;
 }
 
 void Physics::update(Game *game)
@@ -62,6 +75,8 @@ void Physics::update(Game *game)
 	// POSITIONS, WHICH MEANS WE'RE NOT APPLYING GRAVITY OR
 	// ACCELERATION AND WE ARE NOT DOING ANY COLLISION 
 	// DETECTION OR RESPONSE
+	float timer = 0;
+
 	GameStateManager *gsm = game->getGSM();
 	SpriteManager *sm = gsm->getSpriteManager();
 	World *w = gsm->getWorld();
@@ -99,7 +114,9 @@ void Physics::update(Game *game)
 	{			
 		Bot *bot = (*botIterator);
 		pp = bot->getPhysicalProperties();
-		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY() + gravity);
+		pp->incVelocity(this, pp->getAccelerationX(), pp->getAccelerationY());
+		if(pp->isGravAffected() == true)
+			pp->incVelocity(this, 0, gravity);
 		collideTestWithTiles(bot, tL, &collisions);
 		botIterator++;
 	}
@@ -109,6 +126,83 @@ void Physics::update(Game *game)
 
 	//SORT COLLISIONS
 	collisions.sort(compare_collisionTime);
+
+	//RESOLVING ALL THE COLLISIONS
+	while(collisions.empty() == false)
+	{
+		Collision* currentCollision = collisions.front();
+		collisions.pop_front();
+		float colTime = currentCollision->getTOC();
+		CollidableObject* co1 = currentCollision->getCO1();
+		CollidableObject* co2 = currentCollision->getCO2();
+
+		if(colTime >= 0 && colTime <= 1);
+		{
+			
+			pp = co1->getPhysicalProperties();
+			pp->setVelocity(pp->getVelocityX()*0.01,pp->getVelocityY()*0.01);
+			pp = co2->getPhysicalProperties();
+			pp->setVelocity(pp->getVelocityX()*0.01,pp->getVelocityY()*0.01);
+
+			pp = player->getPhysicalProperties();
+			pp->setPosition(pp->getX() + (pp->getVelocityX()*(colTime-timer)),pp->getY() + (pp->getVelocityY()*(colTime-timer)));
+			botIterator = sm->getBotsIterator();
+			while (botIterator != sm->getEndOfBotsIterator())
+			{			
+				Bot *bot = (*botIterator);
+				pp = bot->getPhysicalProperties();
+				pp->setPosition(pp->getX() + (pp->getVelocityX()*(colTime-timer)), pp->getY() + (pp->getVelocityY()*(colTime-timer)));
+				botIterator++;
+			}
+
+			resolveCollision(currentCollision);
+			
+			boolean deleteLast = false;
+			list<Collision*>::iterator cIterator = collisions.begin();
+			list<Collision*>::iterator lastIterator;
+			while(cIterator != collisions.end())
+			{
+				deleteLast = false;
+				Collision* check = (*cIterator);
+				if(check->contains(co1) || check->contains(co2))
+				{
+					lastIterator = cIterator;
+					deleteLast = true;
+				}
+
+				cIterator++;
+
+				if(deleteLast == true)
+				{
+					collisions.erase(lastIterator);
+				}
+			}
+
+			collideTestWithTiles(co1, tL, &collisions);
+			//collideTestWithSprites(co1);
+
+			if(co2->isStaticObject() == false)
+			{
+				collideTestWithTiles(co2, tL, &collisions);
+				//collideTestWithSprites(co2);
+			}
+
+			collisions.sort(compare_collisionTime);
+
+			timer += colTime;
+		}//end if
+
+
+		if(co2->isStaticObject() == true)
+		{
+			coStackCounter ++;
+			coStack[coStackCounter] = co2;
+		}
+
+		collisionStackCounter ++;
+		collisionStack[collisionStackCounter] = currentCollision;
+	
+	}
 	
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
@@ -130,7 +224,7 @@ void Physics::update(Game *game)
 	
 }
 
-void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collision*> *collisions)
+void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions)
 {
 	
 	
@@ -178,7 +272,8 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collis
 				if((i*tH > maxY || (i+1)*tH < minY)
 					&& (j*tW > maxX && (j+1)*tW < minX))
 				{
-					CollidableObject* tileCO = new CollidableObject();
+					CollidableObject* tileCO = coStack[coStackCounter];
+					coStackCounter --;
 					BoundingVolume *bv = tileCO->getBoundingVolume();
 					bv->setWidth(tW);
 					bv->setHeight(tH);
@@ -186,7 +281,7 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collis
 					bv->setY(tW/2);
 					pp = tileCO->getPhysicalProperties();
 					pp->setPosition(j*tW,i*tH);
-					pp->setVelocity(0,0);
+					
 
 					/*
 					Collision* currentCollision = collisionStack.top();
@@ -207,9 +302,28 @@ void Physics::collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collis
 	
 }
 
+void Physics::resolveCollision(Collision* currentCollision)
+{
+	CollidableObject* co1 = currentCollision->getCO1();
+	CollidableObject* co2 = currentCollision->getCO2();
+	PhysicalProperties* pp;
+	
+	if(co2->isStaticObject() == true)
+	{
+		pp = co1->getPhysicalProperties();
+		
+		if(currentCollision->getSXC() < currentCollision->getSYC())
+			pp->setVelocity(pp->getVelocityX(), 0);
+		else if(currentCollision->getSXC() > currentCollision->getSYC())
+			pp->setVelocity(0, pp->getVelocityY());
+	}
+}
+
+
+
 bool compare_collisionTime(Collision *first, Collision *second)
 {
-	if(first->timeOfCollision < second->timeOfCollision)
+	if(first->getTOC() < second->getTOC())
 		return true;
 	else
 		return false;

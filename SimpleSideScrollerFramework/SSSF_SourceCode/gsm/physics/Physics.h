@@ -15,6 +15,7 @@
 #include "stdafx.h"
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\physics\Collision.h"
+#include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
 #include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
 
@@ -29,12 +30,18 @@ private:
 
 	// THINK OF THIS AS THE WORLD'S TERMINAL VELOCITY
 	float maxVelocity;
+	
 
 	//stack<Collision*> collisionStack;
-	Collision* collisionStack[1000];
+
+	int coStackCounter;
 	int collisionStackCounter;
+	Collision* collisionStack[1000];
+	CollidableObject* coStack[500];
 	
-	void collideTestWithTiles(AnimatedSprite *c,TiledLayer *tL, list<Collision*> *collisions);
+	
+	void collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions);
+	void resolveCollision(Collision* c);
 
 public:
 	// INLINED METHODS
