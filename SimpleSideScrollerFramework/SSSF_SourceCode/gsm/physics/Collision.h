@@ -27,8 +27,8 @@ class Collision
 		float getTOC()				{return timeOfCollision;}
 		float getSXC()				{return startTimeOfXCollision;}
 		float getEXC()				{return	endTimeOfXCollision;}
-		float getSYC()				{return startTimeOfXCollision;}
-		float getEYC()				{return endTimeOfXCollision;}
+		float getSYC()				{return startTimeOfYCollision;}
+		float getEYC()				{return endTimeOfYCollision;}
 		CollidableObject* getCO1()	{return co1;}
 		CollidableObject* getCO2()	{return co2;}
 

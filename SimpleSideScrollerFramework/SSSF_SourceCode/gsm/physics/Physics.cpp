@@ -187,6 +187,10 @@ void Physics::update(Game *game)
 					lastIterator = cIterator;
 					deleteLast = true;
 				}
+				else
+				{
+					check->calculateTimes();
+				}
 
 				cIterator++;
 
@@ -224,9 +228,10 @@ void Physics::update(Game *game)
 	
 	if(timer < 1)
 	{
+		gsm->updateViewport(game, 1-timer);
 		pp = player->getPhysicalProperties();
 		pp->setPosition(pp->getX() + (pp->getVelocityX()*(1-timer)),pp->getY() + (pp->getVelocityY()*(1-timer)));
-		pp->setVelocity(0.0f, pp->getVelocityY());
+		//pp->setVelocity(0.0f, pp->getVelocityY());
 		botIterator = sm->getBotsIterator();
 		while (botIterator != sm->getEndOfBotsIterator())
 		{			
@@ -236,8 +241,8 @@ void Physics::update(Game *game)
 			botIterator++;
 		}
 	}
-	gsm->updateViewport(game, 1-timer);
 	
+	pp = player->getPhysicalProperties();;
 	pp->setVelocity(0.0f, pp->getVelocityY());
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
@@ -364,7 +369,7 @@ void Physics::resolveCollision(Collision* currentCollision)
 			pp->setX(pp->getX() + 0.1);*/
 		
 
-		if(currentCollision->getSXC() <= currentCollision->getSYC())
+		if(currentCollision->getTOC() == currentCollision->getSYC())
 		{
 			//if(pp->getVelocityY() < 0)
 			//	pp->setY(pp->getY() + 0.1);
@@ -376,7 +381,7 @@ void Physics::resolveCollision(Collision* currentCollision)
 			pp->setY(pp->getY() + 0.1);
 			pp->setVelocity(pp->getVelocityX(), 0);
 		}
-		else if(currentCollision->getSXC() > currentCollision->getSYC())
+		else if(currentCollision->getTOC() == currentCollision->getSXC())
 		{
 			/*if(pp->getVelocityX() < 0)
 				pp->setX(pp->getX() + 0.1);
