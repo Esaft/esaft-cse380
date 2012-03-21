@@ -99,25 +99,34 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
 		{
 			vX = -PLAYER_SPEED;
-			if (input->isKeyDownForFirstTime(A_KEY) || input->isKeyDownForFirstTime(LEFT_KEY))
+			if (vY == 0 && player->getCurrentState().compare(L"LEFT_STATE") != 0)
 				player->setCurrentState(L"LEFT_STATE");
-		}
-		if (input->isKeyDown(S_KEY) || input->isKeyDown(DOWN_KEY))
-		{
-			vY = PLAYER_SPEED;
+			else if(vY != 0 && player->getCurrentState().compare(L"JUMPL_STATE") != 0)
+				player->setCurrentState(L"JUMPL_STATE");
 		}
 		if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
 		{
 			vX = PLAYER_SPEED;
-			if (input->isKeyDownForFirstTime(D_KEY) || input->isKeyDownForFirstTime(RIGHT_KEY))
+			if (vY == 0 && player->getCurrentState().compare(L"RIGHT_STATE") != 0)
 				player->setCurrentState(L"RIGHT_STATE");
+			else if(vY != 0 && player->getCurrentState().compare(L"JUMP_STATE") != 0)
+				player->setCurrentState(L"JUMP_STATE");
 		}
+		/*if (input->isKeyDown(S_KEY) || input->isKeyDown(DOWN_KEY))
+		{
+			vY = PLAYER_SPEED;
+		}*/
 		if (input->isKeyDown(W_KEY) || input->isKeyDown(UP_KEY))
 		{
 			
 
-			if (input->isKeyDownForFirstTime(W_KEY) || input->isKeyDownForFirstTime(UP_KEY))
+			if (input->isKeyDownForFirstTime(W_KEY) || input->isKeyDownForFirstTime(UP_KEY)
+				&& pp->hasDoubleJumped() == false)
 			{
+				if(pp->hasJumped() == true)
+					pp->setDoubleJumped(true);
+				pp->setJumped(true);
+
 				vY = -PLAYER_SPEED;
 				player->setCurrentState(L"JUMP_STATE");
 				if(vX < 0)

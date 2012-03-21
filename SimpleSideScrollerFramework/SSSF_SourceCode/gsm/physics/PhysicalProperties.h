@@ -9,6 +9,8 @@ protected:
 	float mass;
 	bool  collidable;
 	bool  gravAffected;
+	bool  jumped;
+	bool  doubleJumped;
 	float coefficientOfRestitution;
 	float x;
 	float y;
@@ -28,6 +30,8 @@ public:
 	float getCoefficientOfRestitution()		{ return coefficientOfRestitution;	}
 	bool isCollidable()						{ return collidable;			}
 	bool isGravAffected()					{ return gravAffected;			}
+	bool hasJumped()						{ return jumped;				}
+	bool hasDoubleJumped()					{ return doubleJumped;			}
 	float getX()							{ return x;						}
 	float getY()							{ return y;						}
 	float getZ()							{ return z;						}
@@ -40,6 +44,8 @@ public:
 	void setCofficientOfRestitution(float cR) { coefficientOfRestitution = cR; }
 	void setCollidable(bool initCollidable)	{ collidable = initCollidable;	}
 	void setGravAffected(bool initGA)		{ gravAffected = initGA;		}
+	void setJumped(bool initJ)				{ jumped = initJ;				}
+	void setDoubleJumped(bool initDJ)		{ doubleJumped = initDJ;		}
 	void setX(float initX)					{ x = initX;					}
 	void incX(float xToInc)					{ x += xToInc;					}
 	void setY(float initY)					{ y = initY;					}

@@ -40,7 +40,7 @@ private:
 	
 	
 	void collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions);
-	void resolveCollision(Collision* c);
+	void resolveCollision(Game* game, Collision* c);
 
 public:
 	// INLINED METHODS

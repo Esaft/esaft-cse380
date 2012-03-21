@@ -163,7 +163,7 @@ void Physics::update(Game *game)
 
 			gsm->updateViewport(game, colTime-timer);
 
-			resolveCollision(currentCollision);
+			resolveCollision(game, currentCollision);
 			
 			boolean deleteLast = false;
 			list<Collision*>::iterator cIterator = collisions.begin();
@@ -346,11 +346,12 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 	
 }
 
-void Physics::resolveCollision(Collision* currentCollision)
+void Physics::resolveCollision(Game* game, Collision* currentCollision)
 {
 	CollidableObject* co1 = currentCollision->getCO1();
 	CollidableObject* co2 = currentCollision->getCO2();
 	PhysicalProperties* pp;
+	AnimatedSprite* player = game->getGSM()->getSpriteManager()->getPlayer();
 	
 	if(co2->isStaticObject() == true)
 	{
@@ -371,22 +372,57 @@ void Physics::resolveCollision(Collision* currentCollision)
 
 		if(currentCollision->getTOC() == currentCollision->getSYC())
 		{
-			//if(pp->getVelocityY() < 0)
-			//	pp->setY(pp->getY() + 0.1);
-			//else
-			//	pp->setY(pp->getY() - 0.1);
+			/*if(pp->getVelocityY() < 0)
+			{
+				pp->setY(pp->getY() + 0.1);
+			}
+			else
+			{
+				pp->setY(pp->getY() - 0.1);
+				if(co1 == player)
+				{
+					pp->setJumped(false);
+					pp->setDoubleJumped(false);
+					if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
+						|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
+					{
+						player->setCurrentState(L"IDLE_STATE");
+					}
+				}
+			}*/
 			if(y < tY)
-			pp->setY(pp->getY() - 0.1);
+			{
+				pp->setY(pp->getY() - 0.1);
+				if(co1 == player)
+				{
+					pp->setJumped(false);
+					pp->setDoubleJumped(false);
+					/*if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
+						|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
+					{
+						player->setCurrentState(L"IDLE_STATE");
+					}*/
+				}
+			}
 			if(y > tY)
-			pp->setY(pp->getY() + 0.1);
+			{
+				pp->setY(pp->getY() + 0.1);
+				
+			}
 			pp->setVelocity(pp->getVelocityX(), 0);
+			
+			
 		}
 		else if(currentCollision->getTOC() == currentCollision->getSXC())
 		{
 			/*if(pp->getVelocityX() < 0)
+			{
 				pp->setX(pp->getX() + 0.1);
+			}
 			else
-				pp->setX(pp->getX() - 0.1);*/
+			{
+				pp->setX(pp->getX() - 0.1);
+			}*/
 			if(x < tX)
 			pp->setX(pp->getX() - 0.1);
 			if(x > tX)

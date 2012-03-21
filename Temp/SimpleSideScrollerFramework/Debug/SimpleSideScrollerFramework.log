@@ -1,11 +1,34 @@
-﻿Build started 3/21/2012 1:15:15 AM.
+﻿Build started 3/21/2012 12:43:20 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\gsm\physics\Collision.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXGraphics.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXTextureManager.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsInput.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.cpp SSSF_SourceCode\game\Game.cpp SSSF_SourceCode\graphics\GameGraphics.cpp SSSF_SourceCode\gsm\ai\BotRecycler.cpp SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp SSSF_SourceCode\gsm\physics\Collision.cpp SSSF_SourceCode\gsm\physics\Physics.cpp SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp SSSF_SourceCode\gsm\sprite\SpriteManager.cpp SSSF_SourceCode\gsm\state\GameStateManager.cpp SSSF_SourceCode\gsm\world\TiledLayer.cpp SSSF_SourceCode\gsm\world\World.cpp SSSF_SourceCode\gui\Button.cpp SSSF_SourceCode\gui\Cursor.cpp SSSF_SourceCode\gui\GameGUI.cpp SSSF_SourceCode\gui\ScreenGUI.cpp SSSF_SourceCode\input\GameInput.cpp SSSF_SourceCode\text\GameText.cpp
+         DirectXGraphics.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         GameText.cpp
+         GameInput.cpp
+         ScreenGUI.cpp
+         GameGUI.cpp
+         Cursor.cpp
+         Button.cpp
+         World.cpp
+         TiledLayer.cpp
+         GameStateManager.cpp
+         SpriteManager.cpp
+         AnimatedSprite.cpp
+         Physics.cpp
          Collision.cpp
+         SimplePatternBot.cpp
+         RandomFloatingBot.cpp
+         BotRecycler.cpp
+         GameGraphics.cpp
+         Game.cpp
+         WindowsOS.cpp
+         WindowsInput.cpp
+         DirectXTextureManager.cpp
        Lib:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Common\SimpleSideScrollerFramework.lib" /NOLOGO "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Game.obj"
@@ -48,4 +71,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.25
+Time Elapsed 00:00:01.59
