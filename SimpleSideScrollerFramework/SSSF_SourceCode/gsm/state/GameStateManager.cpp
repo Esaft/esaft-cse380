@@ -275,7 +275,7 @@ void GameStateManager::update(Game *game)
 	float pVelY = pp->getVelocityY();
 
 	//VIEWPORT SCOPING
-	Viewport *vp = game->getGUI()->getViewport();
+	/*Viewport *vp = game->getGUI()->getViewport();
 	
 	if(pVelX < 0 
 		&& (pp->round(pp->getX() - vp->getViewportX())) < vp->getViewportWidth()/3)
@@ -319,15 +319,15 @@ void GameStateManager::update(Game *game)
 	vp->moveViewport(	vp->getScrollSpeedX(),
 						vp->getScrollSpeedY(),
 						world.getWorldWidth(),
-						world.getWorldHeight());
+						world.getWorldHeight());*/
 }
 
-void GameStateManager::updateViewport(Game *game)
+void GameStateManager::updateViewport(Game *game, float time)
 {
 	AnimatedSprite *p = spriteManager->getPlayer();
 	PhysicalProperties *pp = p->getPhysicalProperties();
-	float pVelX = pp->getVelocityX();
-	float pVelY = pp->getVelocityY();
+	float pVelX = pp->getVelocityX()*time;
+	float pVelY = pp->getVelocityY()*time;
 
 	//VIEWPORT SCOPING
 	Viewport *vp = game->getGUI()->getViewport();

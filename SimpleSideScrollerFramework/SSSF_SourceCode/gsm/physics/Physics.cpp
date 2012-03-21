@@ -146,9 +146,9 @@ void Physics::update(Game *game)
 		{
 			
 			pp = co1->getPhysicalProperties();
-			//pp->setVelocity(pp->getVelocityX(),pp->getVelocityY());
+			//pp->setVelocity(pp->getVelocityX()*9.99f,pp->getVelocityY()*9.99f);
 			pp = co2->getPhysicalProperties();
-			//pp->setVelocity(pp->getVelocityX(),pp->getVelocityY());
+			//pp->setVelocity(pp->getVelocityX()*9.99f,pp->getVelocityY()*9.99f);
 
 			pp = player->getPhysicalProperties();
 			pp->setPosition(pp->getX() + (pp->getVelocityX()*(colTime-timer)),pp->getY() + (pp->getVelocityY()*(colTime-timer)));
@@ -161,6 +161,8 @@ void Physics::update(Game *game)
 				botIterator++;
 			}
 
+			gsm->updateViewport(game, colTime-timer);
+
 			resolveCollision(currentCollision);
 			
 			boolean deleteLast = false;
@@ -172,6 +174,16 @@ void Physics::update(Game *game)
 				Collision* check = (*cIterator);
 				if(check->contains(co1) || check->contains(co2))
 				{
+					CollidableObject* checkStatic = check->getCO2();
+					if(checkStatic->isStaticObject())
+					{
+						coStackCounter ++;
+						coStack[coStackCounter] = checkStatic;
+					}
+
+					collisionStackCounter ++;
+					collisionStack[collisionStackCounter] = check;
+
 					lastIterator = cIterator;
 					deleteLast = true;
 				}
@@ -224,6 +236,7 @@ void Physics::update(Game *game)
 			botIterator++;
 		}
 	}
+	gsm->updateViewport(game, 1-timer);
 	
 	pp->setVelocity(0.0f, pp->getVelocityY());
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
@@ -284,6 +297,11 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 	int firstRow = minY/tH;
 	int lastRow = maxY/tH;
 
+	if(lastCol >= tL->getColumns())
+		lastCol = tL->getColumns() - 1;
+	if(lastRow >= tL->getRows())
+		lastRow = tL->getRows() - 1;
+
 	for(int i = firstRow; i <= lastRow; i++)
 	{
 		for(int j = firstCol; j <= lastCol; j++)
@@ -331,25 +349,59 @@ void Physics::resolveCollision(Collision* currentCollision)
 	
 	if(co2->isStaticObject() == true)
 	{
+		pp = co2->getPhysicalProperties();
+		float tX = pp->getX();
+		float tY = pp->getY();
+
 		pp = co1->getPhysicalProperties();
+		float x = pp->getX();
+		float y = pp->getY();
+		//pp->setVelocity(0, 0);
+
+		/*if(x < tX)
+			pp->setX(pp->getX() - 0.1);
+		if(x > tX)
+			pp->setX(pp->getX() + 0.1);*/
 		
-		
+
 		if(currentCollision->getSXC() <= currentCollision->getSYC())
 		{
-			if(pp->getVelocityY() < 0)
-				pp->setY(pp->getY() + 0.1);
-			else
-				pp->setX(pp->getY() - 0.1);
+			//if(pp->getVelocityY() < 0)
+			//	pp->setY(pp->getY() + 0.1);
+			//else
+			//	pp->setY(pp->getY() - 0.1);
+			if(y < tY)
+			pp->setY(pp->getY() - 0.1);
+			if(y > tY)
+			pp->setY(pp->getY() + 0.1);
 			pp->setVelocity(pp->getVelocityX(), 0);
 		}
 		else if(currentCollision->getSXC() > currentCollision->getSYC())
 		{
-			if(pp->getVelocityX() < 0)
+			/*if(pp->getVelocityX() < 0)
 				pp->setX(pp->getX() + 0.1);
 			else
-				pp->setX(pp->getX() - 0.1);
+				pp->setX(pp->getX() - 0.1);*/
+			if(x < tX)
+			pp->setX(pp->getX() - 0.1);
+			if(x > tX)
+			pp->setX(pp->getX() + 0.1);
 			pp->setVelocity(0, pp->getVelocityY());
 		}
+		//else
+		//{
+		//	/*if(pp->getVelocityY() < 0)
+		//		pp->setY(pp->getY() + 0.1);
+		//	else
+		//		pp->setY(pp->getY() - 0.1);
+
+		//	if(pp->getVelocityX() < 0)
+		//		pp->setX(pp->getX() + 0.1);
+		//	else
+		//		pp->setX(pp->getX() - 0.1);*/
+
+		//	pp->setVelocity(0,0);
+		//}
 	}
 }
 
