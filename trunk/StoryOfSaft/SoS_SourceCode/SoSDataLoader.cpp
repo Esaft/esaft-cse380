@@ -527,6 +527,8 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	int width = _wtoi(line.substr(0, delimiterIndex).c_str());
 	int height = _wtoi(line.substr(delimiterIndex+1).c_str());
 
+	
+
 	ast->setTextureSize(height, width);
 	
 
@@ -561,9 +563,14 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	player->setIsStatic(false);
 	player->setCurrentlyCollidable(true);
 
+	line = reader.getNextLine();
+	delimiterIndex = line.find(delim);
+	int bVWidth = _wtoi(line.substr(0, delimiterIndex).c_str());
+	int bVHeight = _wtoi(line.substr(delimiterIndex+1).c_str());
+
 	BoundingVolume *bv = player->getBoundingVolume();
-	bv->setWidth(width);
-	bv->setHeight(height);
+	bv->setWidth(bVWidth);
+	bv->setHeight(bVHeight);
 	bv->setX(width/2);
 	bv->setY(height/2);
 	bv->setType(1);
