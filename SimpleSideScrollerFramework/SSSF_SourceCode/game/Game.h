@@ -45,6 +45,7 @@ class GameTimer;
 class GameStateManager;
 class GameGUI;
 class GameText;
+class Collision;
 
 static const float PI = 3.1415926535897932384626433f;
 
@@ -104,4 +105,6 @@ public:
 	void	runGameLoop();
 	void	shutdown();
 	void	startGame();
+
+	void GameSpecificResolve(Collision* c);
 };

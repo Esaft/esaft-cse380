@@ -128,7 +128,15 @@ void Physics::update(Game *game)
 	}
 
 	//HERE, COLLIDE SPRITES WITH OTHER SPRITES
-
+	//collideTestWithSprites(game, player, &collisions));
+	/*botIterator = sm->getBotsIterator();
+	while (botIterator != sm->getEndOfBotsIterator())
+	{			
+		Bot *bot = (*botIterator);
+		if(bot->isCurrentlyCollidable() == true);
+			collideTestWithSprites(game, bot, &collisions);
+		botIterator++;
+	}*/
 
 	//SORT COLLISIONS
 	collisions.sort(compare_collisionTime);
@@ -344,6 +352,69 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 		}
 	}
 	
+}
+
+
+//FOR NOW, TESTS SPRITES AGAINST ALL OTHER SPRITES. IF I HAVE TIME, I WILL IMPLEMENT SWEEP AND PRUNE
+void Physics::collideTestWithSprites(Game* game, AnimatedSprite* c, list<Collision*> *collisions)
+{
+	SpriteManager *sm = game->getGSM()->getSpriteManager();
+	AnimatedSprite* player = sm->getPlayer();
+
+	if(c != player && player->isCurrentlyCollidable() == true)
+	{
+		Collision* currentCollision = collisionStack[collisionStackCounter];
+		collisionStackCounter --;
+		currentCollision->setCO1(c);
+		currentCollision->setCO2(player);
+		currentCollision->calculateTimes();
+
+		if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
+		{
+			collisions->push_back(currentCollision);
+		}
+		else
+		{
+			collisionStackCounter ++;
+			collisionStack[collisionStackCounter] = currentCollision;
+		}
+	}
+
+	list<Bot*>::iterator botIterator = sm->getBotsIterator();
+	while (botIterator != sm->getEndOfBotsIterator())
+	{			
+		Bot *bot = (*botIterator);
+		if(c != bot && bot->isCurrentlyCollidable() == true)
+		{
+			Collision* currentCollision = collisionStack[collisionStackCounter];
+			collisionStackCounter --;
+			currentCollision->setCO1(c);
+			currentCollision->setCO2(bot);
+			currentCollision->calculateTimes();
+
+			if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
+			{
+				collisions->push_back(currentCollision);
+			}
+			else
+			{
+				collisionStackCounter ++;
+				collisionStack[collisionStackCounter] = currentCollision;
+			}
+		}
+		
+		botIterator++;
+	}
+	/*Collision* currentCollision = collisionStack[collisionStackCounter];
+	collisionStackCounter --;
+
+
+	currentCollision->setCO1(c);
+	currentCollision->setCO2(tileCO);
+	currentCollision->calculateTimes();
+
+	collisions->push_back(currentCollision);*/
+
 }
 
 void Physics::resolveCollision(Game* game, Collision* currentCollision)
