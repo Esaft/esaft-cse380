@@ -26,9 +26,21 @@ void SimpleTrackingBot::think(Game *game)
 	if (trackX == true)
 	{
 		if(playerProps->getX() < pp->getX())
-			pp->setVelocity(-velMag,pp->getVelocityY());
+		{
+			if(pp->getVelocityX() >= 0)
+			{
+				this->setCurrentState(L"LEFT_STATE");
+				pp->setVelocity(-velMag,pp->getVelocityY());
+			}
+		}
 		else
-			pp->setVelocity(velMag,pp->getVelocityY());
+		{	
+			if(pp->getVelocityX() < 0)
+			{
+				this->setCurrentState(L"RIGHT_STATE");
+				pp->setVelocity(velMag,pp->getVelocityY());
+			}
+		}
 	}
 	if (trackY == true)
 	{

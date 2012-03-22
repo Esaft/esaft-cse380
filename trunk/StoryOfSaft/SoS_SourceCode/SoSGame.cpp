@@ -19,6 +19,7 @@
 #include "SoS_SourceCode\SoSButtonEventHandler.h"
 #include "SoS_SourceCode\SoSDataLoader.h"
 #include "SoS_SourceCode\SoSGame.h"
+#include "SoS_SourceCode\SoSGameRules.h"
 #include "SoS_SourceCode\SoSKeyEventHandler.h"
 #include "SoS_SourceCode\SoSTextGenerator.h"
 
@@ -58,8 +59,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	// FIRST WE'LL SETUP THE DATA LOADER, SINCE IT MAY NEED TO READ
 	// IN DATA TO SETUP OTHER STUFF
 	SoSDataLoader *sosDataLoader = new SoSDataLoader();
+	SoSGameRules *sosGameRules	=	new SoSGameRules();
 	sosDataLoader->initWinHandle(hInstance, nCmdShow);
 	sosGame->setDataLoader(sosDataLoader);
+	
 	sosDataLoader->loadGame(sosGame, SoS_INIT_FILE);
 	
 	// WHAT WE SHOULD BE DOING HERE IS LOADING THE GAME DATA FROM FILES. THIS
