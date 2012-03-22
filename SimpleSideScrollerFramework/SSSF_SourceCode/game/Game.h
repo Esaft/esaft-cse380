@@ -46,6 +46,7 @@ class GameStateManager;
 class GameGUI;
 class GameText;
 class Collision;
+class GameRules;
 
 static const float PI = 3.1415926535897932384626433f;
 
@@ -72,6 +73,7 @@ private:
 	GameInput			*input;
 	GameOS				*os;
 	GameTimer			*timer;
+	GameRules			*gameRules;
 	wstring	initLevelFile;
 
 public:
@@ -86,9 +88,11 @@ public:
 	GameInput*			getInput()				{ return input;								}
 	GameOS*				getOS()					{ return os;								}
 	GameTimer*			getTimer()				{ return timer;								}
+	GameRules*			getGameRules()			{ return gameRules;							}
 
 	// INLINED MUTATOR METHOD
 	void	setDataLoader(GameDataLoader *initDL) { dataLoader = initDL; }
+	void	setGameRules(GameRules *initGR) { gameRules = initGR;}
 
 	// METHODS DEFINED IN Game.cpp
 	Game();
@@ -106,5 +110,5 @@ public:
 	void	shutdown();
 	void	startGame();
 
-	void GameSpecificResolve(Collision* c);
+	
 };
