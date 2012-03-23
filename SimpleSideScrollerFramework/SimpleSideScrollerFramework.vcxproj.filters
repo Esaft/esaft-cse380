@@ -292,9 +292,6 @@
     <ClCompile Include="SSSF_SourceCode\gui\Viewport.cpp">
       <Filter>SSSF_SourceCode\gui</Filter>
     </ClCompile>
-    <ClCompile Include="SSSF_SourceCode\gsm\state\GameStateManager.cpp">
-      <Filter>SSSF_SourceCode\gsm\state</Filter>
-    </ClCompile>
     <ClCompile Include="SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXGraphics.cpp">
       <Filter>SSSF_SourceCode\PlatformPlugins\DirectXPlugin</Filter>
     </ClCompile>
@@ -321,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\state\GameStateManager.cpp">
+      <Filter>SSSF_SourceCode\gsm\state</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

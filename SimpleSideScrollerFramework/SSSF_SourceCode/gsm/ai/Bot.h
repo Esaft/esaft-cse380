@@ -6,7 +6,7 @@
 
 class Bot : public AnimatedSprite
 {
-private:
+protected:
 	bool enemy;
 	bool item;
 	bool portal;

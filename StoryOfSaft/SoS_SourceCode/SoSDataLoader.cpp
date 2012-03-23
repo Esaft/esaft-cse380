@@ -104,6 +104,8 @@ void SoSDataLoader::loadGame(Game *game, wstring gameInitFile)
 	// INIT THE VIEWPORT TOO
 	initViewport(game->getGUI(), properties);	
 
+	loadBots(game, SoS_BOT_INIT_FILE);
+
 	// WE DON'T NEED THE PROPERTIES MAP ANYMORE, THE GAME IS ALL LOADED
 	delete properties;
 }
@@ -453,7 +455,8 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	delete tileCollisionMap;
 
 	loadPlayer(game, playerInfoFile);
-	loadBots(game, botInfoFile);
+	gR->setUpGame(game);
+	
 	
 	SpriteManager *spriteManager = gsm->getSpriteManager();
 
@@ -580,6 +583,7 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 	AnimatedSprite *player = spriteManager->getPlayer();
 	player->setSpriteType(ast);
 	player->setIsStatic(false);
+	player->setMobile(true);
 	player->setCurrentlyCollidable(true);
 
 	line = reader.getNextLine();
@@ -1116,6 +1120,10 @@ GameState SoSDataLoader::gsLookup(wstring g)
 	if(g.compare(L"GS_GAME_OVER")== 0)
 	{
 		return GS_GAME_OVER;
+	}
+	if(g.compare(L"GS_WIN")== 0)
+	{
+		return GS_WIN;
 	}
 	if(g.compare(L"GS_IN_GAME_HELP")== 0)
 	{

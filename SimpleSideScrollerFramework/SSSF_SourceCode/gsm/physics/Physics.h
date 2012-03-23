@@ -41,7 +41,7 @@ private:
 	
 	
 	void collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions);
-	void collideTestWithSprites(Game* game, AnimatedSprite *s, list<Collision*> *collisions);
+	void collideTestWithSprites(Game* game, CollidableObject *s, list<Collision*> *collisions);
 	void resolveCollision(Game* game, Collision* c);
 
 public:

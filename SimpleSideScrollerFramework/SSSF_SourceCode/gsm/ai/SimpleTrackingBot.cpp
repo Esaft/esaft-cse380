@@ -18,37 +18,53 @@ SimpleTrackingBot::SimpleTrackingBot(float vM, bool tX, bool tY)
 	velMag = vM;
 	trackX = tX;
 	trackY = tY;
+	enemy = true;
 }
 
 void SimpleTrackingBot::think(Game *game)
 {
-	PhysicalProperties* playerProps = game->getGSM()->getSpriteManager()->getPlayer()->getPhysicalProperties();
-	PhysicalProperties* pp	= &(this->pp);
-
-	if (trackX == true)
+	wstring curState = this->getCurrentState();
+	if(curState.compare(L"DIE_STATE") != 0 && curState.compare(L"DIEL_STATE") != 0)
 	{
-		if(playerProps->getX() < pp->getX())
+		PhysicalProperties* playerProps = game->getGSM()->getSpriteManager()->getPlayer()->getPhysicalProperties();
+		PhysicalProperties* pp	= &(this->pp);
+
+		if (trackX == true)
 		{
-			if(pp->getVelocityX() >= 0)
+			if(playerProps->getX() < pp->getX())
 			{
-				this->setCurrentState(L"LEFT_STATE");
-				pp->setVelocity(-velMag,pp->getVelocityY());
+				if(pp->getVelocityX() >= 0)
+				{
+					
+					this->setCurrentState(L"LEFT_STATE");
+					pp->setVelocity(-velMag,pp->getVelocityY());
+					pp->setOrientedLeft();
+				}
+			}
+			else
+			{	
+				if(pp->getVelocityX() < 0)
+				{
+					this->setCurrentState(L"RIGHT_STATE");
+					pp->setVelocity(velMag,pp->getVelocityY());
+					pp->setOrientedRight();
+				}
 			}
 		}
-		else
-		{	
-			if(pp->getVelocityX() < 0)
-			{
-				this->setCurrentState(L"RIGHT_STATE");
-				pp->setVelocity(velMag,pp->getVelocityY());
-			}
+		if (trackY == true)
+		{
+			if(playerProps->getY() < pp->getY())
+				pp->setVelocity(pp->getVelocityX(),-velMag);
+			else
+				pp->setVelocity(pp->getVelocityX(),velMag);
 		}
 	}
-	if (trackY == true)
+	else
 	{
-		if(playerProps->getY() < pp->getY())
-			pp->setVelocity(pp->getVelocityX(),-velMag);
-		else
-			pp->setVelocity(pp->getVelocityX(),velMag);
+		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
+		if(this->getFrameIndex()/2 == lastFrame)
+		{
+			game->getGSM()->getSpriteManager()->removeBot(this);
+		}
 	}
 }

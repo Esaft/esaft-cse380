@@ -3,6 +3,8 @@
 #include "SSSF_SourceCode\game\GameRules.h"
 #include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\ai\Bot.h"
+#include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
+#include "SSSF_SourceCode\gsm\sprite\AnimatedSprite.h"
 
 class SoSGameRules: public GameRules
 {
@@ -10,6 +12,8 @@ class SoSGameRules: public GameRules
 		vector<Bot*> *botTypeList; 
 		int health;
 		int codeCollected;
+
+		void playerColResolve(AnimatedSprite* player, CollidableObject* other);
 
 	public:
 		SoSGameRules();
@@ -20,6 +24,6 @@ class SoSGameRules: public GameRules
 		void gameSpecificResolve(Game* game, Collision* c);
 		void spawnEnemies(Game* game);
 		void setBotSprite(AnimatedSpriteType* ast, int enemyType);
-		void setUpGame();
+		void setUpGame(Game* game);
 
 };
