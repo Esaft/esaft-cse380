@@ -90,6 +90,7 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\Bot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BotRecycler.h" />
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\ItemBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h" />

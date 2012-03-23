@@ -12,8 +12,12 @@ class SoSGameRules: public GameRules
 		vector<Bot*> *botTypeList; 
 		int health;
 		int codeCollected;
+		int doorX;
+		int doorY;
+		bool won;
 
 		void playerColResolve(AnimatedSprite* player, CollidableObject* other);
+		void placeDoor(Game* game);
 
 	public:
 		SoSGameRules();

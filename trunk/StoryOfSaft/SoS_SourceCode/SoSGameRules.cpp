@@ -7,6 +7,7 @@
 #include "SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.h"
 #include "SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h"
 #include "SSSF_SourceCode\gsm\ai\BackAndForthBot.h"
+#include "SSSF_SourceCode\gsm\ai\ItemBot.h"
 #include "SSSF_SourceCode\gsm\physics\PhysicalProperties.h"
 #include "SSSF_SourceCode\gsm\physics\BoundingVolume.h"
 #include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
@@ -19,7 +20,7 @@ SoSGameRules::SoSGameRules()
 	
 	Bot* botToAdd;
 	PhysicalProperties* pp;
-	for(int i = 0; i < 2; i++)
+	for(int i = 0; i < 4; i++)
 	{
 		if(i == 0)
 		{
@@ -29,8 +30,18 @@ SoSGameRules::SoSGameRules()
 		{
 			botToAdd = new BackAndForthBot(200);
 		}
-		if(i == 2);
-		if(i == 3);
+		if(i == 2)
+		{
+			botToAdd = new ItemBot();
+			botToAdd->setMobile(false);
+		}
+		if(i == 3)
+		{
+			botToAdd = new ItemBot();
+			botToAdd->setItem(false);
+			botToAdd->setPortal(true);
+			botToAdd->setMobile(false);
+		}
 
 		botToAdd->setIsStatic(false);
 		pp = botToAdd->getPhysicalProperties();
@@ -84,8 +95,31 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 		game->quitGame();
 		game->getGSM()->goToGameOver();
 	}*/
+	if(codeCollected == 1)
+	{
+		placeDoor(game);
+	}
+	if(won == true)
+	{
+		game->quitGame();
+		game->getGSM()->goToWinScreen();
+	}
+
 	//Other sprite-sprite collisions really don't have any specific response in this game.
 
+}
+
+void SoSGameRules::placeDoor(Game*game)
+{
+
+	Bot* bot = getBot(3);
+	PhysicalProperties* pp = bot->getPhysicalProperties();
+	pp->setX(doorX);
+	pp->setY(doorY);
+	bot->setAlpha(255);
+	bot->setCurrentState(L"DOOR_STATE");
+	bot->setCurrentlyCollidable(true);
+	game->getGSM()->getSpriteManager()->addBot(bot);
 }
 
 void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* other)
@@ -130,15 +164,13 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 			}
 		}
 		else if(other->isItem())
-		{
-			/*if(other->getCurrentState().compare(L"CODE_STATE") == 0)
-			{
+		{	
 				codeCollected ++;
-			}*/
+			
 		}
 		else if(other->isPortal())
 		{
-
+			won = true;
 		}
 	}
 }
@@ -152,4 +184,7 @@ void SoSGameRules::setUpGame(Game* game)
 {
 	health = 100;
 	codeCollected = 0;
+	doorX = 500;
+	doorY = 1792;
+	won = false;
 }

@@ -465,15 +465,6 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	bot->setDead(false);
 
 	AnimatedSpriteType* ast = bot->getSpriteType();
-	float width = ast->getTextureWidth();
-	float height = ast->getTextureHeight();
-
-	BoundingVolume *bv = bot->getBoundingVolume();
-	bv->setWidth(width);
-	bv->setHeight(height);
-	bv->setX(width/2);
-	bv->setY(height/2);
-	bv->setType(1);
 
 	bot->setAlpha(255);
 	bot->setCurrentState(L"RIGHT_STATE");
@@ -483,6 +474,21 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	pp->setCollidable(true);
 	pp->setGravAffected(true);
 	pp->setX(400);
+	pp->setY(1600);
+	
+
+	spriteManager->addBot(bot);
+
+	bot = gR->getBot(2);
+
+	bot->setAlpha(255);
+	bot->setCurrentState(L"CODE_STATE");
+	bot->setCurrentlyCollidable(true);
+	bot->setIsStatic(false);
+	pp = bot->getPhysicalProperties();
+	pp->setCollidable(true);
+	//pp->setGravAffected(true);
+	pp->setX(600);
 	pp->setY(1600);
 	
 
