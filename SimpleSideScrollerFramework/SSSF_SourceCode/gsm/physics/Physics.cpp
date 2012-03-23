@@ -178,6 +178,10 @@ void Physics::update(Game *game)
 			list<Collision*>::iterator lastIterator;
 			while(cIterator != collisions.end())
 			{
+				if(deleteLast == true)
+				{
+					collisions.erase(lastIterator);
+				}
 				deleteLast = false;
 				Collision* check = (*cIterator);
 				if(check->contains(co1) || check->contains(co2))
@@ -197,15 +201,15 @@ void Physics::update(Game *game)
 				}
 				else
 				{
-					check->calculateTimes();
+					//check->calculateTimes();
 				}
 
 				cIterator++;
+			}
 
-				if(deleteLast)
-				{
-					collisions.erase(lastIterator);
-				}
+			if(deleteLast == true)
+			{
+				collisions.erase(lastIterator);
 			}
 
 			collideTestWithTiles(co1, tL, &collisions);
@@ -274,23 +278,18 @@ void Physics::update(Game *game)
 
 void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions)
 {
-	
-	
-
 	BoundingVolume *bv = c->getBoundingVolume();
-	float toLeft	= bv->getX() - bv->getWidth()/2;
-	float toRight	= bv->getX() + bv->getWidth()/2;
-	float toTop	 = bv->getY() - bv->getHeight()/2;
-	float toBottom = bv->getY() + bv->getHeight()/2;
+	float toRight= bv->getWidth()/2;
+	float toBottom = bv->getHeight()/2;
 
 	PhysicalProperties *pp = c->getPhysicalProperties();
-	float x = pp->getX();
-	float y = pp->getY();
+	float x = pp->getX()+bv->getX();
+	float y = pp->getY()+bv->getY();
 	float xVel = pp->getVelocityX();
 	float yVel = pp->getVelocityY();
-	float minX = x + toLeft;
+	float minX = x - toRight;
 	float maxX = x + toRight;
-	float minY = y + toTop;
+	float minY = y - toBottom;
 	float maxY = y + toBottom;
 
 	if(xVel > 0)

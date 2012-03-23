@@ -68,3 +68,9 @@ void SoSGameRules::spawnEnemies(Game* game)
 {
 
 }
+
+void SoSGameRules::setUpGame()
+{
+	health = 3;
+	codeCollected = 0;
+}

@@ -464,6 +464,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	bot->setAlpha(255);
 	bot->setCurrentState(L"RIGHT_STATE");
 	bot->setCurrentlyCollidable(true);
+	bot->setIsStatic(false);
 	PhysicalProperties *pp = bot->getPhysicalProperties();
 	pp->setCollidable(true);
 	pp->setGravAffected(true);
