@@ -458,8 +458,9 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	delete tileCollisionMap;
 
 	loadPlayer(game, playerInfoFile);
-	
+	loadCodeLocs(game, codeLocInfoFile);
 	gR->setUpGame(game);
+	
 	
 	
 	SpriteManager *spriteManager = gsm->getSpriteManager();
@@ -482,20 +483,20 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 
 	spriteManager->addBot(bot);
 
-	bot = gR->getBot(2);
+	//bot = gR->getBot(2);
 
-	bot->setAlpha(255);
-	bot->setCurrentState(L"CODE_STATE");
-	bot->setCurrentlyCollidable(true);
-	bot->setIsStatic(false);
-	pp = bot->getPhysicalProperties();
-	pp->setCollidable(true);
-	//pp->setGravAffected(true);
-	pp->setX(600);
-	pp->setY(1400);
-	
+	//bot->setAlpha(255);
+	//bot->setCurrentState(L"CODE_STATE");
+	//bot->setCurrentlyCollidable(true);
+	//bot->setIsStatic(false);
+	//pp = bot->getPhysicalProperties();
+	//pp->setCollidable(true);
+	////pp->setGravAffected(true);
+	//pp->setX(600);
+	//pp->setY(1400);
+	//
 
-	spriteManager->addBot(bot);
+	//spriteManager->addBot(bot);
 	/////////////////////////////////////////ADDING THE PATTERN BOT
 
 	//SpriteManager *spriteManager = gsm->getSpriteManager();
@@ -717,6 +718,49 @@ void SoSDataLoader::loadBots(Game *game, wstring botInitFile)
 		botMap->clear();
 	}
 	delete botMap;
+}
+
+void SoSDataLoader::loadCodeLocs(Game *game, wstring codeLocInitFile)
+{
+	GameStateManager *gsm = game->getGSM();
+	GameRules* gR = game->getGameRules();
+	SpriteManager *spriteManager = gsm->getSpriteManager();
+
+
+	BufferedTextFileReader codeLocReader;
+	codeLocReader.initFile(codeLocInitFile);
+
+	wstring line;
+	unsigned int delimiterIndex;
+	wchar_t delim = ',';
+	int numLoc = _wtoi(codeLocReader.getNextLine().c_str());
+
+
+	Bot* b = gR->getBot(2);
+
+	
+
+	for(int i = 0; i < numLoc; i++)
+	{
+		line = codeLocReader.getNextLine();
+		delimiterIndex = line.find(delim);
+		int x = _wtoi(line.substr(0, delimiterIndex).c_str());
+		int y = _wtoi(line.substr(delimiterIndex+1).c_str());
+
+		Bot* bot = b->clone();
+		bot->setAlpha(255);
+		bot->setCurrentState(L"CODE_STATE");
+		bot->setCurrentlyCollidable(true);
+		bot->setIsStatic(false);
+		PhysicalProperties* pp = bot->getPhysicalProperties();
+		pp->setCollidable(true);
+		pp->setX(x);
+		pp->setY(y);
+	
+
+		spriteManager->addBot(bot);
+	}
+		
 }
 
 

@@ -140,6 +140,7 @@
     <ClCompile Include="SSSF_SourceCode\graphics\TextureManager.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BotRecycler.cpp" />
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\ItemBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp" />

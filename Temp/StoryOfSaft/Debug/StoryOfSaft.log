@@ -1,4 +1,4 @@
-﻿Build started 3/23/2012 10:54:06 AM.
+﻿Build started 3/23/2012 11:45:57 AM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -9,8 +9,8 @@
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(64): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(67): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(82): warning C4101: 'other' : unreferenced local variable
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(117): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(118): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(119): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -38,4 +38,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.04
+Time Elapsed 00:00:07.76

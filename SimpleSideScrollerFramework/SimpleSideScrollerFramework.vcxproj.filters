@@ -331,5 +331,8 @@
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.cpp">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\ItemBot.cpp">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
