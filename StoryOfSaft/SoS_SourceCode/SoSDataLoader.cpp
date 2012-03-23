@@ -489,7 +489,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	pp->setCollidable(true);
 	//pp->setGravAffected(true);
 	pp->setX(600);
-	pp->setY(1600);
+	pp->setY(1400);
 	
 
 	spriteManager->addBot(bot);

@@ -15,8 +15,9 @@ class SoSGameRules: public GameRules
 		int doorX;
 		int doorY;
 		bool won;
+		bool doorPlaced;
 
-		void playerColResolve(AnimatedSprite* player, CollidableObject* other);
+		void playerColResolve(Game* game, AnimatedSprite* player, CollidableObject* other);
 		void placeDoor(Game* game);
 
 	public:

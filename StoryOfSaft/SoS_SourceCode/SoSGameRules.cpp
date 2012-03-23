@@ -83,11 +83,11 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 
 	if(c->getCO1() == player)
 	{
-		playerColResolve(player, c->getCO2());
+		playerColResolve(game, player, c->getCO2());
 	}
 	else if(c->getCO2() == player)
 	{
-		playerColResolve(player, c->getCO1());
+		playerColResolve(game, player, c->getCO1());
 	}
 
 	/*if(health == 0)
@@ -95,7 +95,7 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 		game->quitGame();
 		game->getGSM()->goToGameOver();
 	}*/
-	if(codeCollected == 1)
+	if(codeCollected == 1 && !doorPlaced)
 	{
 		placeDoor(game);
 	}
@@ -122,13 +122,14 @@ void SoSGameRules::placeDoor(Game*game)
 	game->getGSM()->getSpriteManager()->addBot(bot);
 }
 
-void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* other)
+void SoSGameRules::playerColResolve(Game* game, AnimatedSprite* player, CollidableObject* other)
 {
 	if(!other->isStaticObject())
 	{
-		if(other->isEnemy())
+		Bot* b = static_cast<Bot*>(other);
+		if(b->isEnemy())
 		{
-			Bot* b = static_cast<Bot*>(other);
+			
 			PhysicalProperties* playerProps = player->getPhysicalProperties();
 			PhysicalProperties* pp = b->getPhysicalProperties();
 			
@@ -163,12 +164,13 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 				health --;
 			}
 		}
-		else if(other->isItem())
+		else if(b->isItem())
 		{	
 				codeCollected ++;
+				game->getGSM()->getSpriteManager()->removeBot(b);
 			
 		}
-		else if(other->isPortal())
+		else if(b->isPortal())
 		{
 			won = true;
 		}
@@ -187,4 +189,5 @@ void SoSGameRules::setUpGame(Game* game)
 	doorX = 500;
 	doorY = 1792;
 	won = false;
+	doorPlaced = false;
 }

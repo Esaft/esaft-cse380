@@ -65,7 +65,7 @@ void SimpleTrackingBot::think(Game *game)
 	{
 		wstring curState = this->getCurrentState();
 		pp->setVelocity(0,pp->getVelocityY());
-		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
+  		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
 		if(this->getFrameIndex() == lastFrame)
 		{
 			game->getGSM()->getSpriteManager()->removeBot(this);
