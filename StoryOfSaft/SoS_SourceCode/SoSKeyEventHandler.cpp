@@ -78,7 +78,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		// CHECK FOR WASD KEYS FOR MOVEMENT
 		int incX = 0;
 		int incY = 0;
-		bool moveViewport = false;
+		bool movingLR = false;
 		bool attacking = false;
 
 		if(input->isKeyDown(SPACE_KEY))
@@ -103,6 +103,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		
 		if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
 		{
+			movingLR = true;
 			pp->setOrientedLeft();
 			vX = -PLAYER_SPEED;
 			if (vY == 0 && player->getCurrentState().compare(L"LEFT_STATE") != 0)
@@ -112,6 +113,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		}
 		if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
 		{
+			movingLR = true;
 			pp->setOrientedRight();
 			vX = PLAYER_SPEED;
 			if (vY == 0 && player->getCurrentState().compare(L"RIGHT_STATE") != 0)
@@ -140,6 +142,11 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 					player->setCurrentState(L"JUMPL_STATE");
 			}
 		}	
+
+		if(!movingLR)
+		{
+			vX = 0;
+		}
 
 		if(vY == 0 && vX == 0 && !attacking && 
 			player->getCurrentState().compare(L"IDLE_STATE") != 0 && player->getCurrentState().compare(L"IDLEL_STATE") != 0 )
