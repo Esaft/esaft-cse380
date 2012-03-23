@@ -66,7 +66,7 @@ Bot* BotRecycler::retrieveBot(wstring botType)
 {
 	// FIRST MAKE SURE THIS IS A REGISTERED BOT TYPE,
 	// IF IT IS NOT, WE NEED TO RETURN NULL
-	if (isRegisteredBotType(botType))
+	if (!isRegisteredBotType(botType))
 	{
 		return NULL;
 	}
