@@ -399,9 +399,12 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	wstring playerInfoFile = reader.getNextLine();
 	wstring tiledLayerFile = reader.getNextLine();
 	wstring botInfoFile = reader.getNextLine();
+	wstring codeLocInfoFile = reader.getNextLine();
 	reader.closeReader();
 	BufferedTextFileReader tileInfoReader;
 	tileInfoReader.initFile(tileInfoFile);
+
+	loadBots(game,botInfoFile);
 	
 	map<wstring, int> *tileIDMap = new map<wstring, int>();//Tile identifier, tileImageID
 	map<wstring, int> *tileCollisionMap = new map<wstring, int>();//Tile identifier, tileImageID
@@ -455,7 +458,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	delete tileCollisionMap;
 
 	loadPlayer(game, playerInfoFile);
-	loadBots(game,botInfoFile);
+	
 	gR->setUpGame(game);
 	
 	
