@@ -25,5 +25,5 @@ class SoSGameRules: public GameRules
 		void spawnEnemies(Game* game);
 		void setBotSprite(AnimatedSpriteType* ast, int enemyType);
 		void setUpGame(Game* game);
-
+		void checkGameOver(Game* game){};
 };

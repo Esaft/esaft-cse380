@@ -19,7 +19,7 @@ SoSGameRules::SoSGameRules()
 	
 	Bot* botToAdd;
 	PhysicalProperties* pp;
-	for(int i = 0; i < 1; i++)
+	for(int i = 0; i < 2; i++)
 	{
 		if(i == 0)
 		{
@@ -79,10 +79,11 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 		playerColResolve(player, c->getCO1());
 	}
 
-	if(health == 0)
+	/*if(health == 0)
 	{
+		game->quitGame();
 		game->getGSM()->goToGameOver();
-	}
+	}*/
 	//Other sprite-sprite collisions really don't have any specific response in this game.
 
 }
@@ -116,13 +117,13 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 			{
 				if(playerProps->getX() < pp->getX())
 				{
-					playerProps->setVelocity(-7.0f,playerProps->getVelocityY());
-					pp->setVelocity(7.0f,pp->getVelocityY());
+					playerProps->setVelocity(-10.0f,playerProps->getVelocityY());
+					pp->setVelocity(10.0f,pp->getVelocityY());
 				}
 				else
 				{
-					playerProps->setVelocity(7.0f,playerProps->getVelocityY());
-					pp->setVelocity(-7.0f,pp->getVelocityY());
+					playerProps->setVelocity(10.0f,playerProps->getVelocityY());
+					pp->setVelocity(-10.0f,pp->getVelocityY());
 				}
 
 				health --;
@@ -149,6 +150,6 @@ void SoSGameRules::spawnEnemies(Game* game)
 
 void SoSGameRules::setUpGame(Game* game)
 {
-	health = 3;
+	health = 100;
 	codeCollected = 0;
 }
