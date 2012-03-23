@@ -1,28 +1,39 @@
-﻿Build started 3/23/2012 2:48:28 AM.
+﻿Build started 3/23/2012 4:15:47 AM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\gsm\physics\Physics.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXGraphics.cpp SSSF_SourceCode\PlatformPlugins\DirectXPlugin\DirectXTextureManager.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsInput.cpp SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsOS.cpp SSSF_SourceCode\game\Game.cpp SSSF_SourceCode\graphics\GameGraphics.cpp SSSF_SourceCode\gsm\ai\BotRecycler.cpp SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp SSSF_SourceCode\gsm\physics\Collision.cpp SSSF_SourceCode\gsm\physics\Physics.cpp SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp SSSF_SourceCode\gsm\sprite\SpriteManager.cpp SSSF_SourceCode\gsm\state\GameStateManager.cpp SSSF_SourceCode\gsm\world\TiledLayer.cpp SSSF_SourceCode\gsm\world\World.cpp SSSF_SourceCode\gui\Button.cpp SSSF_SourceCode\gui\Cursor.cpp SSSF_SourceCode\gui\GameGUI.cpp SSSF_SourceCode\gui\ScreenGUI.cpp SSSF_SourceCode\input\GameInput.cpp SSSF_SourceCode\text\GameText.cpp
+         SimpleTrackingBot.cpp
+         Generating Code...
+         Compiling...
+         SpriteManager.cpp
+         SimplePatternBot.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(29): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\ai\simplepatternbot.cpp(70): warning C4244: '=' : conversion from 'const float' to 'unsigned int', possible loss of data
+         RandomFloatingBot.cpp
+         BotRecycler.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         GameText.cpp
+         GameInput.cpp
+         ScreenGUI.cpp
+         GameGUI.cpp
+         Cursor.cpp
+         Button.cpp
+         World.cpp
+         TiledLayer.cpp
+         GameStateManager.cpp
+         AnimatedSprite.cpp
          Physics.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(139): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(184): warning C4805: '==' : unsafe mix of type 'boolean' and type 'bool' in operation
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(213): warning C4805: '==' : unsafe mix of type 'boolean' and type 'bool' in operation
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(318): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(319): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(320): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(321): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(344): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(345): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(346): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(347): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(349): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(349): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(480): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(494): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(512): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(514): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Collision.cpp
+         GameGraphics.cpp
+         Game.cpp
+         WindowsOS.cpp
+         WindowsInput.cpp
+         DirectXTextureManager.cpp
+         DirectXGraphics.cpp
        Lib:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Common\SimpleSideScrollerFramework.lib" /NOLOGO "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Game.obj"
@@ -66,4 +77,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.88
+Time Elapsed 00:00:03.66

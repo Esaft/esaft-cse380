@@ -93,11 +93,13 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 			{
 				if(pp->isOrientedRight())
 				{
-					b->setCurrentState(L"DIE_STATE");
+					b->setCurrentlyCollidable(false);
+					b->setDead(true);
 				}
 				else
 				{
-					b->setCurrentState(L"DIEL_STATE");
+					b->setCurrentlyCollidable(false);
+					b->setDead(true);
 				}
 			}
 			else

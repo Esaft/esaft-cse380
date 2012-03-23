@@ -43,6 +43,7 @@ private:
 	void collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Collision*> *collisions);
 	void collideTestWithSprites(Game* game, CollidableObject *s, list<Collision*> *collisions);
 	void resolveCollision(Game* game, Collision* c);
+	bool willObjectsCollide(CollidableObject* co1, CollidableObject* co2);
 
 public:
 	// INLINED METHODS

@@ -12,9 +12,6 @@
     <Filter Include="SSSF_SourceCode">
       <UniqueIdentifier>{a4f388a3-3f53-4f70-a258-1a08a6bddec9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SSSF_SourceCode\dataLoader">
-      <UniqueIdentifier>{214407ec-26b8-4f62-a209-74279aef3d9c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SSSF_SourceCode\game">
       <UniqueIdentifier>{c8f94df4-03a6-4ffc-8ea9-124c530305e2}</UniqueIdentifier>
     </Filter>
@@ -63,6 +60,9 @@
     <Filter Include="SSSF_SourceCode\PlatformPlugins\WindowsPlugin">
       <UniqueIdentifier>{660537eb-3d16-4fb7-abc4-d3e5f9f63668}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SSSF_SourceCode\gsm\dataLoader">
+      <UniqueIdentifier>{214407ec-26b8-4f62-a209-74279aef3d9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -75,7 +75,7 @@
       <Filter>VS2010 Files</Filter>
     </ClInclude>
     <ClInclude Include="SSSF_SourceCode\dataLoader\GameDataLoader.h">
-      <Filter>SSSF_SourceCode\dataLoader</Filter>
+      <Filter>SSSF_SourceCode\gsm\dataLoader</Filter>
     </ClInclude>
     <ClInclude Include="SSSF_SourceCode\game\Game.h">
       <Filter>SSSF_SourceCode\game</Filter>
@@ -299,7 +299,7 @@
       <Filter>SSSF_SourceCode\PlatformPlugins\DirectXPlugin</Filter>
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\dataLoader\GameDataLoader.cpp">
-      <Filter>SSSF_SourceCode\dataLoader</Filter>
+      <Filter>SSSF_SourceCode\gsm\dataLoader</Filter>
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\PlatformPlugins\WindowsPlugin\WindowsInput.cpp">
       <Filter>SSSF_SourceCode\PlatformPlugins\WindowsPlugin</Filter>

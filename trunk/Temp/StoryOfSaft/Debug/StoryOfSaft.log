@@ -1,18 +1,9 @@
-﻿Build started 3/23/2012 2:42:17 AM.
+﻿Build started 3/23/2012 4:16:15 AM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSButtonEventHandler.cpp SoS_SourceCode\SoSDataLoader.cpp SoS_SourceCode\SoSGame.cpp SoS_SourceCode\SoSGameRules.cpp SoS_SourceCode\SoSKeyEventHandler.cpp SoS_SourceCode\SoSPhysics.cpp SoS_SourceCode\SoSTextGenerator.cpp
-         SoSButtonEventHandler.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         SoSTextGenerator.cpp
-         SoSPhysics.cpp
-         SoSKeyEventHandler.cpp
-         SoSGameRules.cpp
-         SoSGame.cpp
-         SoSDataLoader.cpp
+         All outputs are up-to-date.
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -40,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.94
+Time Elapsed 00:00:04.06

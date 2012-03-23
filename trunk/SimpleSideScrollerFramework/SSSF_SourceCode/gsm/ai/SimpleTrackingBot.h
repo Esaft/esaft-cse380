@@ -32,7 +32,7 @@ public:
 	void	setTrackY(bool tY)	{trackY = tY;}
 	void	setVelMag(float vM) {velMag = vM;}
 	void	think(Game *game);
-
+	void	setDead(bool d);
 	// INLINED METHODS
 	//unsigned int getCyclesRemainingBeforeChange()	{ return cyclesRemainingBeforeChange; }
 
