@@ -106,6 +106,22 @@ void GameStateManager::goToControlsMenu()
 	currentGameState = GS_MENU_CONTROLS_MENU;
 }
 
+void GameStateManager::goToWinScreen()
+{
+	currentGameState = GS_WIN_SCREEN;
+	if (isWorldRenderable())
+		unloadCurrentLevel();
+}
+
+void GameStateManager::goToGameOver()
+{
+	currentGameState = GS_GAME_OVER;
+	if (isWorldRenderable())
+		unloadCurrentLevel();
+}
+
+
+
 /*
 	isGamePaused - Used to test if this application is currently
 	paused. This will dictate what to render, but also
@@ -170,7 +186,7 @@ bool GameStateManager::isWorldRenderable()
 {
 	return (	(currentGameState == GS_GAME_IN_PROGRESS)
 		||		(currentGameState == GS_PAUSED)
-		||		(currentGameState == GS_GAME_OVER));
+		/*||		(currentGameState == GS_GAME_OVER)*/);
 }
 
 /*

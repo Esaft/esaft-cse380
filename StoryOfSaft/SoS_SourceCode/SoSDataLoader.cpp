@@ -1131,9 +1131,9 @@ GameState SoSDataLoader::gsLookup(wstring g)
 	{
 		return GS_GAME_OVER;
 	}
-	if(g.compare(L"GS_WIN")== 0)
+	if(g.compare(L"GS_WIN_SCREEN")== 0)
 	{
-		return GS_WIN;
+		return GS_WIN_SCREEN;
 	}
 	if(g.compare(L"GS_IN_GAME_HELP")== 0)
 	{

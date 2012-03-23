@@ -87,6 +87,7 @@
     <ClInclude Include="SSSF_SourceCode\graphics\GameGraphics.h" />
     <ClInclude Include="SSSF_SourceCode\graphics\RenderList.h" />
     <ClInclude Include="SSSF_SourceCode\graphics\TextureManager.h" />
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\Bot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BotRecycler.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.h" />
@@ -136,6 +137,7 @@
     <ClCompile Include="SSSF_SourceCode\graphics\GameGraphics.cpp" />
     <ClCompile Include="SSSF_SourceCode\graphics\RenderList.cpp" />
     <ClCompile Include="SSSF_SourceCode\graphics\TextureManager.cpp" />
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BotRecycler.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp" />

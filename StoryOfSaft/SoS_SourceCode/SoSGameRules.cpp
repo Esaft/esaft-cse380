@@ -6,6 +6,7 @@
 #include "SSSF_SourceCode\gsm\ai\Bot.h"
 #include "SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.h"
 #include "SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h"
+#include "SSSF_SourceCode\gsm\ai\BackAndForthBot.h"
 #include "SSSF_SourceCode\gsm\physics\PhysicalProperties.h"
 #include "SSSF_SourceCode\gsm\physics\BoundingVolume.h"
 #include "SSSF_SourceCode\gsm\physics\CollidableObject.h"
@@ -24,7 +25,10 @@ SoSGameRules::SoSGameRules()
 		{
 			botToAdd = new SimpleTrackingBot(1.0f,true,false);
 		}
-		if(i == 1);
+		if(i == 1)
+		{
+			botToAdd = new BackAndForthBot(200);
+		}
 		if(i == 2);
 		if(i == 3);
 
@@ -75,6 +79,10 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 		playerColResolve(player, c->getCO1());
 	}
 
+	if(health == 0)
+	{
+		game->getGSM()->goToGameOver();
+	}
 	//Other sprite-sprite collisions really don't have any specific response in this game.
 
 }
@@ -83,10 +91,12 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 {
 	if(!other->isStaticObject())
 	{
-		Bot* b = static_cast<Bot*>(other);
-		if(b->isEnemy())
+		if(other->isEnemy())
 		{
+			Bot* b = static_cast<Bot*>(other);
+			PhysicalProperties* playerProps = player->getPhysicalProperties();
 			PhysicalProperties* pp = b->getPhysicalProperties();
+			
 
 			if(player->getCurrentState().compare(L"ATTACK_STATE") == 0
            				|| player->getCurrentState().compare(L"ATTACKl_STATE") == 0 )
@@ -104,17 +114,28 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 			}
 			else
 			{
-				
+				if(playerProps->getX() < pp->getX())
+				{
+					playerProps->setVelocity(-7.0f,playerProps->getVelocityY());
+					pp->setVelocity(7.0f,pp->getVelocityY());
+				}
+				else
+				{
+					playerProps->setVelocity(7.0f,playerProps->getVelocityY());
+					pp->setVelocity(-7.0f,pp->getVelocityY());
+				}
+
+				health --;
 			}
 		}
-		else if(b->isItem())
+		else if(other->isItem())
 		{
-			if(b->getCurrentState().compare(L"CODE_STATE") == 0)
+			/*if(other->getCurrentState().compare(L"CODE_STATE") == 0)
 			{
 				codeCollected ++;
-			}
+			}*/
 		}
-		else if(b->isPortal())
+		else if(other->isPortal())
 		{
 
 		}
