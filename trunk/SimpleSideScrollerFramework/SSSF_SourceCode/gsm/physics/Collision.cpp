@@ -27,23 +27,23 @@
 			velX -= pp->getVelocityX();
 			velY -= pp->getVelocityY();
 
-			if ((xB-(widthB/2)) > (xA+(widthB/2)))
+			if ((xB-(widthB/2)) > (xA+(widthA/2)))
 			{
 				startTimeOfXCollision = ((xB-(widthB/2)) - (xA + (widthA/2)))/velX;
 				endTimeOfXCollision = ((xB + (widthB/2)) - (xA-(widthA/2)))/velX;
 			}
-			else if ((xB-(widthB/2)) < (xA+(widthB/2)))
+			else if ((xB+(widthB/2)) < (xA-(widthA/2)))
 			{
 				startTimeOfXCollision = ((xB + (widthB/2)) - (xA-(widthA/2)))/velX;
 				endTimeOfXCollision = ((xB-(widthB/2)) - (xA + (widthA/2)))/velX;
 			}
 
-			if ((yB-(heightB/2)) > (yA+(heightB/2)))
+			if ((yB-(heightB/2)) > (yA+(heightA/2)))
 			{
 				startTimeOfYCollision = ((yB-(heightB/2)) - (yA + (heightA/2)))/velY;
 				endTimeOfYCollision = ((yB + (heightB/2)) - (yA-(heightA/2)))/velY;
 			}
-			else if ((yB-(heightB/2)) < (yA+(heightB/2)))
+			else if ((yB+(heightB/2)) < (yA-(heightA/2)))
 			{
 				startTimeOfYCollision = ((yB + (heightB/2)) - (yA-(heightA/2)))/velY;
 				endTimeOfYCollision = ((yB-(heightB/2)) - (yA + (heightA/2)))/velY;

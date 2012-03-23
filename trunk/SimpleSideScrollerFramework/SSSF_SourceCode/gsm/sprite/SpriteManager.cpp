@@ -138,6 +138,7 @@ void SpriteManager::unloadSprites()
 
 Bot* SpriteManager::removeBot(Bot *botToRemove)
 {
+	botsToRemove.push_back(botToRemove);
 	return NULL;
 	// @TODO
 }
@@ -162,4 +163,13 @@ void SpriteManager::update(Game *game)
 		bot->think(game);
 		botIterator++;
 	}
+
+	botIterator = botsToRemove.begin();
+	while (botIterator != botsToRemove.end())
+	{
+		Bot *bot = (*botIterator);
+		bots.remove(bot);
+		botIterator++;
+	}
+	botsToRemove.clear();
 }

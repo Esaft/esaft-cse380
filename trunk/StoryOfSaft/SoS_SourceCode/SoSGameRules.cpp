@@ -49,7 +49,7 @@ void SoSGameRules::setBotSprite(AnimatedSpriteType* ast, int enemyType)
 	float height = ast->getTextureHeight();
 
 	BoundingVolume *bv = b->getBoundingVolume();
-	bv->setWidth(width);
+	bv->setWidth(width*0.6);
 	bv->setHeight(height);
 	bv->setX(width/2);
 	bv->setY(height/2);
@@ -89,7 +89,7 @@ void SoSGameRules::playerColResolve(AnimatedSprite* player, CollidableObject* ot
 			PhysicalProperties* pp = b->getPhysicalProperties();
 
 			if(player->getCurrentState().compare(L"ATTACK_STATE") == 0
-				|| player->getCurrentState().compare(L"ATTACKl_STATE") == 0 )
+           				|| player->getCurrentState().compare(L"ATTACKl_STATE") == 0 )
 			{
 				if(pp->isOrientedRight())
 				{
