@@ -10,6 +10,22 @@
 Bot* SimpleTrackingBot::clone()
 {
 	SimpleTrackingBot *botClone = new SimpleTrackingBot(velMag, trackX, trackY);
+	PhysicalProperties* pp = this->getPhysicalProperties();
+	PhysicalProperties* bp = botClone->getPhysicalProperties();
+	BoundingVolume* pV = this->getBoundingVolume();
+	BoundingVolume* bV = botClone->getBoundingVolume();
+	botClone->setEnemy(enemy);
+	botClone->setItem(item);
+	botClone->setPortal(portal);
+	botClone->setSpriteType(this->getSpriteType());
+	botClone->setAlpha(this->getAlpha());
+	botClone->setDead(false);
+	bp->setCollidable(pp->isCollidable());
+	bp->setGravAffected(pp->isGravAffected());
+	bV->setHeight(pV->getHeight());
+	bV->setWidth(pV->getWidth());
+	bV->setX(pV->getX());
+	bV->setY(pV->getY());
 	return botClone;
 }
 

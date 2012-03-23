@@ -453,6 +453,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	tiledLayerReader.closeReader();
 	
 	world->addLayer(tiledLayer);
+	world->setTiledLayer(tiledLayer);
 	
 	delete tileIDMap;
 	delete tileCollisionMap;
@@ -463,7 +464,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	
 	
 	
-	SpriteManager *spriteManager = gsm->getSpriteManager();
+	/*SpriteManager *spriteManager = gsm->getSpriteManager();
 
 	Bot* bot = gR->getBot(0);
 	bot->setDead(false);
@@ -481,7 +482,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	pp->setY(1600);
 	
 
-	spriteManager->addBot(bot);
+	spriteManager->addBot(bot);*/
 
 	//bot = gR->getBot(2);
 

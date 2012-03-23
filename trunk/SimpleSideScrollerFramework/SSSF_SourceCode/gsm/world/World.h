@@ -37,18 +37,21 @@ private:
 
 	// THESE ARE THE BACKGROUND LAYERS
 	vector<WorldLayer*> *layers;
+	TiledLayer* tL;
 
 public:
 	// INLINED ACCESSOR METHODS
 	vector<WorldLayer*>*	getLayers()	{ return layers;				}
-	int						getWorldHeight()	{ return worldHeight;			}
-	int						getWorldWidth()		{ return worldWidth;			}
+	int						getWorldHeight()	{ return worldHeight;	}
+	int						getWorldWidth()		{ return worldWidth;	}
+	TiledLayer*				getTiledLayer()		{return tL;				}
 
 	// INLINED MUTATOR METHODS
 	void setWorldHeight(int initWorldHeight)
 	{ worldHeight = initWorldHeight;		}
 	void setWorldWidth(int initWorldWidth)
 	{ worldWidth = initWorldWidth;			}
+	void setTiledLayer(TiledLayer* t)	{tL = t;}
 
 	// METHODS DEFINED in GameStateManager.cpp
 	World();

@@ -226,7 +226,7 @@ void Physics::update(Game *game)
 
 			collisions.sort(compare_collisionTime);
 
-			timer += colTime;
+			timer += (colTime-timer);
 		}//end if
 
 
@@ -376,40 +376,16 @@ void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Colli
 	SpriteManager *sm = game->getGSM()->getSpriteManager();
 	AnimatedSprite* player = sm->getPlayer();
 
-	if(c != player && player->isCurrentlyCollidable() == true)
+	if(c != player)
 	{
-		if(willObjectsCollide(player, c) == true)
+		if(player->isCurrentlyCollidable() == true)
 		{
-			Collision* currentCollision = collisionStack[collisionStackCounter];
-			collisionStackCounter --;
-			currentCollision->setCO1(player);
-			currentCollision->setCO2(c);
-			currentCollision->calculateTimes();
-
-			if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
-			{
-				collisions->push_back(currentCollision);
-			}
-			else
-			{
-				collisionStackCounter ++;
-				collisionStack[collisionStackCounter] = currentCollision;
-			}
-		}
-	}
-
-	list<Bot*>::iterator botIterator = sm->getBotsIterator();
-	while (botIterator != sm->getEndOfBotsIterator())
-	{			
-		Bot *bot = (*botIterator);
-		if(c != bot && bot->isCurrentlyCollidable() == true)
-		{
-			if(willObjectsCollide(c, bot) == true)
+			if(willObjectsCollide(player, c) == true)
 			{
 				Collision* currentCollision = collisionStack[collisionStackCounter];
 				collisionStackCounter --;
-				currentCollision->setCO1(c);
-				currentCollision->setCO2(bot);
+				currentCollision->setCO1(player);
+				currentCollision->setCO2(c);
 				currentCollision->calculateTimes();
 
 				if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
@@ -421,10 +397,39 @@ void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Colli
 					collisionStackCounter ++;
 					collisionStack[collisionStackCounter] = currentCollision;
 				}
-			}
-		}
+			}//end if
+		}//end if
+	}//end if
+	else
+	{
+		list<Bot*>::iterator botIterator = sm->getBotsIterator();
+		while (botIterator != sm->getEndOfBotsIterator())
+		{			
+			Bot *bot = (*botIterator);
+			if(c != bot && bot->isCurrentlyCollidable() == true)
+			{
+				if(willObjectsCollide(c, bot) == true)
+				{
+					Collision* currentCollision = collisionStack[collisionStackCounter];
+					collisionStackCounter --;
+					currentCollision->setCO1(c);
+					currentCollision->setCO2(bot);
+					currentCollision->calculateTimes();
+
+					if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
+					{
+						collisions->push_back(currentCollision);
+					}
+					else
+					{
+						collisionStackCounter ++;
+						collisionStack[collisionStackCounter] = currentCollision;
+					}
+				}//end if
+			}//end if
+			botIterator++;
+		}//end while
 		
-		botIterator++;
 	}
 	/*Collision* currentCollision = collisionStack[collisionStackCounter];
 	collisionStackCounter --;
@@ -540,6 +545,7 @@ void Physics::resolveCollision(Game* game, Collision* currentCollision)
 				{
 					pp->setJumped(false);
 					pp->setDoubleJumped(false);
+					pp->setStunned(false);
 				}
 				pp->setVelocity(pp->getVelocityX(), 0);
 		}
@@ -617,6 +623,54 @@ void Physics::resolveCollision(Game* game, Collision* currentCollision)
 
 		//	pp->setVelocity(0,0);
 		//}
+	}
+	else
+	{
+
+		pp = co1->getPhysicalProperties();
+		bv = co1->getBoundingVolume();
+		float x = pp->getX()+ bv->getX() - (bv->getWidth()/2);
+		float y = pp->getY()+ bv->getY() - (bv->getHeight()/2);
+		float xR = x + bv->getWidth();
+		float yB = y + bv->getHeight();
+
+		PhysicalProperties* p2 = co2->getPhysicalProperties();
+		bv = co2->getBoundingVolume();
+		float tX = p2->getX() + bv->getX() - (bv->getWidth()/2);
+		float tY = p2->getY() + bv->getY() - (bv->getHeight()/2);
+		float tXR = tX+bv->getWidth();
+		float tYB = tY+bv->getHeight();
+		//pp->setVelocity(0, 0);
+
+		if(x >= tXR)
+		{
+			if(co1->isMobile())
+				pp->setX(pp->getX() + 0.1);
+			if(co2->isMobile())
+				p2->setX(p2->getX() - 0.1);
+
+		}
+		if(xR <= tX)
+		{
+			if(co1->isMobile())
+				pp->setX(pp->getX() - 0.1);
+			if(co2->isMobile())
+				p2->setX(p2->getX() + 0.1);
+		}
+		if(y >= tYB)
+		{
+			if(co1->isMobile())
+				pp->setY(pp->getY() + 0.1);
+			if(co2->isMobile())
+				p2->setY(p2->getY() - 0.1);
+		}
+		if(yB <= tY)
+		{
+			if(co1->isMobile())
+				pp->setY(pp->getY() - 0.1);
+			if(co2->isMobile())
+				p2->setY(p2->getY() + 0.1);
+		}
 	}
 }
 

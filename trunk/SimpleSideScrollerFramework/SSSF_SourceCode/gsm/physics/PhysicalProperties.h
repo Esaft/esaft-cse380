@@ -12,6 +12,7 @@ protected:
 	bool  jumped;
 	bool  doubleJumped;
 	bool  orientationRight;
+	bool  stunned;
 	float coefficientOfRestitution;
 	float x;
 	float y;
@@ -22,7 +23,7 @@ protected:
 	float accelerationY;
 
 public:
-	PhysicalProperties()	{accelerationX = 0; accelerationY = 0;}
+	PhysicalProperties()	{accelerationX = 0; accelerationY = 0; stunned = false;}
 	~PhysicalProperties()	{}
 
 	// INLINED METHODS
@@ -31,6 +32,7 @@ public:
 	float getCoefficientOfRestitution()		{ return coefficientOfRestitution;	}
 	bool isCollidable()						{ return collidable;			}
 	bool isGravAffected()					{ return gravAffected;			}
+	bool isStunned()						{ return stunned;			}
 	bool hasJumped()						{ return jumped;				}
 	bool hasDoubleJumped()					{ return doubleJumped;			}
 	bool isOrientedRight()					{ return orientationRight;		}
@@ -49,6 +51,7 @@ public:
 	void setOrientedRight()					{ orientationRight = true;		}
 	void setOrientedLeft()					{ orientationRight = false;		}
 	void setJumped(bool initJ)				{ jumped = initJ;				}
+	void setStunned(bool initS)				{ stunned = initS;				}
 	void setDoubleJumped(bool initDJ)		{ doubleJumped = initDJ;		}
 	void setX(float initX)					{ x = initX;					}
 	void incX(float xToInc)					{ x += xToInc;					}
