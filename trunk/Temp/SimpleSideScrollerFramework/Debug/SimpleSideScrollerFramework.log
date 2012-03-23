@@ -1,11 +1,27 @@
-﻿Build started 3/22/2012 7:08:13 PM.
+﻿Build started 3/22/2012 11:03:03 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild".
+         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp
-         SimpleTrackingBot.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\SimpleSideScrollerFramework\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\SimpleSideScrollerFramework.pch" /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SSSF_SourceCode\gsm\physics\Physics.cpp
+         Physics.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(181): warning C4805: '==' : unsafe mix of type 'boolean' and type 'bool' in operation
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(210): warning C4805: '==' : unsafe mix of type 'boolean' and type 'bool' in operation
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(307): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(308): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(309): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(310): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(329): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(330): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(331): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(332): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(465): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(479): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(497): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\simplesidescrollerframework\sssf_sourcecode\gsm\physics\physics.cpp(499): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Lib:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Common\SimpleSideScrollerFramework.lib" /NOLOGO "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\GameDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\SimpleSideScrollerFramework\Debug\Game.obj"
@@ -49,4 +65,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.51
+Time Elapsed 00:00:01.47

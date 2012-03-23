@@ -7,6 +7,8 @@ class SoSGameRules: public GameRules
 {
 	private:
 		vector<Bot*> *botTypeList; 
+		int health;
+		int codeCollected;
 
 	public:
 		SoSGameRules();
@@ -17,6 +19,6 @@ class SoSGameRules: public GameRules
 		void gameSpecificResolve(Collision* c);
 		void spawnEnemies(Game* game);
 		void setBotSprite(AnimatedSpriteType* ast, int enemyType);
-		
+		void setUpGame();
 
 };
