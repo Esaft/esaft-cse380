@@ -212,6 +212,12 @@
     <ClInclude Include="SSSF_SourceCode\gsm\physics\Collision.h">
       <Filter>SSSF_SourceCode\gsm\physics</Filter>
     </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\game\GameRules.h">
+      <Filter>SSSF_SourceCode\game</Filter>
+    </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -312,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\gsm\physics\Collision.cpp">
       <Filter>SSSF_SourceCode\gsm\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

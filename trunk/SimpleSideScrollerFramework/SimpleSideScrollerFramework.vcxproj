@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClInclude Include="SSSF_SourceCode\dataLoader\GameDataLoader.h" />
     <ClInclude Include="SSSF_SourceCode\game\Game.h" />
+    <ClInclude Include="SSSF_SourceCode\game\GameRules.h" />
     <ClInclude Include="SSSF_SourceCode\game\IllegalArgumentException.h" />
     <ClInclude Include="SSSF_SourceCode\game\IllegalFileFormatException.h" />
     <ClInclude Include="SSSF_SourceCode\game\WStringTable.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BotRecycler.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.h" />
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\BoundingVolume.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\CollidableObject.h" />
     <ClInclude Include="SSSF_SourceCode\gsm\physics\Collision.h" />
@@ -137,6 +139,7 @@
     <ClCompile Include="SSSF_SourceCode\gsm\ai\BotRecycler.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\RandomFloatingBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\ai\SimplePatternBot.cpp" />
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\physics\Collision.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\physics\Physics.cpp" />
     <ClCompile Include="SSSF_SourceCode\gsm\sprite\AnimatedSprite.cpp" />

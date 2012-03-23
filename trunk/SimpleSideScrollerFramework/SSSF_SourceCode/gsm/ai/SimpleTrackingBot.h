@@ -23,7 +23,7 @@ private:
 	//SimpleTrackingBot();
 
 public:
-	SimpleTrackingBot(float vM);
+	SimpleTrackingBot(float vM, bool tX, bool tY);
 	~SimpleTrackingBot() {}
 	Bot*	clone();
 	//void initBot();

@@ -9,13 +9,15 @@
 
 Bot* SimpleTrackingBot::clone()
 {
-	SimpleTrackingBot *botClone = new SimpleTrackingBot(velMag);
+	SimpleTrackingBot *botClone = new SimpleTrackingBot(velMag, trackX, trackY);
 	return botClone;
 }
 
-SimpleTrackingBot::SimpleTrackingBot(float vM)
+SimpleTrackingBot::SimpleTrackingBot(float vM, bool tX, bool tY)
 {
 	velMag = vM;
+	trackX = tX;
+	trackY = tY;
 }
 
 void SimpleTrackingBot::think(Game *game)
