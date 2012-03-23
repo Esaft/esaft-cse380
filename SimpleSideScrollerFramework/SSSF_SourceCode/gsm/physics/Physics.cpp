@@ -257,7 +257,15 @@ void Physics::update(Game *game)
 		}
 	}
 	
-	pp = player->getPhysicalProperties();;
+	pp = player->getPhysicalProperties();
+	if(pp->getX() < 0)
+	{
+		pp->setX(0);
+	}
+	if(pp->getY() < 0)
+	{
+		pp->setY(0);
+	}
 	pp->setVelocity(0.0f, pp->getVelocityY());
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
@@ -312,6 +320,10 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 	int firstRow = minY/tH;
 	int lastRow = maxY/tH;
 
+	if(firstCol < 0)
+		firstCol = 0;
+	if(firstRow < 0)
+		firstRow = 0;
 	if(lastCol >= tL->getColumns())
 		lastCol = tL->getColumns() - 1;
 	if(lastRow >= tL->getRows())
