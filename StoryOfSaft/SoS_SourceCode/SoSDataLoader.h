@@ -27,6 +27,7 @@ private:
 
 	//helper method for loading world
 	void loadPlayer(Game *game, wstring playerInitFile);
+	void loadBots(Game *game, wstring botInitFile);
 
 public:
 	SoSDataLoader()	{}

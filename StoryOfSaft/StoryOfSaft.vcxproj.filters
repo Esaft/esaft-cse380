@@ -35,6 +35,9 @@
     <ClInclude Include="SoS_SourceCode\SoSPhysics.h">
       <Filter>SoS_SourceCode</Filter>
     </ClInclude>
+    <ClInclude Include="SoS_SourceCode\SoSGameRules.h">
+      <Filter>SoS_SourceCode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SoS_SourceCode\SoSDataLoader.cpp">
@@ -53,6 +56,9 @@
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
     <ClCompile Include="SoS_SourceCode\SoSPhysics.cpp">
+      <Filter>SoS_SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SoS_SourceCode\SoSGameRules.cpp">
       <Filter>SoS_SourceCode</Filter>
     </ClCompile>
   </ItemGroup>

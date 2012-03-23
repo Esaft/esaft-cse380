@@ -1,14 +1,15 @@
-﻿Build started 3/21/2012 12:43:25 PM.
+﻿Build started 3/22/2012 7:57:23 PM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild".
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSButtonEventHandler.cpp SoS_SourceCode\SoSDataLoader.cpp SoS_SourceCode\SoSGame.cpp SoS_SourceCode\SoSKeyEventHandler.cpp SoS_SourceCode\SoSPhysics.cpp SoS_SourceCode\SoSTextGenerator.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSButtonEventHandler.cpp SoS_SourceCode\SoSDataLoader.cpp SoS_SourceCode\SoSGame.cpp SoS_SourceCode\SoSGameRules.cpp SoS_SourceCode\SoSKeyEventHandler.cpp SoS_SourceCode\SoSPhysics.cpp SoS_SourceCode\SoSTextGenerator.cpp
          SoSKeyEventHandler.cpp
          Generating Code...
          Skipping... (no relevant changes detected)
          SoSTextGenerator.cpp
          SoSPhysics.cpp
+         SoSGameRules.cpp
          SoSGame.cpp
          SoSDataLoader.cpp
          SoSButtonEventHandler.cpp
@@ -22,6 +23,7 @@
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSButtonEventHandler.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSDataLoader.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSGame.obj"
+         "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSGameRules.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSKeyEventHandler.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSPhysics.obj"
          "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\SoSTextGenerator.obj"
@@ -38,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.92
+Time Elapsed 00:00:06.55

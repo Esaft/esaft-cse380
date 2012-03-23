@@ -11,6 +11,7 @@ protected:
 	bool  gravAffected;
 	bool  jumped;
 	bool  doubleJumped;
+	bool  orientationRight;
 	float coefficientOfRestitution;
 	float x;
 	float y;
@@ -32,6 +33,7 @@ public:
 	bool isGravAffected()					{ return gravAffected;			}
 	bool hasJumped()						{ return jumped;				}
 	bool hasDoubleJumped()					{ return doubleJumped;			}
+	bool isOrientedRight()					{ return orientationRight;		}
 	float getX()							{ return x;						}
 	float getY()							{ return y;						}
 	float getZ()							{ return z;						}
@@ -44,6 +46,8 @@ public:
 	void setCofficientOfRestitution(float cR) { coefficientOfRestitution = cR; }
 	void setCollidable(bool initCollidable)	{ collidable = initCollidable;	}
 	void setGravAffected(bool initGA)		{ gravAffected = initGA;		}
+	void setOrientedRight()					{ orientationRight = true;		}
+	void setOrientedLeft()					{ orientationRight = false;		}
 	void setJumped(bool initJ)				{ jumped = initJ;				}
 	void setDoubleJumped(bool initDJ)		{ doubleJumped = initDJ;		}
 	void setX(float initX)					{ x = initX;					}

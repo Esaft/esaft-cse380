@@ -9,6 +9,7 @@
 
 // GAME OBJECT INCLUDES
 #include "SSSF_SourceCode\game\Game.h"
+#include "SSSF_SourceCode\game\GameRules.h"
 #include "SSSF_SourceCode\graphics\GameGraphics.h"
 #include "SSSF_SourceCode\gsm\state\GameState.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
@@ -347,6 +348,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	
 	GameStateManager *gsm = game->getGSM();
 	GameGraphics *graphics = game->getGraphics();
+	GameRules *gR = game->getGameRules();
 	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
 	Physics *physics = gsm->getPhysics();
 
@@ -394,6 +396,7 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	wstring tileInfoFile = reader.getNextLine();
 	wstring playerInfoFile = reader.getNextLine();
 	wstring tiledLayerFile = reader.getNextLine();
+	wstring botInfoFile = reader.getNextLine();
 	reader.closeReader();
 	BufferedTextFileReader tileInfoReader;
 	tileInfoReader.initFile(tileInfoFile);
@@ -450,10 +453,25 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	delete tileCollisionMap;
 
 	loadPlayer(game, playerInfoFile);
+	loadBots(game, botInfoFile);
 	
+	SpriteManager *spriteManager = gsm->getSpriteManager();
+
+	Bot* bot = gR->getBot(0);
+
 	
 
+	bot->setAlpha(255);
+	bot->setCurrentState(L"RIGHT_STATE");
+	bot->setCurrentlyCollidable(true);
+	PhysicalProperties *pp = bot->getPhysicalProperties();
+	pp->setCollidable(true);
+	pp->setGravAffected(true);
+	pp->setX(400);
+	pp->setY(1600);
+	
 
+	spriteManager->addBot(bot);
 	/////////////////////////////////////////ADDING THE PATTERN BOT
 
 	//SpriteManager *spriteManager = gsm->getSpriteManager();
@@ -596,6 +614,86 @@ void SoSDataLoader::loadPlayer(Game *game, wstring playerInitFile)
 
 	delete playerMap;
 }
+
+void SoSDataLoader::loadBots(Game *game, wstring botInitFile)
+{
+	GameStateManager *gsm = game->getGSM();
+	GameRules* gR = game->getGameRules();
+	GameGraphics *graphics = game->getGraphics();
+	TextureManager *worldTextureManager = graphics->getWorldTextureManager();
+	SpriteManager *spriteManager = gsm->getSpriteManager();
+
+	map<wstring, int> *botMap = new map<wstring, int>();//Sprite identifier, spriteImageID
+	
+
+	BufferedTextFileReader botLocReader;
+	botLocReader.initFile(botInitFile);
+	wstring line;
+	unsigned int delimiterIndex;
+	unsigned int typeCounter = 0;
+
+	
+
+	while(botLocReader.hasMoreLines())
+	{
+		line = botLocReader.getNextLine();
+		AnimatedSpriteType *ast = new AnimatedSpriteType();
+		BufferedTextFileReader reader;
+		reader.initFile(line);
+		
+		int numSprites = _wtoi(reader.getNextLine().c_str());
+		wchar_t delim = ',';
+
+		for(int i = 0; i < numSprites; i++)
+		{
+			line = reader.getNextLine();
+			delimiterIndex = line.find(delim);
+			wstring name = line.substr(0, delimiterIndex);
+			wstring path = line.substr(delimiterIndex+1);
+			(*botMap)[name] = worldTextureManager->loadTexture(path);
+		}
+
+		line = reader.getNextLine();
+		delimiterIndex = line.find(delim);
+		int width = _wtoi(line.substr(0, delimiterIndex).c_str());
+		int height = _wtoi(line.substr(delimiterIndex+1).c_str());
+
+		ast->setTextureSize(height, width);
+	
+		//line = reader.getNextLine();
+		int numStates = _wtoi(reader.getNextLine().c_str());
+	
+		//loads each state
+		for(int i = 0; i < numStates; i++)
+		{
+			line = reader.getNextLine();
+			delimiterIndex = line.find(delim);
+			wstring stateName = line.substr(0, delimiterIndex);
+			int numFrames = _wtoi(line.substr(delimiterIndex+1).c_str());
+			ast->addAnimationSequence(stateName);
+
+			//loads each frame in state
+			for(int j = 0; j < numFrames; j++)
+			{
+				line = reader.getNextLine();
+				delimiterIndex = line.find(delim);
+				wstring sprite = line.substr(0, delimiterIndex);
+				int duration = _wtoi(line.substr(delimiterIndex+1).c_str());
+				ast->addAnimationFrame(stateName, (*botMap)[sprite], duration);
+			}//end for
+		}//end for
+
+		unsigned int spriteTypeID = spriteManager->addSpriteType(ast);
+		ast->setSpriteTypeID(spriteTypeID);
+
+		gR->setBotSprite(ast, typeCounter);
+
+		typeCounter ++;
+		botMap->clear();
+	}
+	delete botMap;
+}
+
 
 /*
 	initSoSGUI - This method builds a GUI for the SoS Game application.
@@ -861,7 +959,7 @@ void SoSDataLoader::hardCodedLoadLevelExample(Game *game)
 	world->addLayer(tiledLayer);
 
 	loadPlayer(game, L"data/PlayerInfo.csv");
-
+	loadBots(game, L"data/botInfo.csv");
 	// AND NOW LET'S MAKE A MAIN CHARACTER SPRITE
 	/*AnimatedSpriteType *ast = new AnimatedSpriteType();
 	int spriteImageID0 = worldTextureManager->loadTexture(PLAYER_IDLE0_PATH);

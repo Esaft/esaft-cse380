@@ -37,9 +37,6 @@ DIE4,textures/world/sprites/brainzombie/zb_DIE_4.png
 DIE5,textures/world/sprites/brainzombie/zb_DIE_5.png
 DIE6,textures/world/sprites/brainzombie/zb_DIE_6.png
 DIE7,textures/world/sprites/brainzombie/zb_DIE_7.png
-DIE10,textures/world/sprites/brainzombie/zb_DIE_10.png
-DIE11,textures/world/sprites/brainzombie/zb_DIE_11.png
-DIE12,textures/world/sprites/brainzombie/zb_DIE_12.png
 DIEL0,textures/world/sprites/brainzombie/zb_DIEL_0.png
 DIEL1,textures/world/sprites/brainzombie/zb_DIEL_1.png
 DIEL2,textures/world/sprites/brainzombie/zb_DIEL_2.png
@@ -50,7 +47,7 @@ DIEL6,textures/world/sprites/brainzombie/zb_DIEL_6.png
 DIEL7,textures/world/sprites/brainzombie/zb_DIEL_7.png
 64,64
 4
-RIGHT_STATE,12
+RIGHT_STATE,15
 RIGHT0,5
 RIGHT1,5
 RIGHT2,5
@@ -66,7 +63,7 @@ RIGHT11,5
 RIGHT12,5
 RIGHT13,5
 RIGHT14,5
-LEFT_STATE,12
+LEFT_STATE,15
 LEFT0,5
 LEFT1,5
 LEFT2,5
@@ -82,7 +79,7 @@ LEFT11,5
 LEFT12,5
 LEFT13,5
 LEFT14,5
-DIE_STATE,13
+DIE_STATE,8
 DIE0,5
 DIE1,5
 DIE2,5
@@ -91,7 +88,7 @@ DIE4,5
 DIE5,5
 DIE6,5
 DIE7,5
-DIEL_STATE,13
+DIEL_STATE,8
 DIEL0,5
 DIEL1,5
 DIEL2,5

@@ -85,7 +85,12 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		{
 			attacking = true;
 			if(input->isKeyDownForFirstTime(SPACE_KEY))
+			{
+			
 				player->setCurrentState(L"ATTACK_STATE");
+				if(!pp->isOrientedRight())
+					player->setCurrentState(L"ATTACKL_STATE");
+			}
 			
 		}
 
@@ -98,6 +103,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		
 		if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
 		{
+			pp->setOrientedLeft();
 			vX = -PLAYER_SPEED;
 			if (vY == 0 && player->getCurrentState().compare(L"LEFT_STATE") != 0)
 				player->setCurrentState(L"LEFT_STATE");
@@ -106,6 +112,7 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		}
 		if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
 		{
+			pp->setOrientedRight();
 			vX = PLAYER_SPEED;
 			if (vY == 0 && player->getCurrentState().compare(L"RIGHT_STATE") != 0)
 				player->setCurrentState(L"RIGHT_STATE");
@@ -134,9 +141,12 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 			}
 		}	
 
-		if(vY == 0 && vX == 0 && !attacking && player->getCurrentState().compare(L"IDLE_STATE") != 0)
+		if(vY == 0 && vX == 0 && !attacking && 
+			player->getCurrentState().compare(L"IDLE_STATE") != 0 && player->getCurrentState().compare(L"IDLEL_STATE") != 0 )
 		{
 			player->setCurrentState(L"IDLE_STATE");
+			if(!pp->isOrientedRight())
+				player->setCurrentState(L"IDLEL_STATE");
 		}
 		
 		// NOW SET THE ACTUAL VELOCITY
