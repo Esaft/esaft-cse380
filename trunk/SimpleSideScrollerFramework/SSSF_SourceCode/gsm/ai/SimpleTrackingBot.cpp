@@ -45,7 +45,7 @@ void SimpleTrackingBot::think(Game *game)
 			}
 			else
 			{	
-				if(pp->getVelocityX() < 0)
+				if(pp->getVelocityX() <= 0)
 				{
 					this->setCurrentState(L"RIGHT_STATE");
 					pp->setVelocity(velMag,pp->getVelocityY());

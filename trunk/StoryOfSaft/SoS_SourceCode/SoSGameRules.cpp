@@ -135,7 +135,7 @@ void SoSGameRules::playerColResolve(Game* game, AnimatedSprite* player, Collidab
 			
 
 			if(player->getCurrentState().compare(L"ATTACK_STATE") == 0
-           				|| player->getCurrentState().compare(L"ATTACKl_STATE") == 0 )
+           				|| player->getCurrentState().compare(L"ATTACKL_STATE") == 0 )
 			{
 				if(pp->isOrientedRight())
 				{

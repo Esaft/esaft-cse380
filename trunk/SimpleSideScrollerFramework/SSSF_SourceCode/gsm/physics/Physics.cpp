@@ -255,6 +255,7 @@ void Physics::update(Game *game)
 			pp->setPosition(pp->getX() + (pp->getVelocityX()*(1-timer)), pp->getY() + (pp->getVelocityY()*(1-timer)));
 			botIterator++;
 		}
+		gsm->updateViewport(game, 1-timer);
 	}
 	
 	pp = player->getPhysicalProperties();
@@ -266,7 +267,7 @@ void Physics::update(Game *game)
 	{
 		pp->setY(0);
 	}
-	pp->setVelocity(0.0f, pp->getVelocityY());
+	//pp->setVelocity(0.0f, pp->getVelocityY());
 	/*pp->setPosition(pp->getX() + pp->getVelocityX(), pp->getY() + pp->getVelocityY());
 
 	// FOR NOW THE PLAYER IS DIRECTLY CONTROLLED BY THE KEYBOARD,
@@ -493,84 +494,115 @@ void Physics::resolveCollision(Game* game, Collision* currentCollision)
 	CollidableObject* co1 = currentCollision->getCO1();
 	CollidableObject* co2 = currentCollision->getCO2();
 	PhysicalProperties* pp;
+	BoundingVolume* bv;
 	AnimatedSprite* player = game->getGSM()->getSpriteManager()->getPlayer();
 	
 	if(co2->isStaticObject() == true)
 	{
 		pp = co2->getPhysicalProperties();
+		bv = co2->getBoundingVolume();
 		float tX = pp->getX();
 		float tY = pp->getY();
+		float tXR = tX + bv->getWidth();
+		float tYB = tY + bv->getHeight();
 
 		pp = co1->getPhysicalProperties();
-		float x = pp->getX();
-		float y = pp->getY();
+		bv = co1->getBoundingVolume();
+		float x = pp->getX() + bv->getX() - (bv->getWidth()/2);
+		float y = pp->getY() + bv->getY() - (bv->getHeight()/2);
+		float xR = x+bv->getWidth();
+		float yB = y+bv->getHeight();
 		//pp->setVelocity(0, 0);
 
 		/*if(x < tX)
 			pp->setX(pp->getX() - 0.1);
 		if(x > tX)
 			pp->setX(pp->getX() + 0.1);*/
-		
-
-		if(currentCollision->getTOC() == currentCollision->getSYC())
+		if(x >= tXR)
 		{
-			/*if(pp->getVelocityY() < 0)
-			{
-				pp->setY(pp->getY() + 0.1);
-			}
-			else
-			{
-				pp->setY(pp->getY() - 0.1);
-				if(co1 == player)
-				{
-					pp->setJumped(false);
-					pp->setDoubleJumped(false);
-					if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
-						|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
-					{
-						player->setCurrentState(L"IDLE_STATE");
-					}
-				}
-			}*/
-			if(y < tY)
-			{
-				pp->setY(pp->getY() - 0.1);
-				if(co1 == player)
-				{
-					pp->setJumped(false);
-					pp->setDoubleJumped(false);
-					/*if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
-						|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
-					{
-						player->setCurrentState(L"IDLE_STATE");
-					}*/
-				}
-			}
-			if(y > tY)
-			{
-				pp->setY(pp->getY() + 0.1);
-				
-			}
-			pp->setVelocity(pp->getVelocityX(), 0);
-			
-			
-		}
-		else if(currentCollision->getTOC() == currentCollision->getSXC())
-		{
-			/*if(pp->getVelocityX() < 0)
-			{
-				pp->setX(pp->getX() + 0.1);
-			}
-			else
-			{
-				pp->setX(pp->getX() - 0.1);
-			}*/
-			if(x < tX)
-			pp->setX(pp->getX() - 0.1);
-			if(x > tX)
 			pp->setX(pp->getX() + 0.1);
 			pp->setVelocity(0, pp->getVelocityY());
 		}
+		if(xR <= tX)
+		{
+			pp->setX(pp->getX() - 0.1);
+			pp->setVelocity(0, pp->getVelocityY());
+		}
+		if(y >= tYB)
+		{
+			pp->setY(pp->getY() + 0.1);
+			pp->setVelocity(pp->getVelocityX(), 0);
+		}
+		if(yB <= tY)
+		{
+			pp->setY(pp->getY() - 0.1);
+				if(co1 == player)
+				{
+					pp->setJumped(false);
+					pp->setDoubleJumped(false);
+				}
+				pp->setVelocity(pp->getVelocityX(), 0);
+		}
+
+		//if(currentCollision->getTOC() == currentCollision->getSYC())
+		//{
+		//	/*if(pp->getVelocityY() < 0)
+		//	{
+		//		pp->setY(pp->getY() + 0.1);
+		//	}
+		//	else
+		//	{
+		//		pp->setY(pp->getY() - 0.1);
+		//		if(co1 == player)
+		//		{
+		//			pp->setJumped(false);s
+		//			pp->setDoubleJumped(false);
+		//			if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
+		//				|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
+		//			{
+		//				player->setCurrentState(L"IDLE_STATE");
+		//			}
+		//		}
+		//	}*/
+		//	if(y < tY)
+		//	{
+		//		pp->setY(pp->getY() - 0.1);
+		//		if(co1 == player)
+		//		{
+		//			pp->setJumped(false);
+		//			pp->setDoubleJumped(false);
+		//			/*if(player->getCurrentState().compare(L"JUMP_STATE") == 0 
+		//				|| player->getCurrentState().compare(L"JUMPL_STATE") == 0)
+		//			{
+		//				player->setCurrentState(L"IDLE_STATE");
+		//			}*/
+		//		}
+		//	}
+		//	if(y > tY)
+		//	{
+		//		pp->setY(pp->getY() + 0.1);
+		//		
+		//	}
+		//	pp->setVelocity(pp->getVelocityX(), 0);
+		//	
+		//	
+		//}
+		//else if(currentCollision->getTOC() == currentCollision->getSXC())
+		//{
+		//	/*if(pp->getVelocityX() < 0)
+		//	{
+		//		pp->setX(pp->getX() + 0.1);
+		//	}
+		//	else
+		//	{
+		//		pp->setX(pp->getX() - 0.1);
+		//	}*/
+		//	/*if(x < tX)
+		//	pp->setX(pp->getX() - 0.1);
+		//	if(x > tX)
+		//	pp->setX(pp->getX() + 0.1);*/
+		//	pp->setVelocity(0, pp->getVelocityY());
+		//}
 		//else
 		//{
 		//	/*if(pp->getVelocityY() < 0)
