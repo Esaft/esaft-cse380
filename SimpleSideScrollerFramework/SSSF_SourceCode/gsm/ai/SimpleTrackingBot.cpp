@@ -26,7 +26,7 @@ void SimpleTrackingBot::think(Game *game)
 {
 	
 	PhysicalProperties* pp	= &(this->pp);
-	if(dead)
+	if(!dead)
 	{
 		PhysicalProperties* playerProps = game->getGSM()->getSpriteManager()->getPlayer()->getPhysicalProperties();
 	
@@ -66,7 +66,7 @@ void SimpleTrackingBot::think(Game *game)
 		wstring curState = this->getCurrentState();
 		pp->setVelocity(0,pp->getVelocityY());
 		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
-		if(this->getFrameIndex()/2 == lastFrame)
+		if(this->getFrameIndex() == lastFrame)
 		{
 			game->getGSM()->getSpriteManager()->removeBot(this);
 		}
@@ -81,6 +81,7 @@ void SimpleTrackingBot::setDead(bool d)
 	if(dead)
 	{
 		this->setCurrentState(L"DIE_STATE");
+		this->setCurrentlyCollidable(false);
 		if(!pp->isOrientedRight())
 		{
 			this->setCurrentState(L"DIEL_STATE");
