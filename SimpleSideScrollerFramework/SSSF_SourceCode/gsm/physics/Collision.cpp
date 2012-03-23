@@ -49,7 +49,7 @@
 				endTimeOfYCollision = ((yB-(heightB/2)) - (yA + (heightA/2)))/velY;
 			}
 	
-
+			timeOfCollision = 10;
 			if(startTimeOfXCollision > startTimeOfYCollision)
 			{
 				if(startTimeOfXCollision <= 1 && startTimeOfXCollision > 0)
@@ -59,12 +59,11 @@
 			}
 			else if(startTimeOfXCollision <= startTimeOfYCollision)
 			{
-				 if(startTimeOfYCollision > 0 && startTimeOfYCollision <= 1)
+				 if(startTimeOfYCollision <= 1 && startTimeOfYCollision > 0)
 					timeOfCollision = startTimeOfYCollision;
 				 else if(startTimeOfXCollision <= 1 && startTimeOfXCollision > 0)
 					 timeOfCollision = startTimeOfXCollision;
 			}
-			else
-				timeOfCollision = 10;
+			
 		
 		}

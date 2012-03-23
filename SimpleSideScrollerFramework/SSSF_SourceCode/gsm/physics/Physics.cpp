@@ -377,33 +377,12 @@ void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Colli
 
 	if(c != player && player->isCurrentlyCollidable() == true)
 	{
-		Collision* currentCollision = collisionStack[collisionStackCounter];
-		collisionStackCounter --;
-		currentCollision->setCO1(c);
-		currentCollision->setCO2(player);
-		currentCollision->calculateTimes();
-
-		if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
-		{
-			collisions->push_back(currentCollision);
-		}
-		else
-		{
-			collisionStackCounter ++;
-			collisionStack[collisionStackCounter] = currentCollision;
-		}
-	}
-
-	list<Bot*>::iterator botIterator = sm->getBotsIterator();
-	while (botIterator != sm->getEndOfBotsIterator())
-	{			
-		Bot *bot = (*botIterator);
-		if(c != bot && bot->isCurrentlyCollidable() == true)
+		if(willObjectsCollide(player, c) == true)
 		{
 			Collision* currentCollision = collisionStack[collisionStackCounter];
 			collisionStackCounter --;
-			currentCollision->setCO1(c);
-			currentCollision->setCO2(bot);
+			currentCollision->setCO1(player);
+			currentCollision->setCO2(c);
 			currentCollision->calculateTimes();
 
 			if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
@@ -414,6 +393,33 @@ void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Colli
 			{
 				collisionStackCounter ++;
 				collisionStack[collisionStackCounter] = currentCollision;
+			}
+		}
+	}
+
+	list<Bot*>::iterator botIterator = sm->getBotsIterator();
+	while (botIterator != sm->getEndOfBotsIterator())
+	{			
+		Bot *bot = (*botIterator);
+		if(c != bot && bot->isCurrentlyCollidable() == true)
+		{
+			if(willObjectsCollide(c, bot) == true)
+			{
+				Collision* currentCollision = collisionStack[collisionStackCounter];
+				collisionStackCounter --;
+				currentCollision->setCO1(c);
+				currentCollision->setCO2(bot);
+				currentCollision->calculateTimes();
+
+				if(currentCollision->getTOC() > 0 && currentCollision->getTOC() <= 1)
+				{
+					collisions->push_back(currentCollision);
+				}
+				else
+				{
+					collisionStackCounter ++;
+					collisionStack[collisionStackCounter] = currentCollision;
+				}
 			}
 		}
 		
@@ -429,6 +435,57 @@ void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Colli
 
 	collisions->push_back(currentCollision);*/
 
+}
+
+bool Physics::willObjectsCollide(CollidableObject* coA, CollidableObject* coB)
+{
+	PhysicalProperties* pp = coA->getPhysicalProperties();
+	BoundingVolume* bv = coA->getBoundingVolume();
+	float widthA = bv->getWidth();
+	float heightA = bv->getHeight();
+	float xA = pp->getX() + bv->getX();
+	float yA = pp->getY() + bv->getY();
+	float velXA = pp->getVelocityX();
+	float velYA = pp->getVelocityY();
+	float minXA = xA-(widthA/2);
+	float maxXA = xA+(widthA/2);
+	float minYA = yA-(heightA/2);
+	float maxYA = yA+(heightA/2);
+
+	if(velXA >= 0)
+		maxXA += velXA; 
+	if(velXA < 0)
+		minXA += velXA; 
+	if(velYA >= 0)
+		maxYA += velYA; 
+	if(velYA < 0)
+		minYA += velYA; 
+
+	pp = coB->getPhysicalProperties();
+	bv = coB->getBoundingVolume();
+	float widthB = bv->getWidth();
+	float heightB = bv->getHeight();
+	float xB = pp->getX() + bv->getX();
+	float yB = pp->getY() + bv->getY();
+	float velXB = pp->getVelocityX();
+	float velYB = pp->getVelocityY();
+	float minXB = xB-(widthB/2);
+	float maxXB = xB+(widthB/2);
+	float minYB = yB-(heightB/2);
+	float maxYB = yB+(heightB/2);
+
+	if(velXB >= 0)
+		maxXB += velXB; 
+	if(velXB < 0)
+		minXB += velXB; 
+	if(velYB >= 0)
+		maxYB += velYB; 
+	if(velYB < 0)
+		minYB += velYB; 
+
+	if( !(maxXB < minXA || minXB > maxXA || maxYB < minYA || minYB > maxYA))
+		return true;
+	return false;
 }
 
 void Physics::resolveCollision(Game* game, Collision* currentCollision)

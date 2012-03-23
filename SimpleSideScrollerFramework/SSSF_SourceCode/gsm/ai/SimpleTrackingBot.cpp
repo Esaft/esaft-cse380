@@ -19,15 +19,17 @@ SimpleTrackingBot::SimpleTrackingBot(float vM, bool tX, bool tY)
 	trackX = tX;
 	trackY = tY;
 	enemy = true;
+	dead = false;
 }
 
 void SimpleTrackingBot::think(Game *game)
 {
-	wstring curState = this->getCurrentState();
-	if(curState.compare(L"DIE_STATE") != 0 && curState.compare(L"DIEL_STATE") != 0)
+	
+	PhysicalProperties* pp	= &(this->pp);
+	if(dead)
 	{
 		PhysicalProperties* playerProps = game->getGSM()->getSpriteManager()->getPlayer()->getPhysicalProperties();
-		PhysicalProperties* pp	= &(this->pp);
+	
 
 		if (trackX == true)
 		{
@@ -61,10 +63,27 @@ void SimpleTrackingBot::think(Game *game)
 	}
 	else
 	{
+		wstring curState = this->getCurrentState();
+		pp->setVelocity(0,pp->getVelocityY());
 		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
 		if(this->getFrameIndex()/2 == lastFrame)
 		{
 			game->getGSM()->getSpriteManager()->removeBot(this);
+		}
+	}
+}
+
+void SimpleTrackingBot::setDead(bool d)
+{
+	dead = d;
+
+	PhysicalProperties* pp	= &(this->pp);
+	if(dead)
+	{
+		this->setCurrentState(L"DIE_STATE");
+		if(!pp->isOrientedRight())
+		{
+			this->setCurrentState(L"DIEL_STATE");
 		}
 	}
 }

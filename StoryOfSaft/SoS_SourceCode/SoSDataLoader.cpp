@@ -461,8 +461,18 @@ void SoSDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	SpriteManager *spriteManager = gsm->getSpriteManager();
 
 	Bot* bot = gR->getBot(0);
+	bot->setDead(false);
 
-	
+	AnimatedSpriteType* ast = bot->getSpriteType();
+	float width = ast->getTextureWidth();
+	float height = ast->getTextureHeight();
+
+	BoundingVolume *bv = bot->getBoundingVolume();
+	bv->setWidth(width);
+	bv->setHeight(height);
+	bv->setX(width/2);
+	bv->setY(height/2);
+	bv->setType(1);
 
 	bot->setAlpha(255);
 	bot->setCurrentState(L"RIGHT_STATE");
