@@ -1,6 +1,9 @@
 #pragma once
 #include "stdafx.h"
 #include "SoSGameRules.h"
+#include "SSSF_SourceCode\game\Game.h"
+#include "SSSF_SourceCode\game\Game.h"
+#include "SSSF_SourceCode\gsm\state\GameStateManager.h"
 #include "SSSF_SourceCode\gsm\ai\Bot.h"
 #include "SSSF_SourceCode\gsm\sprite\AnimatedSpriteType.h"
 #include "SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h"
@@ -58,9 +61,9 @@ Bot* SoSGameRules::getBot(int type)
 	return botTypeList->at(type);
 }
 
-void SoSGameRules::gameSpecificResolve(Collision* c)
+void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 {
-		
+	AnimatedSprite* player = game->getGSM()->getSpriteManager()->getPlayer();
 }
 
 void SoSGameRules::spawnEnemies(Game* game)

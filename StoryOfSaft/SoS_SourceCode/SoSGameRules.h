@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "SSSF_SourceCode\game\GameRules.h"
+#include "SSSF_SourceCode\game\Game.h"
 #include "SSSF_SourceCode\gsm\ai\Bot.h"
 
 class SoSGameRules: public GameRules
@@ -16,7 +17,7 @@ class SoSGameRules: public GameRules
 
 		Bot* getBot(int type);
 
-		void gameSpecificResolve(Collision* c);
+		void gameSpecificResolve(Game* game, Collision* c);
 		void spawnEnemies(Game* game);
 		void setBotSprite(AnimatedSpriteType* ast, int enemyType);
 		void setUpGame();
