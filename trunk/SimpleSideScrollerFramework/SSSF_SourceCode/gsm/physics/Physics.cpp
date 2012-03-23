@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SSSF_SourceCode\gsm\physics\Physics.h"
 #include "SSSF_SourceCode\game\Game.h"
+#include "SSSF_SourceCode\game\GameRules.h"
 #include "SSSF_SourceCode\gsm\sprite\SpriteManager.h"
 #include "SSSF_SourceCode\gsm\state\GameStateManager.h"
 #include "SSSF_SourceCode\gsm\world\TiledLayer.h"
@@ -86,6 +87,7 @@ void Physics::update(Game *game)
 	GameStateManager *gsm = game->getGSM();
 	SpriteManager *sm = gsm->getSpriteManager();
 	World *w = gsm->getWorld();
+	GameRules* gR = game->getGameRules();
 	vector<WorldLayer*> *layers = w->getLayers();
 
 	AnimatedSprite *player;
@@ -128,15 +130,15 @@ void Physics::update(Game *game)
 	}
 
 	//HERE, COLLIDE SPRITES WITH OTHER SPRITES
-	//collideTestWithSprites(game, player, &collisions));
-	/*botIterator = sm->getBotsIterator();
+	collideTestWithSprites(game, player, &collisions);
+	botIterator = sm->getBotsIterator();
 	while (botIterator != sm->getEndOfBotsIterator())
 	{			
 		Bot *bot = (*botIterator);
 		if(bot->isCurrentlyCollidable() == true);
 			collideTestWithSprites(game, bot, &collisions);
 		botIterator++;
-	}*/
+	}
 
 	//SORT COLLISIONS
 	collisions.sort(compare_collisionTime);
@@ -172,6 +174,7 @@ void Physics::update(Game *game)
 			gsm->updateViewport(game, colTime-timer);
 
 			resolveCollision(game, currentCollision);
+			gR->gameSpecificResolve(game, currentCollision);
 			
 			boolean deleteLast = false;
 			list<Collision*>::iterator cIterator = collisions.begin();
@@ -213,12 +216,12 @@ void Physics::update(Game *game)
 			}
 
 			collideTestWithTiles(co1, tL, &collisions);
-			//collideTestWithSprites(co1);
+			collideTestWithSprites(game, co1, &collisions);
 
 			if(co2->isStaticObject() == false)
 			{
 				collideTestWithTiles(co2, tL, &collisions);
-				//collideTestWithSprites(co2);
+				collideTestWithSprites(game, co2, &collisions);
 			}
 
 			collisions.sort(compare_collisionTime);
@@ -355,7 +358,7 @@ void Physics::collideTestWithTiles(CollidableObject *c,TiledLayer *tL, list<Coll
 
 
 //FOR NOW, TESTS SPRITES AGAINST ALL OTHER SPRITES. IF I HAVE TIME, I WILL IMPLEMENT SWEEP AND PRUNE
-void Physics::collideTestWithSprites(Game* game, AnimatedSprite* c, list<Collision*> *collisions)
+void Physics::collideTestWithSprites(Game* game, CollidableObject* c, list<Collision*> *collisions)
 {
 	SpriteManager *sm = game->getGSM()->getSpriteManager();
 	AnimatedSprite* player = sm->getPlayer();

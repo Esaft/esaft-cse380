@@ -15,7 +15,7 @@ class GameRules
 
 	public:
 		virtual void gameSpecificResolve(Game* game, Collision* c) = 0;
-		virtual void setUpGame() = 0;
+		virtual void setUpGame(Game* game) = 0;
 		virtual void spawnEnemies(Game* game) = 0;
 		virtual void setBotSprite(AnimatedSpriteType* ast, int enemyType) = 0;
 		virtual Bot* getBot(int type) = 0;
