@@ -221,6 +221,9 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.h">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\ItemBot.h">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
