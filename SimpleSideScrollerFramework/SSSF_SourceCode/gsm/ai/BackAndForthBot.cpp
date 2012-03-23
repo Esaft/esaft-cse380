@@ -13,7 +13,7 @@
 BackAndForthBot::BackAndForthBot()
 {
 	pathCounter = 0;
-	vel = 1.0f;
+	vel = 3.0f;
 }
 
 /*
@@ -23,7 +23,7 @@ BackAndForthBot::BackAndForthBot()
 BackAndForthBot::BackAndForthBot(int duration)
 {
 	//initBot();
-	vel = 1.0f;
+	vel = 2.0f;
 	pathSize = duration;
 	pathCounter = 0;
 
@@ -37,6 +37,22 @@ BackAndForthBot::BackAndForthBot(int duration)
 Bot* BackAndForthBot::clone()
 {
 	BackAndForthBot *botClone = new BackAndForthBot();
+	PhysicalProperties* pp = this->getPhysicalProperties();
+	PhysicalProperties* bp = botClone->getPhysicalProperties();
+	BoundingVolume* pV = this->getBoundingVolume();
+	BoundingVolume* bV = botClone->getBoundingVolume();
+	botClone->setEnemy(enemy);
+	botClone->setItem(item);
+	botClone->setPortal(portal);
+	botClone->setSpriteType(this->getSpriteType());
+	botClone->setAlpha(this->getAlpha());
+	botClone->setDead(false);
+	bp->setCollidable(pp->isCollidable());
+	bp->setGravAffected(pp->isGravAffected());
+	bV->setHeight(pV->getHeight());
+	bV->setWidth(pV->getWidth());
+	bV->setX(pV->getX());
+	bV->setY(pV->getY());
 	return botClone;
 }
 

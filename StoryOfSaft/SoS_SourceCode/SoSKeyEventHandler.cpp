@@ -81,85 +81,88 @@ void SoSKeyEventHandler::handleKeyEvents(Game *game)
 		bool movingLR = false;
 		bool attacking = false;
 
-		if(input->isKeyDown(SPACE_KEY))
+		if(!pp->isStunned())
 		{
-			attacking = true;
-			if(input->isKeyDownForFirstTime(SPACE_KEY))
+			if(input->isKeyDown(SPACE_KEY))
 			{
+				attacking = true;
+				if(input->isKeyDownForFirstTime(SPACE_KEY))
+				{
 			
-				player->setCurrentState(L"ATTACK_STATE");
-				if(!pp->isOrientedRight())
-					player->setCurrentState(L"ATTACKL_STATE");
+					player->setCurrentState(L"ATTACK_STATE");
+					if(!pp->isOrientedRight())
+						player->setCurrentState(L"ATTACKL_STATE");
+				}
+			
 			}
-			
-		}
 
-		// WASD AND DIRECTION KEY PRESSES WILL CONTROL THE PLAYER,
-		// SO WE'LL UPDATE THE PLAYER VELOCITY WHEN THESE KEYS ARE
-		// PRESSED, THAT WAY PHYSICS CAN CORRECT AS NEEDED
-		float vX = pp->getVelocityX();
-		float vY = pp->getVelocityY();
+			// WASD AND DIRECTION KEY PRESSES WILL CONTROL THE PLAYER,
+			// SO WE'LL UPDATE THE PLAYER VELOCITY WHEN THESE KEYS ARE
+			// PRESSED, THAT WAY PHYSICS CAN CORRECT AS NEEDED
+			float vX = pp->getVelocityX();
+			float vY = pp->getVelocityY();
 
 		
-		if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
-		{
-			movingLR = true;
-			pp->setOrientedLeft();
-			vX = -PLAYER_SPEED;
-			if (vY == 0 && player->getCurrentState().compare(L"LEFT_STATE") != 0)
-				player->setCurrentState(L"LEFT_STATE");
-			else if(vY != 0 && player->getCurrentState().compare(L"JUMPL_STATE") != 0)
-				player->setCurrentState(L"JUMPL_STATE");
-		}
-		if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
-		{
-			movingLR = true;
-			pp->setOrientedRight();
-			vX = PLAYER_SPEED;
-			if (vY == 0 && player->getCurrentState().compare(L"RIGHT_STATE") != 0)
-				player->setCurrentState(L"RIGHT_STATE");
-			else if(vY != 0 && player->getCurrentState().compare(L"JUMP_STATE") != 0)
-				player->setCurrentState(L"JUMP_STATE");
-		}
-		/*if (input->isKeyDown(S_KEY) || input->isKeyDown(DOWN_KEY))
-		{
-			vY = PLAYER_SPEED;
-		}*/
-		if (input->isKeyDown(W_KEY) || input->isKeyDown(UP_KEY))
-		{
-			
-
-			if (input->isKeyDownForFirstTime(W_KEY) || input->isKeyDownForFirstTime(UP_KEY)
-				&& pp->hasDoubleJumped() == false)
+			if (input->isKeyDown(A_KEY) || input->isKeyDown(LEFT_KEY))
 			{
-				if(pp->hasJumped() == true)
-					pp->setDoubleJumped(true);
-				pp->setJumped(true);
-
-				vY = -PLAYER_SPEED;
-				player->setCurrentState(L"JUMP_STATE");
-				if(vX < 0)
+				movingLR = true;
+				pp->setOrientedLeft();
+				vX = -PLAYER_SPEED;
+				if (vY == 0 && player->getCurrentState().compare(L"LEFT_STATE") != 0)
+					player->setCurrentState(L"LEFT_STATE");
+				else if(vY != 0 && player->getCurrentState().compare(L"JUMPL_STATE") != 0)
 					player->setCurrentState(L"JUMPL_STATE");
 			}
-		}	
+			if (input->isKeyDown(D_KEY) || input->isKeyDown(RIGHT_KEY))
+			{
+				movingLR = true;
+				pp->setOrientedRight();
+				vX = PLAYER_SPEED;
+				if (vY == 0 && player->getCurrentState().compare(L"RIGHT_STATE") != 0)
+					player->setCurrentState(L"RIGHT_STATE");
+				else if(vY != 0 && player->getCurrentState().compare(L"JUMP_STATE") != 0)
+					player->setCurrentState(L"JUMP_STATE");
+			}
+			/*if (input->isKeyDown(S_KEY) || input->isKeyDown(DOWN_KEY))
+			{
+				vY = PLAYER_SPEED;
+			}*/
+			if (input->isKeyDown(W_KEY) || input->isKeyDown(UP_KEY))
+			{
+			
 
-		if(!movingLR)
-		{
-			vX = 0;
-		}
+				if ((input->isKeyDownForFirstTime(W_KEY) || input->isKeyDownForFirstTime(UP_KEY))
+					&& pp->hasDoubleJumped() == false)
+				{
+					if(pp->hasJumped() == true)
+						pp->setDoubleJumped(true);
+					pp->setJumped(true);
 
-		if(vY == 0 && vX == 0 && !attacking && 
-			player->getCurrentState().compare(L"IDLE_STATE") != 0 && player->getCurrentState().compare(L"IDLEL_STATE") != 0 )
-		{
-			player->setCurrentState(L"IDLE_STATE");
-			if(!pp->isOrientedRight())
-				player->setCurrentState(L"IDLEL_STATE");
-		}
+					vY = -PLAYER_SPEED;
+					player->setCurrentState(L"JUMP_STATE");
+					if(vX < 0)
+						player->setCurrentState(L"JUMPL_STATE");
+				}
+			}	
+
+			if(!movingLR)
+			{
+				vX = 0;
+			}
+
+			if(vY == 0 && vX == 0 && !attacking && 
+				player->getCurrentState().compare(L"IDLE_STATE") != 0 && player->getCurrentState().compare(L"IDLEL_STATE") != 0 )
+			{
+				player->setCurrentState(L"IDLE_STATE");
+				if(!pp->isOrientedRight())
+					player->setCurrentState(L"IDLEL_STATE");
+			}
 		
-		// NOW SET THE ACTUAL VELOCITY
-		Physics *physics = gsm->getPhysics();
-		pp->setVelocitySafely(physics, vX, vY);
+			// NOW SET THE ACTUAL VELOCITY
+			Physics *physics = gsm->getPhysics();
+			pp->setVelocitySafely(physics, vX, vY);
 
+		}
 		// NOTE THAT THE VIEWPORT SHOULD FOLLOW THE PLAYER, AND SO SHOULD BE CORRECTED AFTER PHYSICS
 		// ARE APPLIED. I HAVE PROVIDED A SIMPLE WAY OF DOING SO, WHICH SHOULD BE IMPROVED, DEPENDING
 		// ON THE GAME'S NEED

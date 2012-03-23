@@ -11,6 +11,7 @@
 #include "stdafx.h"
 #include "SSSF_SourceCode\dataLoader\GameDataLoader.h"
 #include "SSSF_SourceCode\game\Game.h"
+#include "SSSF_SourceCode\game\GameRules.h"
 #include "SSSF_SourceCode\graphics\GameGraphics.h"
 #include "SSSF_SourceCode\graphics\RenderList.h"
 #include "SSSF_SourceCode\graphics\TextureManager.h"
@@ -284,6 +285,7 @@ void GameStateManager::unloadCurrentLevel()
 */
 void GameStateManager::update(Game *game)
 {
+	game->getGameRules()->spawnEnemies(game);
 	spriteManager->update(game);
 	world.update(game);
 	physics.update(game);
