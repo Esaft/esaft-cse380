@@ -218,6 +218,9 @@
     <ClInclude Include="SSSF_SourceCode\gsm\ai\SimpleTrackingBot.h">
       <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClInclude>
+    <ClInclude Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.h">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -321,6 +324,9 @@
     </ClCompile>
     <ClCompile Include="SSSF_SourceCode\gsm\state\GameStateManager.cpp">
       <Filter>SSSF_SourceCode\gsm\state</Filter>
+    </ClCompile>
+    <ClCompile Include="SSSF_SourceCode\gsm\ai\BackAndForthBot.cpp">
+      <Filter>SSSF_SourceCode\gsm\ai</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

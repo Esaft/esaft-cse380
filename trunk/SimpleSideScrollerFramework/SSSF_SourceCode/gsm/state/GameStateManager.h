@@ -86,6 +86,8 @@ public:
 	void			goToGame();
 	void			goToLoadLevel();
 	void			goToMainMenu();
+	void			goToWinScreen();
+	void			goToGameOver();
 
 	void			goToPaused();
 	void			goToAboutMenu();
