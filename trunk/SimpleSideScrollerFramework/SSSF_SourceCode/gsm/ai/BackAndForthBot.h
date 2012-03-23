@@ -12,6 +12,7 @@ private:
 	unsigned int cyclesRemainingBeforeChange;
 	unsigned int pathCounter;
 	unsigned int pathSize;
+	float vel;
 	
 	
 

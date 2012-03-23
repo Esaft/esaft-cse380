@@ -13,7 +13,7 @@
 BackAndForthBot::BackAndForthBot()
 {
 	pathCounter = 0;
-	
+	vel = 1.0f;
 }
 
 /*
@@ -23,6 +23,8 @@ BackAndForthBot::BackAndForthBot()
 BackAndForthBot::BackAndForthBot(int duration)
 {
 	//initBot();
+	vel = 1.0f;
+	pathSize = duration;
 	pathCounter = 0;
 
 }
@@ -42,15 +44,6 @@ Bot* BackAndForthBot::clone()
 
 
 /*
-	pickRandomVelocity - calculates a random velocity vector for this
-	bot and initializes the appropriate instance variables.
-*/
-void BackAndForthBot::pickNextVelocity(Physics *physics)
-{
-	
-}
-
-/*
 	think - called once per frame, this is where the bot performs its
 	decision-making. Note that we might not actually do any thinking each
 	frame, depending on the value of cyclesRemainingBeforeThinking.
@@ -59,11 +52,39 @@ void BackAndForthBot::think(Game *game)
 {
 	// EACH FRAME WE'LL TEST THIS BOT TO SEE IF WE NEED
 	// TO PICK A DIFFERENT DIRECTION TO FLOAT IN
-
-	if (cyclesRemainingBeforeChange == 0)
+	PhysicalProperties* pp	= &(this->pp);
+	if(!dead)
 	{
-			
+		if (cyclesRemainingBeforeChange == 0)
+		{
+			pp->setVelocity(-vel, pp->getVelocityY());
+
+			if(pp->isOrientedRight())
+			{
+				this->setCurrentState(L"WALKL_STATE");
+				pp->setOrientedLeft();
+			}
+			else
+			{
+				this->setCurrentState(L"WALK_STATE");
+				pp->setOrientedRight();
+			}
+
+			cyclesRemainingBeforeChange = pathSize;
+
+		}
+		else
+			cyclesRemainingBeforeChange--;
+
 	}
 	else
-		cyclesRemainingBeforeChange--;
+	{
+		wstring curState = this->getCurrentState();
+		pp->setVelocity(0,pp->getVelocityY());
+		int lastFrame = this->getSpriteType()->getSequenceSize(curState)-2;
+		if(this->getFrameIndex() == lastFrame)
+		{
+			game->getGSM()->getSpriteManager()->removeBot(this);
+		}
+	}
 }
