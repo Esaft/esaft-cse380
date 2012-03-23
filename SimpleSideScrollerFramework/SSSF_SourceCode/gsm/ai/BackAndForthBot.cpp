@@ -26,7 +26,8 @@ BackAndForthBot::BackAndForthBot(int duration)
 	vel = 2.0f;
 	pathSize = duration;
 	pathCounter = 0;
-
+	enemy = true;
+	dead = false;
 }
 
 /*
@@ -71,9 +72,14 @@ void BackAndForthBot::think(Game *game)
 	PhysicalProperties* pp	= &(this->pp);
 	if(!dead)
 	{
+		if(pp->getVelocityX() == 0)
+		{
+			pp->setVelocity(vel, pp->getVelocityY());
+		}
 		if (cyclesRemainingBeforeChange == 0)
 		{
-			pp->setVelocity(-vel, pp->getVelocityY());
+			vel *= -1;
+			pp->setVelocity(vel, pp->getVelocityY());
 
 			if(pp->isOrientedRight())
 			{
