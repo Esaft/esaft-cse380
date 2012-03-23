@@ -111,6 +111,7 @@ void GameStateManager::goToWinScreen()
 	currentGameState = GS_WIN_SCREEN;
 	if (isWorldRenderable())
 		unloadCurrentLevel();
+	//graphics->clearWorldTextures();
 }
 
 void GameStateManager::goToGameOver()
@@ -118,6 +119,8 @@ void GameStateManager::goToGameOver()
 	currentGameState = GS_GAME_OVER;
 	if (isWorldRenderable())
 		unloadCurrentLevel();
+	//graphics->clearWorldTextures();
+
 }
 
 

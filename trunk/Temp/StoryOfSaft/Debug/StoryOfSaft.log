@@ -1,16 +1,22 @@
-﻿Build started 3/23/2012 6:36:23 AM.
+﻿Build started 3/23/2012 7:02:05 AM.
      1>Project "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\StoryOfSaft\StoryOfSaft.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild".
+         Creating "C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\StoryOfSaft.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSGameRules.cpp
-         SoSGameRules.cpp
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(33): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(35): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(52): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(53): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(56): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosgamerules.cpp(71): warning C4101: 'other' : unreferenced local variable
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\\" /Fd"C:\Users\Evan\Documents\Classes\CSE 380\CSE380_Spring2012_Projects\Temp\StoryOfSaft\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SoS_SourceCode\SoSDataLoader.cpp
+         SoSDataLoader.cpp
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(365): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(468): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(469): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(361): warning C4101: 'delimiterIndex2' : unreferenced local variable
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(606): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(607): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(608): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(609): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(617): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(618): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(1086): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\evan\documents\classes\cse 380\cse380_spring2012_projects\storyofsaft\sos_sourcecode\sosdataloader.cpp(1087): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        ResourceCompile:
          All outputs are up-to-date.
        ManifestResourceCompile:
@@ -38,4 +44,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.79
+Time Elapsed 00:00:07.25

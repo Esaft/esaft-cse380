@@ -159,8 +159,8 @@ NUM_SCREENS:8
 7_SCREEN_NUM_IMAGES:0
 7_SCREEN_NUM_BUTTONS:1
 7_SCREEN_NUM_STATES:1
-7_SCREEN_BUTTON_PATH_0:textures/gui/overlays/sos_splash_screen_overlay.png
-7_SCREEN_BUTTON_MO_PATH_0:textures/gui/overlays/sos_splash_screen_overlay.png
+7_SCREEN_BUTTON_PATH_0:textures/gui/overlays/sos_lose_screen_overlay.png
+7_SCREEN_BUTTON_MO_PATH_0:textures/gui/overlays/sos_lose_screen_overlay.png
 7_SCREEN_BUTTON_X_0:0
 7_SCREEN_BUTTON_Y_0:0
 7_SCREEN_BUTTON_Z_0:0
