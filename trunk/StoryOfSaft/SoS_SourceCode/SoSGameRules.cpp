@@ -95,9 +95,10 @@ void SoSGameRules::gameSpecificResolve(Game* game, Collision* c)
 		game->quitGame();
 		game->getGSM()->goToGameOver();
 	}*/
-	if(codeCollected == 1 && !doorPlaced)
+	if(codeCollected == 5 && !doorPlaced)
 	{
 		placeDoor(game);
+		doorPlaced = true;
 	}
 	if(won == true)
 	{
@@ -186,8 +187,8 @@ void SoSGameRules::setUpGame(Game* game)
 {
 	health = 100;
 	codeCollected = 0;
-	doorX = 500;
-	doorY = 1792;
+	doorX = 3520;
+	doorY = 1280;
 	won = false;
 	doorPlaced = false;
 }
